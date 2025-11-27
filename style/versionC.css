@@ -1,0 +1,779 @@
+/*fonts*/
+@font-face {
+    font-family: fontHeader;
+    src: url("../fonts/Christmas.otf");
+}
+
+@font-face {
+    font-family: fontText;
+    src: url("../fonts/textStyle.otf");
+}
+
+@font-face {
+    font-family: fontMainPage;
+    src: url("../fonts/MainChirstmas.otf");
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: fontText,serif;
+    font-size: 1.3vw;
+    margin: 0; /* Añadido para consistencia */
+    padding: 0; /* Añadido para consistencia */
+
+    /* Fondo aplicado al body (ajuste de escritorio) */
+    background-image: url('../images/back_register.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*margins for all the built-in headers*/
+h1, h2, h3, h4, h5, h6 {
+    margin: 4vw;
+}
+/*form input fields*/
+input {
+    font-size: 1.3vw;
+    font-family: fontText,serif;
+}
+
+#Inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    color: #302c23;
+    padding-bottom: 3vw;
+    position: relative; /* Necesario para que el footer fijo no lo pise */
+}
+
+
+/*form input functionality (Reglas generales para inputs/selects del nuevo formulario)*/
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container select {
+    width: 100%;
+    padding: 1vw;
+    border: 0.1vw solid #ccc;
+    border-radius: 0.4vw;
+    box-sizing: border-box;
+    margin-top: 0.5vw;
+    margin-bottom: 1.2vw;
+    font-size: 1.3vw;
+    font-family: fontText, serif;
+}
+
+/*submit button functionality (Aplica a los nuevos botones .boton-comprar)*/
+.boton-comprar {
+    background-color: rgba(39, 88, 124, 0.79);
+    color: white;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 0.8vw;
+    font-family: fontHeader, serif;
+    font-size: 1.4vw;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/*change of the color while clicking on submit button*/
+.boton-comprar:hover {
+    background-color: #e19c38;
+    border: 0.2vmin solid #183d61;
+}
+
+@keyframes AnimacionLetras {
+    from{color: #c1b089
+    }
+    to{color: goldenrod}
+}
+
+/*navigation bar should change depending on the device*/
+#Navegacion{
+    margin: 0;
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.website-name, #Navegacion a{
+    text-align: center;
+    flex-grow: 1;
+    font-family: fontMainPage, serif;
+    font-size: 7vmin;
+    color: #605e5e;
+    margin: 25px 4px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: break-word;
+    wrap-option: no-wrap;
+}
+
+.website-name {
+    color: #e3b87e;
+}
+
+
+#Navegacion a:hover{
+    animation-name: AnimacionLetras;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}
+#InicioTitulo {
+    font-family: fontMainPage, serif;
+    margin-top: 10vmax;
+    font-size: 20vmin;
+    text-shadow: #383a43 10px 0 10px;
+    margin-bottom: 1vh;
+}
+@keyframes AnimacionColor {
+    from{background-color: #c3b18a
+    }
+    to{background-color: goldenrod}
+}
+
+
+
+
+.menu-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px 0 0;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    color: #302f2f;
+    background: #f1f1f1;
+    border-radius: 0.25rem 1rem 0.25rem 1rem;
+    width: 3vw;
+}
+
+.top-right {
+    padding-top: 1vw;
+
+}
+
+
+/* =================================
+   NUEVO LAYOUT DE PÁGINA (Dos Columnas)
+   ================================= */
+.wrapper-main {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    max-width: 1200px;
+    margin: 3vw auto;
+    padding: 2vw;
+    background-color: rgba(176, 196, 222, 0.5);
+    border-radius: 0.8vw;
+    box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.2);
+}
+
+.left_container, .right_container {
+    padding: 1.5vw;
+    box-sizing: border-box;
+}
+
+.left_container {
+    flex: 1;
+    margin-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+}
+
+.right_container {
+    flex: 2;
+    min-width: 60%;
+}
+
+
+/* =================================
+   CONTENIDO LATERAL IZQUIERDO
+   ================================= */
+.top-left {
+    border: 0.1vw solid #ccc;
+    padding: 2.2vw;
+    margin-bottom: 1.5vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2vw 0.5vw;
+    background-color: white;
+}
+
+.venta-container-left {
+    grid-column: 1 / 2;
+    font-weight: bold;
+}
+
+.venta-container-right {
+    grid-column: 2 / 3;
+    text-align: right;
+    font-weight: bold;
+    color: #e67e22;
+    width: 50%;
+}
+
+.venta-container-middle {
+    grid-column: 1 / 3;
+    color: #555;
+}
+
+.bottom-left {
+    border: 0.1vw solid #ccc;
+    padding: 1.2vw;
+    text-align: justify;
+    background-color: white;
+
+}
+
+.titulo-text {
+    font-weight: bold;
+    margin-bottom: 0.8vw;
+    font-size: 1.2vw;
+    border-bottom: 0.1vw solid #eee;
+    padding-bottom: 0.5vw;
+    font-family: fontHeader, serif;
+}
+
+
+/* =================================
+   FORMULARIO DERECHO
+   ================================= */
+.form-container h2 {
+    font-family: fontHeader, serif;
+    margin-top: 0;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+    text-align: center;
+    color: #333;
+}
+
+.tarjeta {
+    margin-bottom: 1.2vw;
+}
+
+.tarjeta label {
+    display: block;
+    margin-bottom: 0.5vw;
+    font-family: fontText, serif;
+    font-size: 1.3vw;
+}
+
+/* Fecha y CVV en la misma línea */
+.grupo-fecha, .grupo-cvv {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    margin-bottom: 1.5vw;
+    font-size: 1.3vw;
+}
+
+.grupo-fecha {
+    margin-right: 4%;
+}
+
+.grupo-fecha label, .grupo-cvv label {
+    display: block;
+    margin-bottom: 0.5vw;
+}
+
+.entrada-fecha {
+    display: flex;
+    align-items: center;
+}
+
+.entrada-fecha input {
+    margin: 0;
+    margin-right: 0.5vw;
+    width: 100%;
+}
+
+.icono-calendario {
+    font-size: 1.8vw;
+    cursor: pointer;
+    margin-bottom: 0.5vw;
+}
+
+.grupo-cvv input {
+    margin: 0.5vw 0 0 0;
+}
+
+/* Estilos de botones */
+.botones-accion {
+    text-align: center;
+    margin-top: 2vw;
+}
+
+.boton-borrar {
+    padding: 1vw 2vw;
+    margin: 0.5vw 1vw;
+    border: none;
+    border-radius: 0.8vw;
+    cursor: pointer;
+    font-family: fontHeader, serif;
+    font-size: 1.4vw;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #ccc;
+    color: #333;
+}
+
+.boton-borrar:hover {
+    background-color: #999;
+    border: 0.2vmin solid #333;
+}
+
+
+
+
+
+.nl-title{
+    margin:0;
+    font-family: fontHeader, serif;
+    font-size:1.1rem;
+    color:#fff;
+}
+
+.nl-form{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    margin-left:auto;
+}
+
+.nl-form input[type="email"]{
+    padding:.55rem .75rem;
+    border-radius:.5rem;
+    border:none;
+    outline:none;
+    font-family: fontText, serif;
+    min-width: 220px;
+    background:#fff;
+    color:#333;
+}
+
+.nl-btn{
+    background:#f6d586;
+    color:#2a2a2a;
+    border:none;
+    border-radius:.55rem;
+    padding:.55rem .9rem;
+    font-family: fontHeader, serif;
+    cursor:pointer;
+}
+.nl-btn:hover{ background:#e6a31f; }
+
+/* oculto visualmente pero accesible */
+.sr-only{
+    position:absolute !important;
+    height:1px; width:1px;
+    overflow:hidden; clip:rect(1px,1px,1px,1px);
+}
+
+
+.copy{
+    margin:0;
+    font-size:.9rem;
+    color:#e6eef6;
+}
+
+
+
+
+/* --- Móvil (0px a 600px) --- */
+@media (max-width: 600px) {
+
+
+    .nl-title {
+        font-size: 5vw; /* Más grande en móvil */
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .nl-form {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        gap: 1rem;
+    }
+
+    .nl-form input[type="email"] {
+        width: 100%;
+        min-width: auto;
+        font-size: 4vw;
+        padding: 2.5vw;
+        box-sizing: border-box;
+    }
+
+    .nl-btn {
+        width: 100%;
+        font-size: 4.5vw;
+        padding: 2.5vw;
+    }
+
+
+
+
+    .copy {
+        font-size: 3.5vw;
+    }
+
+
+
+
+    .website-name, #Navegacion a{
+        font-size: 4.7vmin;
+        padding: 4px;
+    }
+    .top-right {
+        padding-top: 5vw;
+    }
+
+    .forma {
+        margin-top: 16vw;
+    }
+
+    .forma-text {
+        white-space: pre-line;
+        font-size: 1.5vw;
+    }
+
+    .footer-bar .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px; /* separación entre iconos */
+        margin-top: 10px;
+    }
+
+    .footer-bar .footer-social .social-link {
+        width: 32px;   /* tamaño fijo en móvil */
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-bar .footer-social .social-link img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        display: block;
+    }
+
+    /* Newsletter en una columna */
+    .footer-newsletter {
+        flex-direction: row;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-newsletter-title,
+    .mail,
+    .newsletter-submit-button {
+        width: 100%;
+    }
+
+    .mail input {
+        width: 90%; /* input más ancho */
+        margin: 0 auto;
+        display: block;
+    }
+
+    .newsletter-submit-button button {
+        width: auto;
+        padding: 8px 16px;
+    }
+
+    .footer-bar,
+    .footer-bar p,
+    .footer-bar a,
+    .footer-newsletter label,
+    .footer-newsletter input,
+    .footer-newsletter button {
+        font-size: 2.5vw !important;
+    }
+
+}
+
+
+/* --- Tablet (600px a 768px) --- */
+@media (min-width: 600px) and (max-width: 768px) {
+
+    .nl-title {
+        font-size: 1.8rem;
+    }
+    .nl-form input[type="email"] {
+        min-width: 180px;
+    }
+
+
+
+    .copy {
+        grid-column: 1 / 2;
+    }
+
+
+
+}
+
+/* --- Escritorio Pequeño (768px a 1087px) --- */
+@media (min-width: 768px) and (max-width: 1087px) {
+    .wrapper-main {
+        width: 90vw;
+    }
+    .form-container h2 {
+        font-size: 2.5vw;
+    }
+    .boton-comprar, .boton-borrar {
+        font-size: 1.8vw;
+    }
+    .menu-lang {
+        font-size: 1.5vw;
+        width: 4vw;
+    }
+
+}
+
+/* --- Footer Responsive (Ajustes Adicionales) --- */
+
+@media (max-width: 900px){
+    .footer-bar{ grid-template-columns: 1fr; text-align:center; }
+    .footer-links{ justify-content:center; flex-wrap:wrap; }
+    .footer-social{ justify-content:center; }
+    .nl-form{ width:100%; justify-content:flex-start; }
+}
+
+@media (max-width: 560px){
+    .footer-newsletter{ flex-direction:column; align-items:stretch; }
+    .nl-form{ margin-left:0; }
+    .nl-form input[type="email"]{ min-width:0; width:100%; }
+}
+
+
+.site-footer {
+    background:#2a578c;
+    color:#f0f0f0;
+    width:100%;
+    margin:0;
+    border-radius:0;
+    font-family: fontText, serif;
+    overflow:hidden;
+}
+.footer-newsletter-title{
+    font-size: 1.5vw;
+}
+
+.footer-newsletter.mail{
+    font-size: 2.5vw;
+}
+
+.footer-newsletter.button-comprar{
+    font: 1.5vw/1.5vw serif;
+}
+
+.site-footer a{ color:#f0f0f0; text-decoration:none; }
+.site-footer a:hover{ text-decoration:underline; }
+
+/* --- Newsletter (tira superior) --- */
+.footer-newsletter{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:1rem 1.25rem;
+    background:rgba(255,255,255,.06);
+}
+
+
+.nl-title{
+    margin:0;
+    font-family: fontHeader, serif;
+    font-size:1.1rem;
+    color:#fff;
+}
+
+.nl-form{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    margin-left:auto;
+}
+
+.nl-form input[type="email"]{
+    padding:.55rem .75rem;
+    border-radius:.5rem;
+    border:none;
+    outline:none;
+    font-family: fontText, serif;
+    min-width: 220px;
+    background:#fff;
+    color:#333;
+}
+
+.nl-btn{
+    background:#f6d586;
+    color:#2a2a2a;
+    border:none;
+    border-radius:.55rem;
+    padding:.55rem .9rem;
+    font-family: fontHeader, serif;
+    cursor:pointer;
+}
+.nl-btn:hover{ background:#e6a31f; }
+
+/* oculto visualmente pero accesible */
+.sr-only{
+    position:absolute !important;
+    height:1px; width:1px;
+    overflow:hidden; clip:rect(1px,1px,1px,1px);
+}
+
+
+/* ===== FOOTER (responsive proporcional al estilo de la web) ===== */
+.site-footer {
+    background: #2a578c;
+    color: #f0f0f0;
+    width: 96%;
+    margin: 2vw auto 0;
+    border-radius: 0.8vw;
+    font-family: fontText, serif;
+    overflow: hidden;
+    font-size: 1vw; /* tamaño base proporcional */
+}
+
+/* Enlaces */
+.site-footer a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1vw;
+}
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Tira superior: newsletter --- */
+.footer-newsletter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* mantiene una sola línea */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0.6vw 0.6vw 0 0;
+}
+
+.footer-newsletter-title label {
+    font-family: fontHeader, serif;
+    font-size: 1.3vw;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.mail input[type="email"] {
+    padding: 0.6vw 0.9vw;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    font-family: fontText, serif;
+    font-size: 1vw;
+    width: 20vw;
+    background: #fff;
+    color: #333;
+}
+
+.newsletter-submit-button button {
+    background: #ffd36b;
+    color: #2a2a2a;
+    border: none;
+    border-radius: 0.4vw;
+    padding: 0.6vw 1.2vw;
+    font-family: fontHeader, serif;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.newsletter-submit-button button:hover {
+    background: #e6a31f;
+    color: #fff;
+}
+
+/* --- Barra inferior --- */
+.footer-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* nunca apila */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    border-top: 0.1vw solid rgba(255, 255, 255, 0.25);
+    background: #21476f;
+}
+
+.copy {
+    margin: 0;
+    font-size: 0.9vw;
+    color: #e6eef6;
+    white-space: nowrap;
+}
+
+/* Enlaces centrales */
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.2vw;
+    margin: 0;
+    padding: 0;
+    font-size: 1vw;
+    white-space: nowrap;
+}
+
+/* Redes sociales */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+}
+
+.footer-social img {
+    width: 1.8vw;
+    height: 1.8vw;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+.footer-social img:hover {
+    transform: scale(1.12);
+}
+
+/* --- Escala general para pantallas pequeñas --- */
+@media (max-width: 600px) {
+    .site-footer {
+        font-size: 1.7vw;
+        border-radius: 1vw;
+    }
+    .footer-newsletter,
+    .footer-bar {
+        padding: 2vw;
+        gap: 2vw;
+    }
+    .footer-social img {
+        width: 3vw;
+        height: 3vw;
+    }
+}
+

@@ -1,0 +1,1047 @@
+/*fonts*/
+@font-face {
+    font-family: fontHeader;
+    src: url("../fonts/Christmas.otf");
+}
+
+@font-face {
+    font-family: fontText;
+    src: url("../fonts/textStyle.otf");
+}
+
+@font-face {
+    font-family: fontMainPage;
+    src: url("../fonts/MainChirstmas.otf");
+}
+
+/*home page */
+#Inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: #302c23;
+    padding-bottom: 3vw;
+}
+
+/*change of color in navegation bar*/
+@keyframes AnimacionLetras {
+    from{color: #c1b089
+    }
+    to{color: goldenrod}
+}
+/*navegation bar container*/
+#Navegacion{
+    margin: 0;
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-items: center;
+}
+/*navegation bar text and website name (no hover for it)*/
+.website-name, #Navegacion a{
+    text-align: center;
+    flex-grow: 1;
+    font-family: fontMainPage, serif;
+    font-size: 7vmin;
+    color: #605e5e;
+    margin: 25px 4px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: break-word;
+    wrap-option: no-wrap;
+}
+.website-name {
+    color: #e3b87e;
+}
+/*navegation bar when putting cursor on it*/
+#Navegacion a:hover{
+    animation-name: AnimacionLetras;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px){
+    .footer-bar{ grid-template-columns: 1fr; text-align:center; }
+    .footer-links{ justify-content:center; flex-wrap:wrap; }
+    .footer-social{ justify-content:center; }
+    .nl-form{ width:100%; justify-content:flex-start; }
+}
+
+@media (max-width: 560px){
+    .footer-newsletter{ flex-direction:column; align-items:stretch; }
+    .nl-form{ margin-left:0; }
+    .nl-form input[type="email"]{ min-width:0; width:100%; }
+}
+
+.footer-newsletter {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.footer-newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: .5rem;
+    border-radius: 4px;
+    border: none;
+    width: 250px;
+    font-size: 1rem;
+}
+
+.footer-newsletter button {
+    padding: .5rem 1rem;
+    background-color: #ffd36b;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.footer-newsletter button:hover {
+    background-color: #e6a31f;
+    color: #fff;
+}
+
+/*wrapper of the whole contents of the initial screen*/
+.wrapper-main {
+    margin-top: 3vh;
+    width: 96%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3vw;
+    grid-auto-rows: minmax(10vw, auto);
+}
+/*left upper container*/
+.first_container {
+    border-radius: 0.8vw;
+    grid-column: 1;
+    grid-row: 1;
+    height: 12vw;
+    background-image: url('../images/sea.jpg');
+}
+/*left second container*/
+.second_container {
+    border-radius: 0.8vw;
+    grid-column: 1;
+    height: 30vw;
+    grid-row: 2;
+    background: rgba(90, 81, 81, 0.25);
+    position: relative;
+}
+/*right container*/
+.third_container {
+    border-radius: 0.8vw;
+    grid-column: 2;
+    grid-row: 1 / 4;
+    background: rgba(90, 81, 81, 0.25);
+}
+/*left bottom container*/
+.fourth-container {
+    border-radius: 0.8vw;
+    grid-column: 1;
+    grid-row: 3;
+    height: auto;
+    background: rgba(90, 81, 81, 0.25);
+}
+/*first container text*/
+.container-text {
+    background-color: rgba(55, 51, 51, 0.31);
+    color: white;
+    padding: 1vw 5vw;
+    margin: 4vw 1vw auto 1vw;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    font-size: 2vw;
+    text-align: center;
+}
+/*consent box on the right*/
+.consent-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: fontText,serif;
+    font-size: 20px;
+}
+
+/*margins for all the built-in headers*/
+h1, h2, h3, h4, h5, h6 {
+    margin: 4vw;
+}
+/*form input fields*/
+input {
+    font-size: 1.5vw;
+    font-family: fontText,serif;
+}
+/*line on the right*/
+.line {
+    border-bottom: 2px solid #2b4485;
+    width: 75%;
+    margin: 1vw 2vw 1vw 3.9vw;
+}
+
+/*bottom grid of experience cards*/
+.cartas-grind {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 3vh;
+    margin: 2vw 0vw 2vw 2vw;
+}
+/*experience card*/
+.carta {
+    width: 16vw;
+    height: 9vw;
+    border: 0.2vmin dashed #114063;
+    background: rgba(95, 173, 218, 0.8);
+    border-radius: 1vmin;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1vw;
+    grid-template-rows: auto 1fr;
+    padding: 1vw;
+}
+/*text block container below logging in on the right*/
+.text-block {
+    width: auto;
+    display: grid;
+    padding: 1vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 4fr;
+    box-sizing: border-box;
+}
+/*text block list container*/
+.text-block dd {
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+    font-size: 1.8vw;
+    margin-left: 3vw;
+}
+/*header of text block*/
+.side-text-header{
+    grid-row: 1/2;
+    text-align: left;
+    font-family: fontHeader, serif;
+    font-size: 2vw;
+}
+/*text block list entries*/
+.side-text-options {
+    grid-row: 2/3;
+    width: auto;
+    font-family: fontText,serif;
+    font-size: 2vw;
+    margin-left: 1.5vw;
+}
+/*experience cartas header*/
+.carta-header{
+    grid-column: 1/3;
+    grid-row: 1;
+    text-align: left;
+    font-size: 1.25vw;
+    font-family: fontHeader, serif;
+}
+/*experience carta photo*/
+.carta-photo {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+/*experience carta like*/
+.carta-like {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    padding-left: 0.7vw;
+    width: 70%;
+    margin-bottom: 2.3vw;
+}
+/*experience carta ver mas button*/
+.cartas-ver-mas-button {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    background-color: rgba(39, 88, 124, 0.79);
+    border-radius: 7px;
+    border-color: #183d61;
+    cursor: pointer;
+    width: auto;
+    height: 3vw;
+    font-family: fontHeader, serif;
+    font-size: 1vw;
+}
+/*second container arrow next button*/
+.back-button{
+    background-color: rgba(39, 88, 124, 0.79);
+    border-radius: 7px;
+    border-color: #183d61;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 2vw;
+    transform: translateY(-50%);
+}
+/*second container arrow back button*/
+.next-button{
+    background-color: rgba(39, 88, 124, 0.79);
+    border-radius: 7px;
+    border-color: #183d61;
+    font-family: fontHeader, serif;
+    font-size: 1.5vw;
+    z-index: 5;
+    position: absolute;
+    /*TODO add AI here*/
+    top: 50%;
+    right: 2vw;
+    transform: translateY(-50%);
+}
+/*second container comprar button*/
+.button-comprar{
+    margin-top: 92vw;
+    float: right;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgb(44, 39, 39);
+    color: white;
+    padding: 0.7vw 1.8vw;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    font-size: 1.7vw;
+}
+/*side text grid container*/
+.side-text-grid {
+    display: grid;
+    width: 25vw;
+    grid-template-columns: 1fr;
+    margin: 2vw 0 2vw 3vw;
+}
+
+/*container for the form*/
+.venta-container {
+    width: 80%;
+    height: auto;
+    border-radius: 0.8vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2vw;
+    margin: 2.4vw auto 0 auto;
+    justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("images/japan.jpg");
+}
+
+/*split of the container into two parts*/
+.venta-container-left {
+    background-color: rgba(255, 255, 255, 0.74);
+    align-content: center;
+    width: auto;
+    padding: 0.8vw;
+    box-sizing: border-box;
+    border-radius: 0.5vw;
+}
+
+.venta-container-right {
+    background-color: rgba(255, 255, 255, 0.74);
+    align-content: center;
+    padding: 0.8vw;
+    box-sizing: border-box;
+    border-radius: 0.5vw;
+    width: 10%;
+}
+
+.venta-container-right {
+    float: right;
+}
+
+.venta-container-left {
+    float: left;
+}
+
+.venta-container-middle {
+    background-color: rgba(255, 255, 255, 0.74);
+    width: 100%;
+    margin-top: 5vw;
+    padding: 0.8vw;
+    border-radius: 0.5vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.venta-container-header {
+    text-align: left;
+    font-size: 1.8vw;
+    font-family: fontHeader, serif;
+    margin: 1.5vw 1.5vw 1.5vw 3vw;
+}
+
+.venta-container-text {
+    font-size: 1.5vw;
+    white-space: pre-line;
+    color: #423d3d;
+    font-family: fontHeader, serif;
+}
+
+/*submit button position*/
+.venta-container-submit {
+    display: flex;
+    font-size: 1.5vw;
+    flex-direction: column;
+    padding-top: 9.7vw;
+    align-items: flex-end;
+}
+/*langauge options container*/
+.menu-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px 0 0;
+    font-family: fontHeader, serif;
+    font-size: 1.3vw;
+    color: #302f2f;
+    background: #f1f1f1;
+    border-radius: 0.25rem 1rem 0.25rem 1rem;
+    width: 3vw;
+}
+/*login form container*/
+.form-container {
+    height: auto;
+    margin-right: 0.6vw;
+    padding-top: 3.5vw;
+    position: relative;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+    width: 95%;
+    margin-bottom: 4vh;
+    margin-left: 2vh;
+    padding: 15px;
+    font-size: 1.2vw;
+    border: none;
+    border-right: 20px;
+    background: #f1f1f1;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: fontText, serif;
+}
+
+.form-container .button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+
+.form-container .button-enter, .button-register{
+    background-color: #f6d586;
+    border-radius: 7px;
+    border-color: #a14432;
+    cursor: pointer;
+    margin: 10px;
+    width: auto;
+    padding: 15px;
+    font-family: fontHeader, serif;
+    font-size: 1.3vw;
+}
+
+.cartas-ver-mas-button:hover, .button-comprar:hover, .form-container .button-enter:hover{
+    background-color: #e6a31f;
+    font-style: italic;
+}
+
+.form-container .button-register:hover {
+    background-color: #df4b14;
+    font-style: italic;
+}
+/*icon location*/
+.top-right {
+    margin-top: 1vw;
+}
+
+#profileAvatar {
+    width:4vw;
+    height:4vw;
+    border-radius:4px;
+    object-fit:cover;
+}
+/*TODO REDO BREAKPOINTS*/
+/*breakpoint for devices less then 600px*/
+@media (max-width: 600px) {
+    .form-container .button-enter, .button-register {
+        font-size: 1.7vw;
+        padding: 1vw 1vw 1vw 1vw;
+        margin-top: 0.5vw;
+    }
+
+    .top-right {
+        padding-top: 4vw;
+    }
+
+    .text-block dd {
+        font-size: 2vw;
+    }
+    .text-block {
+        padding-left: 5vw;
+    }
+    .consent-box {
+        font-size: 2vw;
+    }
+
+    .cartas-grind {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 2vh;
+        padding-left: 5.6vw;
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .carta-header {
+        font-size: 1.6vw;
+    }
+
+    .text-block dd {
+        font-size: 2vw;
+    }
+
+    .first_container {
+        border-radius: 0.8vw;
+        grid-column: 1;
+        grid-row: 1;
+        height: 15vw;
+        background-image: url('../images/sea.jpg');
+    }
+    /*left second container*/
+    .second_container {
+        border-radius: 0.8vw;
+        grid-column: 1;
+        height: 30vw;
+        grid-row: 2;
+        background: rgba(90, 81, 81, 0.25);
+    }
+    /*right container*/
+    .third_container {
+        border-radius: 0.8vw;
+        grid-column: 2;
+        grid-row: 1 / 4;
+        background: rgba(90, 81, 81, 0.25);
+    }
+    /*left bottom container*/
+    .fourth-container {
+        border-radius: 0.8vw;
+        grid-column: 1;
+        grid-row: 3;
+        height: auto;
+        background: rgba(90, 81, 81, 0.25);
+    }
+    /*first container text*/
+    .container-text {
+        padding: 1vw 5vw;
+        margin: 5.4vw 1vw auto 1vw;
+        font-size: 2vw;
+
+    }
+
+    /*wrapper of the whole contents of the initial screen*/
+    .wrapper-main {
+        grid-template-columns: 1fr;
+    }
+
+    /*right container*/
+    .third_container {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .carta {
+        width: 70%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    /*second container arrow next button*/
+    .back-button{
+        left: 1vw;
+    }
+    /*second container arrow back button*/
+    .next-button{
+        right: 1vw;
+    }
+
+    .form-container .button-enter, .button-register {
+        font-size: 1.7vw;
+        padding: 1vw 2vw 1vw 2vw;
+        margin-top: 0.5vw;
+    }
+
+    .form-container input[type=text], .form-container input[type=password] {
+        padding: 10px;
+        width: 70%;
+        font-size: 2vw;
+        margin-left: 12vw;
+        margin-bottom: 2vw;
+    }
+
+    .venta-container-header {
+        font-size: 2vw;
+    }
+    .line {
+        border-bottom: 2px solid #2b4485;
+        width: 80%;
+        margin: 1vw 2vw 1vw 8vw;
+    }
+
+    .website-name, #Navegacion a{
+        font-size: 4.7vmin;
+        padding: 4px;
+    }
+}
+
+/*breakpoint for the middle-scaled devices*/
+@media (min-width: 600px) and (max-width: 766px) {
+
+    .website-name, #Navegacion a{
+        font-size: 5vmin;
+    }
+
+    .form-container .button-enter, .button-register {
+        font-size: 1.7vw;
+        padding: 1vw 1vw 1vw 1vw;
+        margin-top: 0.5vw;
+    }
+
+
+    .form-container input[type=text], .form-container input[type=password] {
+        font-size: 2vw;
+        margin-left: 1vw;
+        margin-bottom: 2vw;
+    }
+
+    .cartas-grind {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1vh;
+        grid-column-gap: 2vh;
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .carta-header {
+        font-size: 1.6vw;
+    }
+
+    .top-right {
+        padding-top: 2vw;
+    }
+
+    .text-block dt {
+        font-size: 2vw;
+    }
+
+
+    .consent-box {
+        font-size: 2vw;
+    }
+
+}
+/*breakpoint for bigger screens, but not extremely big*/
+@media (min-width: 766px) and (max-width: 1087px) {
+    .form-container .button-enter, .button-register {
+        font-size: 1.3vw;
+        padding: 1vw 1vw 1vw 1vw;
+        margin-top: 0.5vw;
+    }
+
+    .form-container input[type=text], .form-container input[type=password] {
+        font-size: 1.5vw;
+        margin-left: 1vw
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .website-name, #Navegacion a{
+        font-size: 5.2vmin;
+    }
+
+    .cartas-grind {
+        margin-left: 1.7vw;
+    }
+
+    .consent-box {
+        font-size: 1.6vw;
+    }
+
+    .top-right {
+        margin-top: 1.5vw;
+    }
+
+}
+
+.button-comprar {
+    margin-top: 9.7vw;
+    float: right;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgb(44, 39, 39);
+    color: white;
+    padding: 0.7vw 1.8vw;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    font-size: 1.7vw;
+}
+
+
+.calendario-titulo{text-align: center}
+.calendario-content{display: block;
+    margin-left: 8.5vw;margin-right: 8.5vw;}
+
+
+.experience-search-container{
+    grid-row: 1/2;
+    text-align: center;
+    font-family: fontHeader, serif;
+    font-size: 1.8vw;
+}
+
+
+.experience-searchbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    font-size: 2vw;
+    margin-top: 1.2vw;
+}
+
+
+    .experience-search h5 {
+        margin-bottom: 5px; /* acerca los checkboxes al título */
+        margin-top: 0.5px; /* reduce el espacio superior */
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;  /* centra el texto dentro del bloque */
+    }
+
+    .consejos h5 {
+        grid-row: 1/2;
+        text-align: center;
+        font-family: fontHeader, serif;
+        font-size: 2vw; /* centra el texto dentro del bloque */
+        margin-bottom: 2vw;
+        margin-top: 1vw;
+    }
+    .ultimos-consejos-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 1.5vw;
+        margin-bottom: 20px;
+
+    }
+
+    .write-consejos-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        width: 100%;
+        font-size: 1.5vw;
+        margin-bottom: 20px;
+    }
+
+    .write-consejos-container input,
+    .write-consejos-container textarea,
+    .write-consejos-container button {
+        /* Estilos de escritorio para el formulario de consejos */
+        font-family: fontText, serif;
+        margin-top: 0.5vw;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        padding: 0.5vw;
+    }
+    .write-consejos-container input[type="text"] {
+        font-size: 1.2vw;
+    }
+    .write-consejos-container textarea {
+        font-size: 1.2vw;
+        height: 6vw;
+        resize: vertical;
+    }
+    .write-consejos-container button {
+        background-color: #5cadcf;
+        color: white;
+        font-size: 1.2vw;
+        cursor: pointer;
+        align-self: flex-end; /* Alinea el botón a la derecha en escritorio */
+        width: 40%;
+    }
+
+
+
+
+/* ===== Calendario compacto centrado ===== */
+.calendario-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;          /* centra horizontal */
+    justify-content: center;      /* centra vertical */
+    padding: 2.5rem 0 2.5rem 0;   /* margen arriba y abajo */
+    min-height: 100%;             /* mantiene proporción vertical */
+}
+
+/* Contenedor del calendario */
+.cal {
+    width: clamp(160px, 25vw, 220px);  /* aún más pequeño */
+    margin: 1.8rem auto;               /* espacio arriba/abajo + centrado */
+    padding: 0.3rem 0.45rem;
+    background: #e3e8ef;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-size: clamp(9px, 0.85vw, 12px); /* texto más pequeño */
+}
+
+/* Cabecera (mes/año) */
+.cal-head {
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.25rem;
+    color: #1f2a3a;
+    font-size: clamp(10px, 0.9vw, 12px);
+}
+
+/* Grid de días */
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.15rem; /* separación más compacta */
+    justify-items: center;
+}
+
+.cal-grid .dow {
+    opacity: 0.65;
+    padding: 0.1rem 0;
+    font-weight: 600;
+}
+
+.cal-grid .day {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 0.3rem;
+    background: #edf4fa;
+    color: #0b2942;
+    transition: background 0.2s ease-in-out;
+    line-height: 1;
+}
+
+.cal-grid .day:hover {
+    background: #d3e6f7;
+}
+
+.cal-grid .day.muted {
+    opacity: 0.4;
+}
+
+.cal-grid .day.highlight {
+    background: #91c0e8;
+    font-weight: 700;
+    color: #0a1a30;
+}
+
+/* Móvil — sigue siendo proporcional */
+@media (max-width: 480px) {
+    .cal {
+        width: clamp(150px, 60vw, 200px);
+        font-size: clamp(8px, 3vw, 11px);
+        padding: 0.25rem 0.35rem;
+        margin: 2rem auto;
+    }
+}
+
+/* ===== FOOTER (responsive proporcional al estilo de la web) ===== */
+.site-footer {
+    background: #2a578c;
+    color: #f0f0f0;
+    width: 96%;
+    margin: 2vw auto 0;
+    border-radius: 0.8vw;
+    font-family: fontText, serif;
+    overflow: hidden;
+    font-size: 1vw; /* tamaño base proporcional */
+}
+
+/* Enlaces */
+.site-footer a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1vw;
+}
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Tira superior: newsletter --- */
+.footer-newsletter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* mantiene una sola línea */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0.6vw 0.6vw 0 0;
+}
+
+.footer-newsletter-title label {
+    font-family: fontHeader, serif;
+    font-size: 1.3vw;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.mail input[type="email"] {
+    padding: 0.6vw 0.9vw;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    font-family: fontText, serif;
+    font-size: 1vw;
+    width: 20vw;
+    background: #fff;
+    color: #333;
+}
+
+.newsletter-submit-button button {
+    background: #ffd36b;
+    color: #2a2a2a;
+    border: none;
+    border-radius: 0.4vw;
+    padding: 0.6vw 1.2vw;
+    font-family: fontHeader, serif;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.newsletter-submit-button button:hover {
+    background: #e6a31f;
+    color: #fff;
+}
+
+/* --- Barra inferior --- */
+.footer-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* nunca apila */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    border-top: 0.1vw solid rgba(255, 255, 255, 0.25);
+    background: #21476f;
+}
+
+.copy {
+    margin: 0;
+    font-size: 0.9vw;
+    color: #e6eef6;
+    white-space: nowrap;
+}
+
+/* Enlaces centrales */
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.2vw;
+    margin: 0;
+    padding: 0;
+    font-size: 1vw;
+    white-space: nowrap;
+}
+
+/* Redes sociales */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+}
+
+.footer-social img {
+    width: 1.8vw;
+    height: 1.8vw;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+.footer-social img:hover {
+    transform: scale(1.12);
+}
+
+/* --- Escala general para pantallas pequeñas --- */
+@media (max-width: 600px) {
+    .site-footer {
+        font-size: 1.7vw;
+        border-radius: 1vw;
+    }
+    .footer-newsletter,
+    .footer-bar {
+        padding: 2vw;
+        gap: 2vw;
+    }
+    .footer-social img {
+        width: 3vw;
+        height: 3vw;
+    }
+}
+
+
+

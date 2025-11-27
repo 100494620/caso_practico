@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/versionB.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Kilómetros Sin Fin</title>
+</head>
+<body>
+<section id="Inicio">
+    <nav id="Navegacion">
+        <div class="website-name">Kilómetros Sin Fin</div>
+        <a href="#">Inicio</a>
+        <a href="#">Experiencias</a>
+        <a href="#">Consejos</a>
+        <a href="#">Foro</a>
+        <a href="#">Contacto</a>
+        <div class="top-right">
+            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo">
+        </div>
+        <label for="lang" ></label>
+        <select class="menu-lang" name="lang" id="lang">
+            <option value="ES">ES</option>
+            <option value="ENG">ENG</option>
+            <option value="UA">UA</option>
+            <option value="FR">FR</option>
+        </select>
+    </nav>
+    <div class="wrapper-main">
+        <div class="first_container">
+            <div class="container-text">
+                Comparte y descubre viajes de todo el mundo
+            </div>
+        </div>
+        <div class="second_container">
+            <button class="next-button">→</button>
+            <button class="back-button">←</button>
+            <div class="venta-container">
+                <form id="NewCardForm">
+                    <div class="venta-container-image">
+                        <img id="packImg" src="images/sea.jpg" alt="Pack Sudeste Asiático" style="width:100%; border-radius:10px;">
+                    </div>
+
+                    <div class="venta-container-left">
+                        <div id="packTitle" class="venta-container-text">Pack Sudeste Asiático</div>
+                    </div>
+                    <div class="venta-container-right">
+                        <div id="packPrice" class="venta-container-text">€600</div>
+                    </div>
+                    <div class="venta-container-middle">
+                        <div id="packDesc" class="venta-container-text">
+                            Japón y Vietnam: buses, hostales y guías de visados
+                        </div>
+                    </div>
+
+
+                    <button type="button" id="buyBtn" class="button-comprar">Comprar</button>
+
+                </form>
+            </div>
+
+        </div>
+        <div class="third_container">
+            <section class="text-bloAck profile-card" aria-labelledby="perfil-usuario">
+                <div class="side-text-options" style="display:flex; align-items:center; gap:1rem;">
+                    <img id="profileAvatar" src="images/login-icon.png" alt="Avatar del usuario" />
+                    <strong id="perfil-usuario">Usuario</strong>
+                    <button type="button" class="button-register" style="margin-left:auto;"
+
+                            onclick="onLogOut()">
+                        Cerrar sesión
+
+                    </button>
+                </div>
+
+            </section>
+            <div class="line"></div>
+
+            <section class="text-block experience-search-container" aria-labelledby="experience-search">
+                <div class="experience-search-content">
+
+                    <label> Busca experiencias</label>
+
+                    <div class="experience-filter-  continents">
+
+                        <label>
+                            <input type="checkbox" name="continent" value="america">
+                            América
+                        </label>
+                        <label>
+                            <input type="checkbox" name="continent" value="europa">
+                            Europa
+                        </label>
+                        <label>
+                            <input type="checkbox" name="continent" value="asia">
+                            Asia
+                        </label>
+                        <label>
+                            <input type="checkbox" name="continent" value="africa">
+                            África
+                        </label>
+                    </div>
+
+                    <div class="experience-searchbar">
+                        <input type="text" placeholder="search" aria-label="Buscar experiencias">
+                    </div>
+
+                </div>
+            </section>
+            <div class="line"></div>
+
+            <section class="text-block consejos-container" aria-labelledby="consejos">
+                <div class="consejos">
+                    <h5 id="consejos">Últimos consejos</h5>
+
+                    <div class="ultimos-consejos-container" id="adviceList">
+                        <!-- aquí se pintan SIEMPRE los 3 últimos desde localStorage -->
+                    </div>
+
+                    <h5>¿Tienes algún consejo?</h5>
+                    <div class="write-consejos-container">
+                        <input type="text" id="adviceTitle" placeholder="Título del consejo">
+                        <textarea id="adviceDesc" placeholder="Escribe aquí tu consejo..."></textarea>
+                        <button type="button" id="adviceSend">Enviar</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="line"></div>
+
+            <section class="cal">
+                <div class="cal-head">SEPTIEMBRE 2025</div>
+
+                <div class="cal-grid">
+                    <!-- cabecera -->
+                    <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div>
+                    <div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
+
+                    <!-- 7 x 6 celdas (rellena como quieras; aquí hay un ejemplo fijo) -->
+                    <div class="day muted">31</div><div class="day">1</div><div class="day">2</div>
+                    <div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div>
+
+                    <div class="day highlight">7</div><div class="day">8</div><div class="day">9</div>
+                    <div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div>
+
+                    <div class="day">14</div><div class="day">15</div><div class="day">16</div>
+                    <div class="day">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div>
+
+                    <div class="day">21</div><div class="day">22</div><div class="day">23</div>
+                    <div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div>
+
+                    <div class="day">28</div><div class="day">29</div><div class="day">30</div>
+                    <div class="day muted">1</div><div class="day muted">2</div><div class="day muted">3</div><div class="day muted">4</div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="fourth-container">
+            <div class="venta-container-header">Experiencias de comunidad viajera</div>
+            <div class="cartas-grind">
+                <div class="carta" id="carta1">
+                    <div class="carta-header">Madrid y sus secretos</div>
+                    <img class="carta-photo" src="images/madrid.jpg" alt="madrid">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta2">
+                    <div class="carta-header">Alemania: castillos históricos </div>
+                    <img class="carta-photo" src="images/germany.jpg" alt="germany">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta3">
+                    <div class="carta-header">París: ruta romántica</div>
+                    <img class="carta-photo" src="images/paris.jpeg" alt="paris">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta4">
+                    <div class="carta-header">Japón: samuráis y tecnología</div>
+                    <img class="carta-photo" src="images/japan_carta.jpg" alt="japan">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta5">
+                    <div class="carta-header">Seoul y cultura de Kpop</div>
+                    <img class="carta-photo" src="images/seoul.jpg" alt="seoul">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta6">
+                    <div class="carta-header">Milan - fancy y antiguo</div>
+                    <img class="carta-photo" src="images/milan.jpg" alt="milan">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="site-footer">
+    <!-- Tira superior: newsletter -->
+    <div class="footer-newsletter">
+        <div class="footer-newsletter-title">
+            <label>
+                Suscríbete a la newsletter
+            </label>
+        </div>
+
+        <div class="mail">
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
+        </div>
+        <div class="newsletter-submit-button">
+            <button type="submit" class="nl-btn">Suscribirme</button>
+        </div>
+    </div>
+
+    <!-- Barra inferior: © + enlaces + redes -->
+    <div class="footer-bar">
+        <p class="copy">&copy; 2025 Kilómetros Sin Fin</p>
+
+        <ul class="footer-links" aria-label="Enlaces legales">
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+
+        <div class="footer-social" aria-label="Redes sociales">
+            <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-instagram-128.png" alt="Instagram">
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-tiktok-128.png" alt="TikTok">
+            </a>
+            <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-youtube-128.png" alt="YouTube">
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script/class.js"></script>
+<script src="script/local_storage_ops.js"></script>
+<script src="script/script.js"></script>
+<script src="script/carrusel.js"></script>
+<script src="script/versionB.js"></script>
+
+</body>
+</html>

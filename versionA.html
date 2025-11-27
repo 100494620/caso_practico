@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/versionA.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Kilómetros Sin Fin</title>
+</head>
+<body>
+<section id="Inicio">
+    <nav id="Navegacion">
+        <div class="website-name">Kilómetros Sin Fin</div>
+        <a href="#">Inicio</a>
+        <a href="#">Experiencias</a>
+        <a href="#">Consejos</a>
+        <a href="#">Foro</a>
+        <a href="#">Contacto</a>
+        <div class="top-right">
+            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo">
+        </div>
+        <label for="lang" ></label>
+        <select class="menu-lang" name="lang" id="lang">
+            <option value="ES">ES</option>
+            <option value="ENG">ENG</option>
+            <option value="UA">UA</option>
+            <option value="FR">FR</option>
+        </select>
+    </nav>
+    <div class="forma" id="forma_container_reg">
+        <div class="forma-header">Registro de nuevos usuarios</div>
+        <form id="registerForm">
+            <div class="forma-left">
+                <label class="forma-text" for="nameR"></label>
+                <input type="text" id="nameR" name="name" placeholder="Nombre">
+                <label class="forma-text" for="emailR"></label>
+                <input type="text" id="emailR" name="email" placeholder="Correo electronico">
+                <label class="forma-text" for="birthdayR">Fecha de nacimiento</label>
+                <input type="date" id="birthdayR">
+                <label class="forma-text" for="loginR"></label>
+                <input type="text" id="loginR" name="login" placeholder="login">
+                <label class="forma-text" for="fileR">Subir imagen de perfil</label>
+                <input type="file" id="fileR" name="filename" style="display:none;" accept=".webp,.png,.jpg,.jpeg">
+                <button type="button" id="button-submit-image">Examinar ...</button>
+                <span id="file-name" style="margin-left:10px; font-size:1.2em;"></span>
+                <div class="consent-box">
+                    <input type="checkbox" id="consent" name="consent" value="Consented">
+                    <label for="consent">Acepto la
+                        <a href="#">Politica de privacidad</a>
+                    </label><br>
+                </div>
+            </div>
+            <div class="forma-right">
+                <label class="forma-text" for="surnameR"></label>
+                <input type="text" id="surnameR" name="surname" placeholder="Apellidos">
+                <label class="forma-text" for="confirmEmailR"></label>
+                <input type="text" id="confirmEmailR" name="confirmEmail" placeholder="Confirmar correo">
+                <label class="forma-text" for="passwordR"></label>
+                <input type="password" id="passwordR" name="password" placeholder="password">
+                <div class="forma-submit">
+                    <button type="button" class="submit-button-forma" id="buttonR" onclick="onRegistration()">Guardar datos y acceder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<footer class="site-footer">
+    <!-- Tira superior: newsletter -->
+    <div class="footer-newsletter">
+            <div class="footer-newsletter-title">
+            <label>
+                Suscríbete a la newsletter
+            </label>
+            </div>
+
+            <div class="mail">
+                <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
+            </div>
+            <div class="newsletter-submit-button">
+                <button type="submit" class="nl-btn">Suscribirme</button>
+            </div>
+    </div>
+
+    <!-- Barra inferior: © + enlaces + redes -->
+    <div class="footer-bar">
+        <p class="copy">&copy; 2025 Kilómetros Sin Fin</p>
+
+        <ul class="footer-links" aria-label="Enlaces legales">
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+
+        <div class="footer-social" aria-label="Redes sociales">
+            <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-instagram-128.png" alt="Instagram">
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-tiktok-128.png" alt="TikTok">
+            </a>
+            <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-youtube-128.png" alt="YouTube">
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script/class.js"></script>
+<script src="script/local_storage_ops.js"></script>
+<script src="script/script.js"></script>
+</body>
+</html>

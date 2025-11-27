@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/home.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Kilómetros Sin Fin</title>
+</head>
+<body>
+<section id="Inicio">
+    <nav id="Navegacion">
+        <div class="website-name">Kilómetros Sin Fin</div>
+        <a href="#">Inicio</a>
+        <a href="#">Experiencias</a>
+        <a href="#">Consejos</a>
+                <a href="#">Foro</a>
+        <a href="#">Contacto</a>
+        <div class="top-right">
+            <img style= "width:auto; height: 3.3vw; padding-right: 1vw;" src="images/logo.png" alt="logo">
+        </div>
+        <label for="lang" ></label>
+        <select class="menu-lang" name="lang" id="lang">
+            <option value="ES">ES</option>
+            <option value="ENG">ENG</option>
+            <option value="UA">UA</option>
+            <option value="FR">FR</option>
+        </select>
+    </nav>
+    <div class="wrapper-main">
+        <div class="first_container">
+            <div class="container-text">
+                Comparte y descubre viajes de todo el mundo
+            </div>
+        </div>
+        <div class="second_container">
+            <button class="next-button">→</button>
+            <button class="back-button">←</button>
+            <div class="venta-container">
+                <form id="NewCardForm">
+                    <!-- Imagen del pack -->
+                    <div class="venta-container-image">
+                        <img id="packImg" src="images/sea.jpg" alt="Pack Sudeste Asiático" style="width:100%; border-radius:10px;">
+                    </div>
+
+                    <div class="venta-container-left">
+                        <div id="packTitle" class="venta-container-text">Pack Sudeste Asiático</div>
+                    </div>
+                    <div class="venta-container-right">
+                        <div id="packPrice" class="venta-container-text">€600</div>
+                    </div>
+                    <div class="venta-container-middle">
+                        <div id="packDesc" class="venta-container-text">
+                            Japón y Vietnam: buses, hostales y guías de visados
+                        </div>
+                    </div>
+
+                    <button type="button" class="button-comprar" onclick="alert('Debes iniciar sesión para comprar.')">Comprar</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="third_container">
+                <form class="form-container" id="LoginForm">
+                    <label for="usuarioLogin"></label>
+                    <input type="text" id="usuarioLogin" placeholder="Usuario" name="usuario" required>
+
+                    <label for="passwordLogin"></label>
+                    <input type="password" id="passwordLogin" placeholder="Contraseña" name="password" required>
+                    <div class="consent-box">
+                        <input type="checkbox" id="consent" name="consent" value="Consented">
+                        <label for="consent">Recordar credenciales</label><br>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="button-enter">Iniciar sesión</button>
+                        <button type="button" class="button-register" onclick="window.location.href='versionA.html'" >Registrar</button>
+                    </div>
+                </form>
+                <div class="line"></div>
+                <div class="side-text-grid">
+                    <div class="text-block" id="textblock1">
+                        <div class="side-text-header">Top destinos viajeros</div>
+                        <div class="side-text-options">
+                            <dl>
+                                <!--declared an empty dt here to not ruin a structure-->
+                                <dt></dt>
+                                <dd><a href="#">Japon</a></dd>
+                                <dd><a href="#">Estados Unidos</a></dd>
+                                <dd><a href="#">Montenegro</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="text-block" id="textblock2">
+                        <div class="side-text-header">Consejos rápidos</div>
+                        <div class="side-text-options">
+                            <dl>
+                                <!--declared an empty dt here to not ruin a structure-->
+                                <dt></dt>
+                                <dd><a href="#">Lleva seguro médico</a></dd>
+                                <dd><a href="#">Informáte sobre visados</a></dd>
+                                <dd><a href="#">Viaja ligero</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="text-block" id="textblock3">
+                        <div class="side-text-header">Próximos encuentros</div>
+                        <div class="side-text-options">
+                            <dl>
+                                <!--declared an empty dt here to not ruin a structure-->
+                                <dt></dt>
+                                <dd><a href="#">Madrid - 12/10</a></dd>
+                                <dd><a href="#">Barcelona - 25/10</a></dd>
+                                <dd><a href="#">Valencia - 08/11</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="fourth-container">
+            <div class="venta-container-header">Experiencias de comunidad viajera</div>
+            <div class="cartas-grind">
+                <div class="carta" id="carta1">
+                    <div class="carta-header">Madrid y sus secretos</div>
+                    <img class="carta-photo" src="images/madrid.jpg" alt="madrid">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta2">
+                    <div class="carta-header">Alemania: castillos históricos </div>
+                    <img class="carta-photo" src="images/germany.jpg" alt="germany">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta3">
+                    <div class="carta-header">París: ruta romántica</div>
+                    <img class="carta-photo" src="images/paris.jpeg" alt="paris">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta4">
+                    <div class="carta-header">Japón: samuráis y tecnología</div>
+                    <img class="carta-photo" src="images/japan_carta.jpg" alt="japan">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta5">
+                    <div class="carta-header">Seoul y cultura de Kpop</div>
+                    <img class="carta-photo" src="images/seoul.jpg" alt="seoul">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+                <div class="carta" id="carta6">
+                    <div class="carta-header">Milan - fancy y antiguo</div>
+                    <img class="carta-photo" src="images/milan.jpg" alt="milan">
+                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <img class="carta-like" src="images/heart.png" alt="like button">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="site-footer">
+    <!-- Tira superior: newsletter -->
+    <div class="footer-newsletter">
+        <div class="footer-newsletter-title">
+            <label>
+                Suscríbete a la newsletter
+            </label>
+        </div>
+
+        <div class="mail">
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
+        </div>
+        <div class="newsletter-submit-button">
+            <button type="submit" class="nl-btn">Suscribirme</button>
+        </div>
+    </div>
+
+    <!-- Barra inferior: © + enlaces + redes -->
+    <div class="footer-bar">
+        <p class="copy">&copy; 2025 Kilómetros Sin Fin</p>
+
+        <ul class="footer-links" aria-label="Enlaces legales">
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+
+        <div class="footer-social" aria-label="Redes sociales">
+            <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-instagram-128.png" alt="Instagram">
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-tiktok-128.png" alt="TikTok">
+            </a>
+            <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener">
+                <img src="images/icons8-youtube-128.png" alt="YouTube">
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script/class.js"></script>
+<script src="script/local_storage_ops.js"></script>
+<script src="script/script.js"></script>
+<script src="script/carrusel.js"></script>
+</body>
+</html>
