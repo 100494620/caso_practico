@@ -1042,6 +1042,40 @@ input {
         height: 3vw;
     }
 }
+/* Flechas de navegación del mes */
+.cal-head span { cursor: pointer; user-select: none; }
 
+/* Día disponible (Viernes) */
+.day.clickable {
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+    background-color: #e8f5e9; /* Verde muy sutil */
+}
+
+/* Día "Fantasma" (Pack de 15 días al pasar mouse) */
+.day.range-preview {
+    background-color: #b9f6ca !important;
+}
+
+/* Día seleccionado (Inicio) */
+.day.selected-start {
+    background-color: #00c853 !important;
+    color: white !important;
+}
+
+/* Días seleccionados (Rango del pack) */
+.day.selected-range {
+    background-color: #69f0ae !important;
+}
+
+/* Días restringidos (Lunes, Martes...) para feedback visual */
+.day.restricted-day {
+    cursor: pointer;
+    color: #aaa;
+}
+.day.restricted-day:hover {
+    background-color: #ffebee; /* Rojo muy suave (error) */
+}
 
 

@@ -52,6 +52,7 @@
                     <div class="venta-container-middle">
                         <div id="packDesc" class="venta-container-text">
                             Japón y Vietnam: buses, hostales y guías de visados
+                            <br><span style="color: #d32f2f; font-size: 0.8rem; font-weight: bold;">📅 Salidas programadas: Solo Viernes</span>
                         </div>
                     </div>
 
@@ -131,29 +132,18 @@
             <div class="line"></div>
 
             <section class="cal">
-                <div class="cal-head">SEPTIEMBRE 2025</div>
+                <div class="cal-head" style="display: flex; justify-content: space-between; padding: 0 15px; align-items: center;">
+        <span id="prevMonth" style="cursor: pointer; font-size: 1.2rem;">&#10094;</span>
+        <span id="currentMonthLabel">CARGANDO...</span>
+        <span id="nextMonth" style="cursor: pointer; font-size: 1.2rem;">&#10095;</span>
+    </div>
 
-                <div class="cal-grid">
-                    <!-- cabecera -->
-                    <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div>
-                    <div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
+    <div class="cal-grid" id="dynamic-calendar">
+        </div>
 
-                    <!-- 7 x 6 celdas (rellena como quieras; aquí hay un ejemplo fijo) -->
-                    <div class="day muted">31</div><div class="day">1</div><div class="day">2</div>
-                    <div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div>
-
-                    <div class="day highlight">7</div><div class="day">8</div><div class="day">9</div>
-                    <div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div>
-
-                    <div class="day">14</div><div class="day">15</div><div class="day">16</div>
-                    <div class="day">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div>
-
-                    <div class="day">21</div><div class="day">22</div><div class="day">23</div>
-                    <div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div>
-
-                    <div class="day">28</div><div class="day">29</div><div class="day">30</div>
-                    <div class="day muted">1</div><div class="day muted">2</div><div class="day muted">3</div><div class="day muted">4</div>
-                </div>
+    <div id="feedback-message" style="text-align: center; margin-top: 5px; font-size: 0.85rem; height: 20px; font-weight: bold; color: #555;">
+        Selecciona tu fecha de salida
+    </div>
             </section>
 
         </div>
