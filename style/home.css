@@ -242,7 +242,7 @@
 }
 
 body {
-    background-color: #FFFFFF;
+    background-color: #f3f3f3;
     font-family: fontText,serif;
     font-size: 20px;
 }
@@ -338,9 +338,9 @@ input {
     padding-left: 0.7vw;
     width: 70%;
     margin-bottom: 2.3vw;
-    filter: sepia(0.8)       /* Forces a warm orange-brown base */
-    saturate(0.9)    /* Boosts the color vibrancy */
-    contrast(1) /* Applied your requested "burned out" brightness */
+    filter: sepia(0.8)
+    saturate(0.9)
+    contrast(1)
     hue-rotate(30deg);
 }
 

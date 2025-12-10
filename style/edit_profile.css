@@ -22,6 +22,7 @@ body {
     padding: 0; /* Añadido para consistencia */
 }
 
+
 /*margins for all the built-in headers*/
 h1, h2, h3, h4, h5, h6 {
     margin: 4vw;
@@ -46,7 +47,7 @@ input {
 .forma {
     width: 60%;
     height: auto;
-    margin-top: 6vw;
+    margin-top: 5vw;
     background: #d0d6cf;
     border-radius: 3vmin;
     position: relative;
@@ -119,7 +120,7 @@ input[type=text], input[type=password] {
 
 
 /*submit button functionality*/
-.submit-button-forma {
+.submit-button-forma, .change-pass-button{
     background-color: rgb(128, 158, 129);
     color: #000000;
     padding: 1vw 2vw;
@@ -129,7 +130,7 @@ input[type=text], input[type=password] {
     font-size: 1.4vw;
 }
 /*change of the color while clicking on submit button*/
-.submit-button-forma:hover {
+.submit-button-forma:hover, .change-pass-button:hover {
     background-color: #e19c38;
     border: 0.2vmin solid #183d61;
 }
@@ -152,7 +153,7 @@ input[type=text], input[type=password] {
     display: none;
 }
 /*submit profile picture button*/
-#button-submit-image {
+#button-submit-image-edited {
     width: 40%;
     padding: 0.7vw;
     border: 1px solid #ccc;
@@ -164,6 +165,28 @@ input[type=text], input[type=password] {
     font-size: 1.3vw;
     font-family: fontText,serif;
 }
+
+input[disabled] {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    cursor: default;
+    opacity: 1;
+}
+
+label.forma-text {
+    display: block;
+    margin-top: 1vw;
+    margin-bottom: 0.5vw;
+    font-weight: bold;
+}
+
+input[type=text], input[type=date] {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5vw;
+}
+
 /*login and password fields*/
 #login, #password{
     width: 60%;
@@ -174,7 +197,7 @@ input[type=text], input[type=password] {
     margin-top: 6.6vw;
 }
 
-/*add ai usage here*/
+
 label[for="file"], label[for="bday"] {
     display: block;
     margin-top: 0.5vw;
@@ -205,8 +228,11 @@ input[type=date] {
     padding: 0.85vw;
 }
 
-#consent {
-    transform: scale(1.4);
+label.forma-text {
+    display: block;
+    margin-top: 1vw;
+    margin-bottom: 0.5vw;
+    font-weight: bold;
 }
 
 /*initial*/
@@ -228,8 +254,7 @@ background-repeat: no-repeat;
     }
     to{color: goldenrod}
 }
-
-/*navigation bar should change depending on the device*/
+/*navegation bar container*/
 #Navegacion{
     margin: 0;
     width: 100%;
@@ -239,7 +264,7 @@ background-repeat: no-repeat;
     align-items: stretch;
     justify-items: center;
 }
-
+/*navegation bar text and website name (no hover for it)*/
 .website-name, #Navegacion a{
     text-align: center;
     flex-grow: 1;
@@ -268,14 +293,15 @@ background-repeat: no-repeat;
     margin-top: 5px;
     border-radius: 27px;
 }
-
+/*navegation bar when putting cursor on it*/
 #Navegacion a:hover{
     animation-name: AnimacionLetras;
     animation-duration: 2s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-
 }
+
+
 #InicioTitulo {
     font-family: fontMainPage, serif;
     margin-top: 10vmax;
@@ -289,6 +315,7 @@ background-repeat: no-repeat;
     to{background-color: goldenrod}
 }
 
+/*langauge options container*/
 .menu-lang {
     display: flex;
     justify-content: center;
@@ -303,7 +330,6 @@ background-repeat: no-repeat;
     height: 2vw;
 
 }
-
 .top-right {
     padding-top: 1vw;
 }
@@ -380,7 +406,7 @@ background-repeat: no-repeat;
     .footer-newsletter input,
     .footer-newsletter button {
         font-size: 2.5vw !important;
-        }
+    }
 
     #consent {
         transform: scale(1);
@@ -435,164 +461,6 @@ background-repeat: no-repeat;
     }
 }
 
-/*footer*/
-
-.site-footer {
-    background:#2a578c;
-    color:#f0f0f0;
-    width:100%;
-    margin:0;
-    border-radius:0;
-    font-family: fontText, serif;
-    overflow:hidden;
-}
-.footer-newsletter-title{
-    font-size: 1.5vw;
-}
-
-.footer-newsletter.mail{
-    font-size: 2.5vw;
-}
-
-.footer-newsletter.button-comprar{
-    font: 1.5vw/1.5vw serif;
-}
-
-.site-footer a{ color:#f0f0f0; text-decoration:none; }
-.site-footer a:hover{ text-decoration:underline; }
-
-/* --- Newsletter (tira superior) --- */
-.footer-newsletter{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:1rem;
-    padding:1rem 1.25rem;
-    background:rgba(255,255,255,.06);
-}
-
-.nl-title{
-    margin:0;
-    font-family: fontHeader, serif;
-    font-size:1.1rem;
-    color:#fff;
-}
-
-.nl-form{
-    display:flex;
-    align-items:center;
-    gap:.6rem;
-    margin-left:auto;
-}
-
-.nl-form input[type="email"]{
-    padding:.55rem .75rem;
-    border-radius:.5rem;
-    border:none;
-    outline:none;
-    font-family: fontText, serif;
-    min-width: 220px;
-    background:#fff;
-    color:#333;
-}
-
-.nl-btn{
-    background:#f6d586;
-    color:#2a2a2a;
-    border:none;
-    border-radius:.55rem;
-    padding:.55rem .9rem;
-    font-family: fontHeader, serif;
-    cursor:pointer;
-}
-.nl-btn:hover{ background:#e6a31f; }
-
-/* oculto visualmente pero accesible */
-.sr-only{
-    position:absolute !important;
-    height:1px; width:1px;
-    overflow:hidden; clip:rect(1px,1px,1px,1px);
-}
-
-/* --- Barra inferior --- */
-.footer-bar{
-    display:grid;
-    grid-template-columns: 1fr auto auto;
-    align-items:center;
-    gap:1rem;
-    padding: .9rem 1.25rem;
-    border-top:1px solid rgba(255,255,255,.25);
-}
-
-.copy{
-    margin:0;
-    font-size:.9rem;
-    color:#e6eef6;
-}
-
-.footer-links{
-    list-style:none;
-    display:flex;
-    gap:1rem;
-    margin:0;
-    padding:0;
-    font-size:.95rem;
-}
-
-.footer-social{
-    display:flex;
-    align-items:center;
-    gap:.8rem;
-}
-
-.footer-social img{
-    width:26px; height:26px; object-fit:contain;
-    transition:transform .2s;
-}
-
-/* Estilos para los iconos sociales del footer */
-.footer-social img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    margin: 0 8px; /* Separación entre iconos */
-    transition: transform 0.2s ease-in-out;
-}
-
-.footer-social img:hover {
-    transform: scale(1.1); /* Efecto al pasar el ratón */
-}
-
-.footer-social .social-icon {
-    width: 40px !important;   /* ancho fijo */
-    height: 40px !important;  /* alto fijo */
-    object-fit: contain;      /* asegura que no se deformen */
-    margin: 0 8px;            /* espacio entre iconos */
-    display: inline-block;    /* asegura alineación */
-}
-
-
-.footer-social {
-    display: flex;
-    justify-content: center; /* centra horizontal */
-    align-items: center;
-    gap: 12px; /* separación entre iconos */
-}
-
-.footer-social .social-link {
-    width: 40px;    /* tamaño fijo */
-    height: 40px;   /* cuadrado */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-social .social-link img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-}
 
 /* ===== FOOTER (responsive proporcional al estilo de la web) ===== */
 .site-footer {
@@ -713,7 +581,6 @@ background-repeat: no-repeat;
     transform: scale(1.12);
 }
 
-
 /* --- Escala general para pantallas pequeñas --- */
 @media (max-width: 600px) {
     .site-footer {
@@ -734,4 +601,3 @@ background-repeat: no-repeat;
     width: 5vw;
     padding-right: 0.5vw;
 }
-

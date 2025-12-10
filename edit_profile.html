@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style/versionA.css" rel="stylesheet">
+    <link href="style/edit_profile.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Kilómetros Sin Fin</title>
@@ -32,59 +32,45 @@
             <option value="FR">FR</option>
         </select>
     </nav>
-    <div class="forma" id="forma_container_reg">
-        <div class="forma-header">Registro de nuevos usuarios</div>
+    <div class="forma" id="forma-container-profile">
+        <div class="forma-header">Mi perfil</div>
         <form id="registerForm">
             <div class="forma-left">
-                <label class="forma-text" for="nameR"></label>
-                <input type="text" id="nameR" name="name" placeholder="Nombre">
-                <label class="forma-text" for="emailR"></label>
-                <input type="text" id="emailR" name="email" placeholder="Correo electronico">
-                <label class="forma-text" for="loginR"></label>
-                <input type="text" id="loginR" name="login" placeholder="login">
-                <label class="forma-text" for="birthdayR">Fecha de nacimiento</label>
-                <input type="date" id="birthdayR">
-                <label class="forma-text" for="fileR">Subir imagen de perfil</label>
-                <input type="file" id="fileR" name="filename" style="display:none;" accept=".webp,.png,.jpg,.jpeg">
-                <button type="button" id="button-submit-image">Examinar ...</button>
-                <span id="file-name" style="margin-left:10px; font-size:1.2em;"></span>
-                <div class="consent-box">
-                    <input type="checkbox" id="consent" name="consent" value="Consented">
-                    <label for="consent">Acepto la
-                        <a href="#">Politica de privacidad</a>
-                    </label><br>
-                </div>
+                <label class="forma-text" for="nameE">Nombre:</label>
+                <input type="text" id="nameE" name="name" placeholder="Nombre" disabled>
+                <label class="forma-text" for="emailE">Correo electronico:</label>
+                <input type="text" id="emailE" name="email" placeholder="Correo electronico" disabled>
+                <label class="forma-text" for="birthdayE">Fecha de nacimiento</label>
+                <input type="date" id="birthdayE" disabled>
             </div>
             <div class="forma-right">
-                <label class="forma-text" for="surnameR"></label>
-                <input type="text" id="surnameR" name="surname" placeholder="Apellidos">
-                <label class="forma-text" for="confirmEmailR"></label>
-                <input type="text" id="confirmEmailR" name="confirmEmail" placeholder="Confirmar correo">
-                <label class="forma-text" for="passwordR"></label>
-                <input type="password" id="passwordR" name="password" placeholder="password">
+                <label class="forma-text" for="surnameE">Apellidos:</label>
+                <input type="text" id="surnameE" name="surname" placeholder="Apellidos" disabled>
+                <label class="forma-text" for="loginE">Username:</label>
+                <input type="text" id="loginE" name="login" placeholder="login" disabled>
             </div>
         </form>
         <div class="button-container-register">
-            <button type="button" class="submit-button-forma" id="buttonQ" onclick="window.location.href='home.html'">Quitar</button>
-            <button type="button" class="submit-button-forma" id="buttonR" onclick="onRegistration()">Guardar datos y acceder</button>
+            <button type="button" class="submit-button-forma" id="buttonQ" onclick="onQuitEdit()">Quitar</button>
+            <button type="button" class="submit-button-forma" id="buttonEd" onclick="startEdit()">Editar</button>
         </div>
     </div>
 </section>
 <footer class="site-footer">
     <!-- Tira superior: newsletter -->
     <div class="footer-newsletter">
-            <div class="footer-newsletter-title">
+        <div class="footer-newsletter-title">
             <label>
                 Suscríbete a la newsletter
             </label>
-            </div>
+        </div>
 
-            <div class="mail">
-                <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
-            </div>
-            <div class="newsletter-submit-button">
-                <button type="submit" class="nl-btn">Suscribirme</button>
-            </div>
+        <div class="mail">
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
+        </div>
+        <div class="newsletter-submit-button">
+            <button type="submit" class="nl-btn">Suscribirme</button>
+        </div>
     </div>
 
     <!-- Barra inferior: © + enlaces + redes -->
