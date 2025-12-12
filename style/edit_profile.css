@@ -92,7 +92,7 @@ input {
     text-align: center;
     font-size: 2.3vw;
     font-family: fontHeader, serif;
-    padding-bottom: 3vw;
+    padding-bottom: 2vw;
 }
 
 .forma-text {
@@ -657,4 +657,17 @@ background-repeat: no-repeat;
     font-size: 1vw;
     border: none;
     box-shadow: none;
+}
+
+.carta-empty{
+    text-align: center;
+    font-size: 2.3vw;
+    font-family: fontHeader, serif;
+}
+.cartas-grind {
+    max-height: 57vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16vw, 1fr));
+    gap: 1vw;
+    overflow: scroll;
 }

@@ -507,6 +507,7 @@ function onQuitEditForm() {
                 <input type="text" id="surnameE" name="surname" placeholder="Apellidos" disabled>
                 <label class="forma-text" for="loginE">Username:</label>
                 <input type="text" id="loginE" name="login" placeholder="login" disabled>
+                <button type="button" class="submit-button-forma" id="buttonFav" onclick="misFavoritos()">Mis Favoritos</button>
             </div>
         </form>
         <div class="button-container-register">
@@ -538,10 +539,15 @@ function misFavoritos() {
     // take favs by user's email
     let userFavourites = allFavourites[email] || [];
 
+    if (userFavourites.length === 0) {
+        $favContainer.append(' <div class="carta-empty">You do not have any favourites :(</div>');
+        return;
+    }
+
     userFavourites.forEach(fav => {
         // add html card
         const carta = `
-              <div class="carta" id="${fav.id}">
+              <div class="carta" id="fav-${fav.id}" data-id="${fav.id}">
                    <div class="carta-header">${fav.header}</div>
                    <img class="carta-photo" src="${fav.photo}" alt="${fav.header}">
                    <button class="cartas-ver-mas-button">Ver más</button>
@@ -553,7 +559,36 @@ function misFavoritos() {
         $favContainer.append(carta);
     });
 
+    // drag and drop
+    $favContainer.sortable({
+        tolerance: "pointer",
+        update: function (event, ui) {
+            updateOrder(email);
+        }
+    });
+    $favContainer.disableSelection();
 }
+
+function updateOrder() {
+    const newOrder = [];
+    const email = localStorage.getItem(EMAIL_LS_DATA);
+
+    let allFavourites = JSON.parse(localStorage.getItem(FAVOURITES)) || {};
+    let userFavourites = allFavourites[email] || [];
+
+    // get cards' new order
+    $("#misCartas .carta").each(function () {
+        const cardId = $(this).data("id");
+        const card = userFavourites.find(c => c.id === cardId);
+        if (card) {
+            newOrder.push(card);
+        }
+    });
+
+    allFavourites[email] = newOrder;
+    localStorage.setItem(FAVOURITES, JSON.stringify(allFavourites));
+}
+
 
 // onclick on like button catcher for saving card
 $(document).on("click", ".carta-like", function () {
@@ -580,6 +615,11 @@ function saveCard(id, headerText, photoSrc) {
         let allFavourites = JSON.parse(localStorage.getItem(FAVOURITES)) || {};
         let userFavourites = allFavourites[email] || [];
 
+        if (userFavourites.length === 0) {
+            const $favContainer = $("#misCartas");
+            $favContainer.append(' <div class="carta-empty">You do not have any favourites :(</div>');
+        }
+
         if (userFavourites.some(c => c.id === newCard.id)) {
             alert("Error! " + newCard.header + " is already saved!");
             return;
@@ -598,6 +638,9 @@ function saveCard(id, headerText, photoSrc) {
 }
 
 function removeCard(id) {
+    if (!confirm("Remove this card?")) {
+        return;
+    }
     const email = localStorage.getItem(EMAIL_LS_DATA);
 
     let allFavourites = JSON.parse(localStorage.getItem(FAVOURITES)) || {};
@@ -609,10 +652,14 @@ function removeCard(id) {
         userFavourites.splice(cardIndex, 1);
         allFavourites[email] = userFavourites;
         localStorage.setItem(FAVOURITES, JSON.stringify(allFavourites));
-        const cardHTML = document.querySelector(`.carta[id="${id}"]`);
+        const cardHTML = document.querySelector(`.carta[data-id="${id}"]`);
         if (cardHTML) {
             cardHTML.remove();
         }
+    }
+    if (userFavourites.length === 0) {
+        const $favContainer = $("#misCartas");
+        $favContainer.append(' <div class="carta-empty">You do not have any favourites :(</div>');
     }
     //console.log(allFavourites);
 }
