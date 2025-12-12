@@ -43,8 +43,9 @@ input {
     background-size: cover;
     color: #c2b28c;
 }
+
 /*container for the form*/
-.forma {
+.forma, .mis-favoritos-container{
     width: 60%;
     height: auto;
     margin-top: 5vw;
@@ -600,4 +601,60 @@ background-repeat: no-repeat;
 .aloj {
     width: 5vw;
     padding-right: 0.5vw;
+}
+
+
+
+.carta-header{
+    grid-column: 1/3;
+    grid-row: 1;
+    text-align: left;
+    font-size: 1.25vw;
+    font-family: fontHeader, serif;
+}
+/*experience carta photo*/
+.carta-photo {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+.carta {
+    width: 16vw;
+    height: auto;
+    background: #9FB8A2;
+    border-radius: 1vmin;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1vw;
+    grid-template-rows: auto 1fr auto;
+    padding: 1vw;
+}
+
+.cartas-delete-button {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(159, 83, 83);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    font-size: 1.4vw;
+}
+
+.cartas-ver-mas-button {
+    grid-column: 2;
+    height: 100%;
+    background-color: #D9D9D9;
+    border-radius: 7px;
+    cursor: pointer;
+    width: auto;
+    font-family: fontHeader, serif;
+    font-size: 1vw;
+    border: none;
+    box-shadow: none;
 }

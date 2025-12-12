@@ -10,3 +10,12 @@ class User {
         this.loginStatus = loginStatus;
     }
 }
+
+class Card {
+    constructor(id, email, header, photo) {
+        this.id = id;
+        this.email = email;
+        this.header = header;
+        this.photo = photo;
+    }
+}

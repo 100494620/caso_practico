@@ -1,5 +1,6 @@
 const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!.,:;@$%^&*-]).{8,}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+const FAVOURITES = "favourites";
 let editPermission = false;
 
 // submit image button functionality ONLY for html where it exists
@@ -516,4 +517,102 @@ function onQuitEditForm() {
     `;
 
     fillProfileForm();
+}
+
+function misFavoritos() {
+    const container = document.getElementById("forma-container-profile");
+    // take email as a key for associating the cards
+    const email = localStorage.getItem(EMAIL_LS_DATA);
+
+    container.innerHTML = `
+        <div class="forma-header">Mis favoritos</div>
+        <div class="cartas-grind" id="misCartas"></div>
+        <div class="button-container-register">
+            <button class="submit-button-forma" onclick="onQuitEditForm()">Volver</button>
+        </div>
+    `;
+
+    const $favContainer = $("#misCartas");
+    // get all the favourited cards
+    let allFavourites = JSON.parse(localStorage.getItem(FAVOURITES)) || {};
+    // take favs by user's email
+    let userFavourites = allFavourites[email] || [];
+
+    userFavourites.forEach(fav => {
+        // add html card
+        const carta = `
+              <div class="carta" id="${fav.id}">
+                   <div class="carta-header">${fav.header}</div>
+                   <img class="carta-photo" src="${fav.photo}" alt="${fav.header}">
+                   <button class="cartas-ver-mas-button">Ver más</button>
+                   <button class="cartas-delete-button" onclick="removeCard('${fav.id}')">
+                       Remove
+                   </button>
+              </div>
+        `;
+        $favContainer.append(carta);
+    });
+
+}
+
+// onclick on like button catcher for saving card
+$(document).on("click", ".carta-like", function () {
+    const card = this.parentElement;
+
+    const id = card.id;
+    const headerText = card.querySelector('.carta-header').textContent;
+    const photoSrc = card.querySelector('.carta-photo').src;
+
+    saveCard(id, headerText, photoSrc);
+});
+
+function saveCard(id, headerText, photoSrc) {
+    const email = localStorage.getItem(EMAIL_LS_DATA);
+    if (!email) {
+        alert("Please log in to save favourites!");
+        return;
+    }
+
+    try {
+        // create new card for adding in favs
+        const newCard = new Card(id, email, headerText, photoSrc);
+
+        let allFavourites = JSON.parse(localStorage.getItem(FAVOURITES)) || {};
+        let userFavourites = allFavourites[email] || [];
+
+        if (userFavourites.some(c => c.id === newCard.id)) {
+            alert("Error! " + newCard.header + " is already saved!");
+            return;
+        }
+
+        // save new favourited card to the storage
+        userFavourites.push(newCard);
+        allFavourites[email] = userFavourites;
+        localStorage.setItem(FAVOURITES, JSON.stringify(allFavourites));
+
+        alert(newCard.header + " was successfully saved!");
+
+    } catch (error) {
+        alert("Error in card saving!");
+    }
+}
+
+function removeCard(id) {
+    const email = localStorage.getItem(EMAIL_LS_DATA);
+
+    let allFavourites = JSON.parse(localStorage.getItem(FAVOURITES)) || {};
+    let userFavourites = allFavourites[email] || [];
+
+    let cardIndex = userFavourites.findIndex(c => c.id === id);
+
+    if (cardIndex !== -1) {
+        userFavourites.splice(cardIndex, 1);
+        allFavourites[email] = userFavourites;
+        localStorage.setItem(FAVOURITES, JSON.stringify(allFavourites));
+        const cardHTML = document.querySelector(`.carta[id="${id}"]`);
+        if (cardHTML) {
+            cardHTML.remove();
+        }
+    }
+    //console.log(allFavourites);
 }
