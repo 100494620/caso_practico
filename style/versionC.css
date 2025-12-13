@@ -90,6 +90,23 @@ input {
     border: 0.2vmin solid #183d61;
 }
 
+.btn-back-home {
+    background-color: #9b9f99;
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'fontHeader', serif;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.btn-back-home:hover{
+    background-color: #e19c38;
+    border: 0.2vmin solid #183d61;
+}
+
 @keyframes AnimacionLetras {
     from{color: #c1b089
     }
@@ -124,6 +141,9 @@ input {
     wrap-option: no-wrap;
 }
 
+.includes-text {
+    font-family: 'fontHeader', serif;
+}
 .website-name {
     color: #000000;
     background: #9FB8A2;
@@ -183,15 +203,18 @@ input {
 /* =================================
    NUEVO LAYOUT DE PÁGINA (Dos Columnas)
    ================================= */
+
 .wrapper-main {
-    display: flex;
-    justify-content: space-between;
-    width: 80vw;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 10px;
     max-width: 1200px;
-    margin: 3vw auto;
-    padding: 2vw;
-    border-radius: 0.8vw;
-    box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    padding: 0 40px;
+    align-items: start;
+    background: transparent !important; /* Fondo transparente */
+    box-shadow: none !important;        /* Quitar la sombra que envuelve todo */
+    border: none !important;
 }
 
 .left_container, .right_container {
@@ -375,13 +398,6 @@ input {
         font-size: 3.5vw;
     }
 
-
-
-
-    .website-name, #Navegacion a{
-        font-size: 4.7vmin;
-        padding: 4px;
-    }
     .top-right {
         padding-top: 5vw;
     }
@@ -766,26 +782,9 @@ input {
 }
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
 
-body {
-    font-family: 'Oswald', sans-serif;
-    background-color: #FFF5F8; /* Fondo rosado pálido como en la imagen */
-    margin: 0;
-}
 
 /* --- ESTRUCTURA PRINCIPAL (Usando tus nombres) --- */
 
-.wrapper-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 50% para cada contenedor */
-    gap: 10px;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 40px;
-    align-items: start;
-    background: transparent !important; /* Fondo transparente */
-    box-shadow: none !important;        /* Quitar la sombra que envuelve todo */
-    border: none !important;
-}
 
 /* IZQUIERDA: INFORMACIÓN */
 .left_container {
@@ -825,6 +824,7 @@ body {
     border-radius: 5px;
     font-size: 0.9rem;
     font-weight: 500;
+    font-family: 'fontHeader', serif;;
 }
 
 .price-badge {
@@ -852,6 +852,7 @@ body {
     text-align: center;
     margin-top: 0;
     margin-bottom: 15px;
+    font-family:'fontHeader', serif ;
 }
 
 .mini-gallery {
@@ -862,21 +863,11 @@ body {
 
 .mini-gallery img {
     width: 50%;
-    height: 100px;
+    height: 160px;
     object-fit: cover;
     border-radius: 6px;
 }
 
-.btn-back-home {
-    background-color: #9CAF9C;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
 
 /* --- ESTILOS DEL FORMULARIO (DENTRO DE RIGHT CONTAINER) --- */
 
@@ -934,5 +925,20 @@ input, select {
     .wrapper-main {
         grid-template-columns: 1fr; /* Una columna */
         padding: 0 20px;
+    }
+}
+@media (max-width: 768px) {
+    .main-trip-img {
+        height: 250px; 
+    }
+}
+@media (max-width: 600px) {
+    .trip-description-box {
+        padding: 15px; /* Menos relleno en móvil para ganar espacio */
+    }
+    
+    .trip-description-box p {
+        font-size: 1.1rem; /* Un pelín más grande en móvil para leer mejor */
+        text-align: justify; /* Opcional: justifica el texto */
     }
 }
