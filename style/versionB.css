@@ -64,7 +64,7 @@
     flex-grow: 0;
     margin-left: 2.2vw;
     padding-left: 1vw;
-    margin-top: 5px;
+    margin-top: 1.4vw;
     border-radius: 27px;
 }
 /*navegation bar when putting cursor on it*/
@@ -219,6 +219,7 @@
     grid-column: 1;
     grid-row: 3;
     height: auto;
+    margin-top: 2vw;
 }
 /*first container text*/
 .container-text {

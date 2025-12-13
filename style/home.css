@@ -65,7 +65,7 @@
     flex-grow: 0;
     margin-left: 2.2vw;
     padding-left: 1vw;
-    margin-top: 5px;
+    margin-top: 1.4vw;
     border-radius: 27px;
 }
 /*navegation bar when putting cursor on it*/
@@ -75,8 +75,6 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-
-
 
 .nl-title{
     margin:0;
@@ -268,7 +266,9 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 3vh;
-    margin: 2vw 0vw 2vw 2vw;
+    margin: 2vw 0vw 2vw 5vw;
+    overflow: scroll;
+    max-height: 40vw;
 }
 /*experience card*/
 .carta {
@@ -372,7 +372,7 @@ input {
     align-items: center;
     z-index: 5;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 2vw;
     transform: translateY(-50%);
     border: none;
@@ -389,7 +389,7 @@ input {
     font-size: 2vw;
     z-index: 5;
     position: absolute;
-    top: 60%;
+    top: 65%;
     right: 2vw;
     transform: translateY(-50%);
     border: none;
@@ -474,11 +474,15 @@ input {
     flex-direction: column;
 }
 
-.venta-container-header {
+
+.venta-container-header, .experiencias-container-header {
     text-align: center;
     font-size: 2.5vw;
     font-family: fontHeader, serif;
     margin: 1.5vw 1.5vw 1.5vw 3vw;
+}
+.venta-container-header {
+    margin-top: 0;
 }
 
 .venta-container-text {
@@ -511,7 +515,6 @@ input {
     border-radius: 7px;
     width: 4vw;
     height: 2vw;
-
 }
 /*login form container*/
 .form-container {
@@ -568,7 +571,7 @@ input {
 }
 
 /*breakpoint for devices less then 600px*/
-@media (max-width: 600px) {
+@media (max-width: 628px) {
     .form-container .button-enter, .button-register {
         font-size: 1.7vw;
         padding: 1vw 1vw 1vw 1vw;
@@ -582,7 +585,7 @@ input {
         padding-left: 5vw;
     }
     .consent-box {
-        font-size: 2vw;
+        font-size: 1.7vw;
     }
 
     .cartas-grind {
@@ -590,6 +593,7 @@ input {
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 2vh;
         padding-left: 5.6vw;
+        max-height: 57vw;
     }
 
     .carta {
@@ -619,14 +623,13 @@ input {
         grid-column: 1;
         height: 30vw;
         grid-row: 2;
-        background: rgba(90, 81, 81, 0.25);
     }
+
     /*right container*/
     .third_container {
         border-radius: 0.8vw;
         grid-column: 2;
         grid-row: 1 / 4;
-        background: rgba(90, 81, 81, 0.25);
     }
     /*left bottom container*/
     .fourth-container {
@@ -634,7 +637,6 @@ input {
         grid-column: 1;
         grid-row: 3;
         height: auto;
-        background: rgba(90, 81, 81, 0.25);
     }
     /*first container text*/
     .container-text {
@@ -661,15 +663,17 @@ input {
         border-radius: 1vmin;
     }
 
-    /*second container arrow next button*/
     .back-button{
-        left: 1vw;
-    }
-    /*second container arrow back button*/
-    .next-button{
-        right: 1vw;
+        height: 14%;
+        top: 60%;
+        left: 8vw;
     }
 
+    .next-button{
+        height: 14%;
+        top: 60%;
+        right: 8vw;
+    }
     .form-container .button-enter, .button-register {
         font-size: 1.7vw;
         padding: 1vw 2vw 1vw 2vw;
@@ -677,14 +681,14 @@ input {
     }
 
     .form-container input[type=text], .form-container input[type=password] {
-        padding: 10px;
+        padding: 7px;
         width: 70%;
-        font-size: 2vw;
+        font-size: 1.5vw;
         margin-left: 12vw;
         margin-bottom: 2vw;
     }
 
-    .venta-container-header {
+    .venta-container-header, .experiencias-container-header {
         font-size: 2vw;
     }
     .line {
@@ -697,33 +701,191 @@ input {
         font-size: 4.7vmin;
         padding: 4px;
     }
+
+    .venta-container {
+        width: 70%;
+    }
+
+    .carta {
+        width: 70%;
+        height: 100%;
+        border-radius: 1vmin;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cartas-grind {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1.5vh;
+        grid-column-gap: 0.1vh;
+        margin-left: 6vw;
+    }
+
+    .carta-photo {
+        height: 7vw;
+    }
+
+    .carta-like {
+        width: 45%;
+        margin-bottom: 2vw;
+        margin-left: 3vw;
+    }
+
+    #consent {
+        width: 1.7vw;
+    }
+
+    .website-name, #Navegacion a{
+        font-size: 2.7vmin;
+    }
+
+    .website-name {
+        margin-top: 3vw;
+        height: 3vh;
+    }
+
 }
 
 /*breakpoint for the middle-scaled devices*/
-@media (min-width: 600px) and (max-width: 766px) {
+@media (min-width: 628px) and (max-width: 766px) {
 
     .website-name, #Navegacion a{
-        font-size: 5vmin;
+        font-size: 4.3vmin;
     }
 
     .form-container .button-enter, .button-register {
-        font-size: 1.7vw;
+        font-size: 1.3vw;
         padding: 1vw 1vw 1vw 1vw;
         margin-top: 0.5vw;
     }
 
 
     .form-container input[type=text], .form-container input[type=password] {
-        font-size: 2vw;
+        font-size: 1.4vw;
         margin-left: 1vw;
-        margin-bottom: 2vw;
+        margin-bottom: 1vw;
+        padding: 1vw 2vw 1vw 2vw;
     }
 
+    .text-block dt {
+        font-size: 2vw;
+    }
+
+    .consent-box {
+        font-size: 2vw;
+    }
+
+    .website-name {
+        margin-top: 2.2vw;
+    }
+
+    .menu-lang {
+        margin-top: 4vw;
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .consent-box {
+        font-size: 1.6vw;
+    }
     .cartas-grind {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 1vh;
         grid-column-gap: 2vh;
+        margin-left: 6vw;
+    }
+
+    .carta-header {
+        font-size: 1.6vw;
+    }
+
+    .text-block dt {
+        font-size: 2vw;
+    }
+
+    .venta-container-header {
+        text-align: center;
+        font-size: 2.5vw;
+        font-family: fontHeader, serif;
+        margin: 1.5vw 1.5vw 1.5vw 3vw;
+    }
+
+    .experiencias-container-header {
+        text-align: center;
+        font-size: 2.5vw;
+        font-family: fontHeader, serif;
+        margin-top: 5vw;
+    }
+
+    .carta-photo {
+        height: 7vw;
+    }
+
+    .carta-like {
+        width: 90%;
+        margin-bottom: 2vw;
+    }
+    .back-button{
+        height: 12%;
+        left: 1vw;
+    }
+
+    .next-button{
+        height: 12%;
+        right: 1vw;
+    }
+
+    #consent {
+        width: 1.4vw;
+    }
+}
+
+@media (min-width: 766px) and (max-width: 998px) {
+    .website-name, #Navegacion a{
+        font-size: 4.3vmin;
+    }
+
+    .website-name {
+        margin-top: 2.2vw;
+    }
+
+    .menu-lang {
+        margin-top: 3vw;
+    }
+
+    .form-container .button-enter, .button-register {
+        font-size: 1.3vw;
+        padding: 1vw 1vw 1vw 1vw;
+        margin-top: 0.5vw;
+    }
+
+    .form-container input[type=text], .form-container input[type=password] {
+        font-size: 1.4vw;
+        margin-left: 1vw;
+        margin-bottom: 1vw;
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .consent-box {
+        font-size: 1.6vw;
+    }
+    .cartas-grind {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1vh;
+        grid-column-gap: 2vh;
+        margin-left: 6vw;
     }
 
     .carta {
@@ -740,14 +902,42 @@ input {
         font-size: 2vw;
     }
 
+    .venta-container-header {
+        text-align: center;
+        font-size: 2.5vw;
+        font-family: fontHeader, serif;
+        margin: 1.5vw 1.5vw 1.5vw 3vw;
+    }
 
-    .consent-box {
-        font-size: 2vw;
+    .experiencias-container-header {
+        text-align: center;
+        font-size: 2.5vw;
+        font-family: fontHeader, serif;
+        margin-top: 5vw;
+    }
+
+    .carta-photo {
+        height: 7vw;
+    }
+
+    .carta-like {
+        width: 90%;
+        margin-bottom: 2vw;
+    }
+
+    .back-button{
+        height: 12%;
+        left: 2vw;
+    }
+
+    .next-button{
+        height: 12%;
+        right: 2vw;
     }
 
 }
 /*breakpoint for bigger screens, but not extremely big*/
-@media (min-width: 766px) and (max-width: 1087px) {
+@media (min-width: 998px) and (max-width: 1087px) {
     .form-container .button-enter, .button-register {
         font-size: 1.3vw;
         padding: 1vw 1vw 1vw 1vw;
@@ -769,12 +959,20 @@ input {
         font-size: 5.2vmin;
     }
 
+    .website-name {
+        margin-top: 2vw;
+    }
+
     .cartas-grind {
         margin-left: 1.7vw;
     }
 
     .consent-box {
         font-size: 1.6vw;
+    }
+
+    .menu-lang {
+        margin-top: 2.4vw;
     }
 
 }
