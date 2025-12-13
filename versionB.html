@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Kilómetros Sin Fin</title>
+    <link rel="stylesheet" href="style/language-styles.css">
+    <script src="script/language-manager.js"></script>
 </head>
 <body>
 <section id="Inicio">
@@ -14,15 +16,15 @@
         <div class="website-name">Kilómetros Sin Fin</div>
         <a href="#">
             <img class="aloj" src="images/vuel.png" alt="vuelo button">
-            Vuelos
+            <span data-i18n="nav.flights">Vuelos</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/viaj.png" alt="viaje button">
-            Viajes
+            <span data-i18n="nav.trips">Viajes</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/aloj.png" alt="alojamiento button">
-            Alojamiento
+            <span data-i18n="nav.accommodation">Alojamiento</span>
         </a>
         <label for="lang" ></label>
         <select class="menu-lang" name="lang" id="lang">
@@ -34,34 +36,33 @@
     </nav>
     <div class="wrapper-main">
         <div class="first_container">
-            <div class="container-text">
+            <div class="container-text" data-i18n="versionB.tagline">
                 Comparte y descubre viajes de todo el mundo
             </div>
         </div>
         <div class="second_container">
-            <div class="venta-container-header">PACKS DE VIAJE MÁS ECONÓMICOS</div>
+            <div class="venta-container-header" data-i18n="versionB.economicPacks">PACKS DE VIAJE MÁS ECONÓMICOS</div>
             <button class="next-button">→</button>
             <button class="back-button">←</button>
             <div class="venta-container">
                 <form id="NewCardForm">
-                    <!-- Imagen del pack -->
                     <div class="venta-container-image">
                         <img id="packImg" src="images/sea.jpg" alt="Pack Sudeste Asiático" style="width:100%; border-radius:10px;">
                     </div>
 
                     <div class="venta-container-left">
-                        <div id="packTitle" class="venta-container-text">Pack Sudeste Asiático</div>
+                        <div id="packTitle" class="venta-container-text" data-i18n="versionB.packSoutheastAsia">Pack Sudeste Asiático</div>
                     </div>
                     <div class="venta-container-right">
-                        <div id="packPrice" class="venta-container-text">€600</div>
+                        <div id="packPrice" class="venta-container-text" data-i18n="versionB.price">€600</div>
                     </div>
                     <div class="venta-container-middle">
-                        <div id="packDesc" class="venta-container-text">
+                        <div id="packDesc" class="venta-container-text" data-i18n="versionB.packDescription">
                             Japón y Vietnam: buses, hostales y guías de visados
                         </div>
                     </div>
 
-                    <button type="button" class="button-comprar" onclick="window.location.href = 'versionC.html'">Comprar</button>
+                    <button type="button" class="button-comprar" onclick="window.location.href = 'versionC.html'" data-i18n="versionB.buyButton">Comprar</button>
                 </form>
             </div>
         </div>
@@ -69,68 +70,61 @@
             <section class="text-bloAck profile-card" aria-labelledby="perfil-usuario">
                 <div class="side-text-options" style="display:flex; align-items:center; gap:1rem;">
                     <img id="profileAvatar" src="images/login-icon.png" alt="Avatar del usuario" />
-                    <strong id="perfil-usuario">Usuario</strong>
-                    <button type="button" class="button-register" style="margin-left:auto;"
-                            onclick="editData()">
+                    <strong id="perfil-usuario" data-i18n="versionB.user">Usuario</strong>
+                    <button type="button" class="button-register" style="margin-left:auto;" onclick="editData()" data-i18n="versionB.myProfile">
                         Mi perfil
                     </button>
-
                 </div>
                 <div class="cerrar-container">
-                <button type="button" class="button-cerrar" onclick="onLogOut()">
-                    Cerrar sesión
-                </button>
+                    <button type="button" class="button-cerrar" onclick="onLogOut()" data-i18n="versionB.logout">
+                        Cerrar sesión
+                    </button>
                 </div>
-
             </section>
             <div class="line"></div>
 
             <section class="text-block experience-search-container" aria-labelledby="experience-search">
                 <div class="experience-search-content">
-
-                    <label> Busca experiencias</label>
+                    <label data-i18n="versionB.searchExperiences"> Busca experiencias</label>
 
                     <div class="experience-filter-  continents">
-
                         <label>
                             <input type="checkbox" name="continent" value="america">
-                            América
+                            <span data-i18n="versionB.america">América</span>
                         </label>
                         <label>
                             <input type="checkbox" name="continent" value="europa">
-                            Europa
+                            <span data-i18n="versionB.europe">Europa</span>
                         </label>
                         <label>
                             <input type="checkbox" name="continent" value="asia">
-                            Asia
+                            <span data-i18n="versionB.asia">Asia</span>
                         </label>
                         <label>
                             <input type="checkbox" name="continent" value="africa">
-                            África
+                            <span data-i18n="versionB.africa">África</span>
                         </label>
                     </div>
 
                     <div class="experience-searchbar">
                         <input type="text" placeholder="search" aria-label="Buscar experiencias">
                     </div>
-
                 </div>
             </section>
             <div class="line"></div>
 
             <section class="text-block consejos-container" aria-labelledby="consejos">
                 <div class="consejos">
-                    <h5 id="consejos">Últimos consejos</h5>
+                    <h5 id="consejos" data-i18n="versionB.latestAdvice">Últimos consejos</h5>
 
                     <div class="ultimos-consejos-container" id="adviceList">
-                        <!-- aquí se pintan SIEMPRE los 3 últimos desde localStorage -->
                     </div>
 
-                    <h5>¿Tienes algún consejo?</h5>
+                    <h5 data-i18n="versionB.haveAdvice">¿Tienes algún consejo?</h5>
                     <div class="write-consejos-container">
                         <input type="text" id="adviceTitle" placeholder="Título del consejo">
                         <textarea id="adviceDesc" placeholder="Escribe aquí tu consejo..."></textarea>
-                        <button type="button" id="adviceSend">Enviar</button>
+                        <button type="button" id="adviceSend" data-i18n="versionB.send">Enviar</button>
                     </div>
                 </div>
             </section>
@@ -140,75 +134,82 @@
             <section class="cal">
                 <div class="cal-head" style="display: flex; justify-content: space-between; padding: 0 15px; align-items: center;">
                     <span id="prevMonth" style="cursor: pointer; font-size: 1.2rem;">&#10094;</span>
-                    <span id="currentMonthLabel">CARGANDO...</span>
+                    <span id="currentMonthLabel" data-i18n="versionB.loading">CARGANDO...</span>
                     <span id="nextMonth" style="cursor: pointer; font-size: 1.2rem;">&#10095;</span>
                 </div>
 
                 <div class="cal-grid" id="dynamic-calendar">
                 </div>
 
-                <div id="feedback-message" style="text-align: center; margin-top: 5px; font-size: 0.85rem; height: 20px; font-weight: bold; color: #555;">
-                Selecciona tu fecha de salida
+                <div id="feedback-message" style="text-align: center; margin-top: 5px; font-size: 0.85rem; height: 20px; font-weight: bold; color: #555;" data-i18n="versionB.selectDepartureDate">
+                    Selecciona tu fecha de salida
                 </div>
             </section>
-
         </div>
 
         <div class="fourth-container">
-            <div class="venta-container-header">EXPERIENCIAS MOCHILERAS</div>
+            <div class="venta-container-header" data-i18n="versionB.experiences">EXPERIENCIAS MOCHILERAS</div>
+
+            <div class="experience-searchbar" style="margin: 10px 0;">
+                <input type="text" id="cardSearch"
+                       placeholder="Filtrar por país o ciudad..."
+                       aria-label="Filtrar experiencias por destino">
+            </div>
+
             <div class="cartas-grind">
-                <div class="carta" id="carta1">
-                    <div class="carta-header">Madrid y sus secretos</div>
+                <div class="carta" id="carta1" data-destino="madrid españa spain">
+                    <div class="carta-header" data-i18n="versionB.madrid_title">Madrid y sus secretos</div>
                     <img class="carta-photo" src="images/madrid.jpg" alt="madrid">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
-                <div class="carta" id="carta2">
-                    <div class="carta-header">Alemania: castillos históricos </div>
+                <div class="carta" id="carta2" data-destino="alemania germany castillos">
+                    <div class="carta-header" data-i18n="versionB.alemania_title">Alemania: castillos históricos </div>
                     <img class="carta-photo" src="images/germany.jpg" alt="germany">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
-                <div class="carta" id="carta3">
-                    <div class="carta-header">París: ruta romántica</div>
+                <div class="carta" id="carta3" data-destino="paris francia france">
+                    <div class="carta-header" data-i18n="versionB.paris_title">París: ruta romántica</div>
                     <img class="carta-photo" src="images/paris.jpeg" alt="paris">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
-                <div class="carta" id="carta4">
-                    <div class="carta-header">Japón: samuráis y tecnología</div>
+                <div class="carta" id="carta4" data-destino="tokio kyoto osaka japón japan">
+                    <div class="carta-header" data-i18n="versionB.japon_title">Japón: samuráis y tecnología</div>
                     <img class="carta-photo" src="images/japan_carta.jpg" alt="japan">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
-                <div class="carta" id="carta5">
-                    <div class="carta-header">Seoul y cultura de Kpop</div>
+                <div class="carta" id="carta5" data-destino="seoul corea korea">
+                    <div class="carta-header" data-i18n="versionB.seoul_title">Seoul y cultura de Kpop</div>
                     <img class="carta-photo" src="images/seoul.jpg" alt="seoul">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
-                <div class="carta" id="carta6">
-                    <div class="carta-header">Milan - fancy y antiguo</div>
+                <div class="carta" id="carta6" data-destino="milan italia italy">
+                    <div class="carta-header" data-i18n="versionB.milan_title">Milan - fancy y antiguo</div>
                     <img class="carta-photo" src="images/milan.jpg" alt="milan">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
-                <div class="carta" id="carta7">
-                    <div class="carta-header">Milan - fancy y antiguo</div>
-                    <img class="carta-photo" src="images/milan.jpg" alt="milan">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+
+                <div class="carta extra" id="carta7" data-destino="lisboa portugal">
+                    <div class="carta-header">Lisboa: tranvías y miradores</div>
+                    <img class="carta-photo" src="images/lisboa.jpg" alt="lisboa">
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
-                <div class="carta" id="carta8">
-                    <div class="carta-header">Milan - fancy y antiguo</div>
-                    <img class="carta-photo" src="images/milan.jpg" alt="milan">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+                <div class="carta extra" id="carta8" data-destino="nueva york new york estados unidos usa">
+                    <div class="carta-header">New York: luces y rascacielos</div>
+                    <img class="carta-photo" src="images/newyork.jpg" alt="new york">
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
-                <div class="carta" id="carta9">
-                    <div class="carta-header">Milan - fancy y antiguo</div>
-                    <img class="carta-photo" src="images/milan.jpg" alt="milan">
-                    <button class="cartas-ver-mas-button">Ver más</button>
+                <div class="carta extra" id="carta9" data-destino="bali indonesia">
+                    <div class="carta-header">Bali: templos y arrozales</div>
+                    <img class="carta-photo" src="images/bali.jpg" alt="bali">
+                    <button class="cartas-ver-mas-button" data-i18n="versionB.viewMore">Ver más</button>
                     <img class="carta-like" src="images/heart.png" alt="like button">
                 </div>
             </div>
@@ -217,23 +218,22 @@
 </section>
 
 <footer class="site-footer">
-    <!-- Tira superior: newsletter -->
     <div class="footer-newsletter">
         <div class="footer-newsletter-title">
-            <label>
+            <label data-i18n="home.newsletterTitle">
                 Suscríbete a la newsletter
             </label>
         </div>
 
         <div class="mail">
-            <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" required
+                   data-i18n-placeholder="home.newsletterEmail">
         </div>
         <div class="newsletter-submit-button">
-            <button type="submit" class="nl-btn">Suscribirme</button>
+            <button type="submit" class="nl-btn" data-i18n="home.newsletterButton">Suscribirme</button>
         </div>
     </div>
 
-    <!-- Barra inferior: © + enlaces + redes -->
     <div class="footer-bar">
         <p class="copy">&copy; 2025 Kilómetros Sin Fin</p>
 

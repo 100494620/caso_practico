@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Kilómetros Sin Fin</title>
+    <link rel="stylesheet" href="style/language-styles.css">
+    <script src="script/language-manager.js"></script>
 </head>
 <body>
 <section id="Inicio">
@@ -14,15 +16,15 @@
         <div class="website-name">Kilómetros Sin Fin</div>
         <a href="#">
             <img class="aloj" src="images/vuel.png" alt="vuelo button">
-            Vuelos
+            <span data-i18n="nav.flights">Vuelos</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/viaj.png" alt="viaje button">
-            Viajes
+            <span data-i18n="nav.trips">Viajes</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/aloj.png" alt="alojamiento button">
-            Alojamiento
+            <span data-i18n="nav.accommodation">Alojamiento</span>
         </a>
         <label for="lang" ></label>
         <select class="menu-lang" name="lang" id="lang">
@@ -35,112 +37,132 @@
     <div class="wrapper-main">
         <div class="left_container">
             <div class="trip-image-card">
-            <span class="trip-badge">Pack Esencial: Maravillas del Sudeste Asiático (15 días)</span>
-            <img src="images/sea.jpg" alt="Sudeste Asiatico" class="main-trip-img">
-            <span class="price-badge">900$</span>
-        </div>
-
-        <div class="trip-description-box">
-            <h3>Descripción</h3>
-            <p>
-                Embárcate en una aventura inolvidable por los destinos más emblemáticos del Sudeste Asiático.
-                <br><br>
-                Explora los templos de Bangkok, navega por la Bahía de Ha Long en Vietnam y relájate en las playas cristalinas de Phuket. Descubre los mercados flotantes y la vibrante vida callejera.
-                <br><br>
-                Disfruta de la gastronomía local, sumérgete en aguas turquesas y vive experiencias únicas.
-            </p>
-
-            <div class="mini-gallery">
-                <img src="images/sea.jpg" alt="Vista 1"> 
-                <img src="images/sea.jpg" alt="Vista 2">
+                <span class="trip-badge" data-i18n="versionC.title">
+                    Pack Esencial: Maravillas del Sudeste Asiático (15 días)
+                </span>
+                <img src="images/sea.jpg" alt="Sudeste Asiatico" class="main-trip-img">
+                <span class="price-badge">900$</span>
             </div>
 
-            <p class="includes-text">
-                <strong>Incluye:</strong> vuelos internos, hoteles 4★, guías locales, traslados y experiencias únicas.
-            </p>
-        </div>
-        
-        <div style="text-align: center; margin-top: 20px;">
-            <button class="btn-back-home" onclick="window.location.href='index.html'">Volver al Inicio</button>
-        </div>
+            <div class="trip-description-box">
+                <h3 data-i18n="versionC.descriptionTitle">Descripción</h3>
+                <p data-i18n="versionC.intro">
+                    Embárcate en una aventura inolvidable por los destinos más emblemáticos del Sudeste Asiático.
+                    <br><br>
+                    Explora los templos de Bangkok, navega por la Bahía de Ha Long en Vietnam y relájate en las playas cristalinas de Phuket. Descubre los mercados flotantes y la vibrante vida callejera.
+                    <br><br>
+                    Disfruta de la gastronomía local, sumérgete en aguas turquesas y vive experiencias únicas.
+                </p>
+
+                <div class="mini-gallery">
+                    <img src="images/sea.jpg" alt="Vista 1">
+                    <img src="images/sea.jpg" alt="Vista 2">
+                </div>
+
+                <p class="includes-text" data-i18n="versionC.includes">
+                    <strong>Incluye:</strong> vuelos internos, hoteles 4★, guías locales, traslados y experiencias únicas.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn-back-home" onclick="window.location.href='index.html'" data-i18n="versionC.backHome">
+                    Volver al Inicio
+                </button>
+            </div>
         </div>
 
         <div class="right_container">
             <form class="form-container" id="purchaseForm" style="padding-top: 1vw;">
-        
-        <h3 style="margin: 0 0 1vw 0; font-size: 1.5vw; color:#333; font-family: 'fontHeader', serif;"> Datos del Titular</h3>
-        
-        <input type="text" id="FullName" name="full-name" placeholder="Nombre completo" required>
-        <input type="email" id="emailLogin" name="email" placeholder="Correo electrónico" required>
 
-        <div style="margin-bottom: 2vw;">
-            <label for="numTickets" style="font-family: 'fontHeader', serif; font-size: 1.2vw; margin-right: 1vw;">
-                🎟️ Número de viajeros:
-            </label>
-            <input type="number" id="numTickets" min="1" max="10" value="1" 
-                   style="width: 4vw; padding: 0.5vw; text-align: center;">
-            
-            <div id="companionsContainer"></div>
-        </div>
+                <h3 style="margin: 0 0 1vw 0; font-size: 1.5vw; color:#333; font-family: 'fontHeader', serif;"
+                    data-i18n="versionC.holderData"> Datos del Titular</h3>
 
-        <div style="background: rgba(255,255,255,0.5); padding: 1vw; border-radius: 0.5vw; margin-bottom: 2vw;">
-            
-            <div style="display: flex; align-items: center; gap: 0.5vw; margin-bottom: 1vw;">
-                <input type="checkbox" id="hasPet" style="width: auto; margin: 0;">
-                <label for="hasPet" style="font-size: 1.2vw; font-family: 'fontText', serif;">
-                    Voy a llevar mascota 🐾
-                </label>
-            </div>
+                <input type="text" id="FullName" name="full-name" placeholder="Nombre completo" required
+                       data-i18n-placeholder="versionC.fullName">
+                <input type="email" id="emailLogin" name="email" placeholder="Correo electrónico" required
+                       data-i18n-placeholder="versionC.email">
 
-            <div id="petDetails" class="hidden" style="margin-left: 1.5vw; margin-bottom: 1vw;">
-                <div style="display: flex; gap: 1vw;">
-                    <select id="petType" style="width: 48%; padding: 0.5vw; font-size: 1vw;">
-                        <option value="" disabled selected>Tipo de animal</option>
-                        <option value="perro">Perro</option>
-                        <option value="gato">Gato</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                    
-                    <select id="petSize" style="width: 48%; padding: 0.5vw; font-size: 1vw;">
-                        <option value="" disabled selected>Tamaño</option>
-                        <option value="peque">Pequeño (&lt;10kg)</option>
-                        <option value="medio">Mediano (10-25kg)</option>
-                        <option value="grande">Grande (&gt;25kg)</option>
+                <div style="margin-bottom: 2vw;">
+                    <label for="numTickets" style="font-family: 'fontHeader', serif; font-size: 1.2vw; margin-right: 1vw;"
+                           data-i18n="versionC.numTravelers">
+                        🎟️ Número de viajeros:
+                    </label>
+                    <input type="number" id="numTickets" min="1" max="10" value="1"
+                           style="width: 4vw; padding: 0.5vw; text-align: center;">
+
+                    <div id="companionsContainer"></div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.5); padding: 1vw; border-radius: 0.5vw; margin-bottom: 2vw;">
+
+                    <div style="display: flex; align-items: center; gap: 0.5vw; margin-bottom: 1vw;">
+                        <input type="checkbox" id="hasPet" style="width: auto; margin: 0;">
+                        <label for="hasPet" style="font-size: 1.2vw; font-family: 'fontText', serif;"
+                               data-i18n="versionC.takePet">
+                            Voy a llevar mascota 🐾
+                        </label>
+                    </div>
+
+                    <div id="petDetails" class="hidden" style="margin-left: 1.5vw; margin-bottom: 1vw;">
+                        <div style="display: flex; gap: 1vw;">
+                            <select id="petType" style="width: 48%; padding: 0.5vw; font-size: 1vw;">
+                                <option value="" disabled selected>Tipo de animal</option>
+                                <option value="perro">Perro</option>
+                                <option value="gato">Gato</option>
+                                <option value="otro">Otro</option>
+                            </select>
+
+                            <select id="petSize" style="width: 48%; padding: 0.5vw; font-size: 1vw;">
+                                <option value="" disabled selected>Tamaño</option>
+                                <option value="peque">Pequeño (&lt;10kg)</option>
+                                <option value="medio">Mediano (10-25kg)</option>
+                                <option value="grande">Grande (&gt;25kg)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <input type="text" id="allergies"
+                           placeholder="¿Alergias o restricciones alimentarias?"
+                           style="margin-bottom: 0;"
+                           data-i18n-placeholder="versionC.allergiesPlaceholder">
+                </div>
+
+                <h3 style="margin: 0 0 1vw 0; font-size: 1.5vw; color:#333;font-family: 'fontHeader', serif;"
+                    data-i18n="versionC.securePayment">💳 Pago Seguro</h3>
+
+                <div class="tarjeta">
+                    <label for="cardType" style="font-size: 1.2vw;" data-i18n="versionC.cardType">Tipo de tarjeta</label>
+                    <select id="cardType" name="cardType" style="width: 100%; padding: 0.5vw; margin-bottom: 1vw; font-size: 1vw;">
+                        <option value="visa">Visa</option>
+                        <option value="mc">Mastercard</option>
+                        <option value="amex">American Express</option>
                     </select>
                 </div>
-            </div>
 
-            <input type="text" id="allergies" placeholder="¿Alergias o restricciones alimentarias?" style="margin-bottom: 0;">
-        </div>
+                <input type="text" id="card-number"
+                       placeholder="Número de tarjeta (16 dígitos)" maxlength="19" required
+                       data-i18n-placeholder="versionC.cardNumber">
+                <input type="text" id="owner-name" placeholder="Titular de la tarjeta" required
+                       data-i18n-placeholder="versionC.cardOwner">
 
-        <h3 style="margin: 0 0 1vw 0; font-size: 1.5vw; color:#333;font-family: 'fontHeader', serif;">💳 Pago Seguro</h3>
-        
-        <div class="tarjeta">
-            <label for="cardType" style="font-size: 1.2vw;">Tipo de tarjeta</label>
-            <select id="cardType" name="cardType" style="width: 100%; padding: 0.5vw; margin-bottom: 1vw; font-size: 1vw;">
-                <option value="visa">Visa</option>
-                <option value="mc">Mastercard</option>
-                <option value="amex">American Express</option>
-            </select>
-        </div>
+                <div class="grupo-fecha" style="display: flex; gap: 1vw;">
+                    <input type="text" placeholder="MM/AA" style="width: 50%;" required
+                           data-i18n-placeholder="versionC.expiry">
+                    <input type="password" id="codigoCVV" placeholder="CVV" maxlength="3" style="width: 50%;" required
+                           data-i18n-placeholder="versionC.cvv">
+                </div>
 
-        <input type="text" id="card-number" placeholder="Número de tarjeta (16 dígitos)" maxlength="19" required>
-        <input type="text" id="owner-name" placeholder="Titular de la tarjeta" required>
-
-        <div class="grupo-fecha" style="display: flex; gap: 1vw;">
-            <input type="text" placeholder="MM/AA" style="width: 50%;" required>
-            <input type="password" id="codigoCVV" placeholder="CVV" maxlength="3" style="width: 50%;" required>
-        </div>
-
-        <div class="botones-accion" style="margin-top: 2vw;">
-            <button type="submit" class="boton-comprar" style="width: 100%; margin:0;">Confirmar Reserva</button>
-        </div>
-    </form>
+                <div class="botones-accion" style="margin-top: 2vw;">
+                    <button type="submit" class="boton-comprar" style="width: 100%; margin:0;"
+                            data-i18n="versionC.confirmBooking">
+                        Confirmar Reserva
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </section>
 <footer class="site-footer">
-    <!-- Tira superior: newsletter -->
     <div class="footer-newsletter">
         <div class="footer-newsletter-title">
             <label>
@@ -156,7 +178,6 @@
         </div>
     </div>
 
-    <!-- Barra inferior: © + enlaces + redes -->
     <div class="footer-bar">
         <p class="copy">&copy; 2025 Kilómetros Sin Fin</p>
 

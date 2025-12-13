@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <title>Kilómetros Sin Fin</title>
+    <link rel="stylesheet" href="style/language-styles.css">
+    <script src="script/language-manager.js"></script>
 </head>
 <body>
 <section id="Inicio">
@@ -15,15 +17,15 @@
         <div class="website-name">Kilómetros Sin Fin</div>
         <a href="#">
             <img class="aloj" src="images/vuel.png" alt="vuelo button">
-            Vuelos
+            <span data-i18n="nav.flights">Vuelos</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/viaj.png" alt="viaje button">
-            Viajes
+            <span data-i18n="nav.trips">Viajes</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/aloj.png" alt="alojamiento button">
-            Alojamiento
+            <span data-i18n="nav.accommodation">Alojamiento</span>
         </a>
         <label for="lang" ></label>
         <select class="menu-lang" name="lang" id="lang">
@@ -34,27 +36,27 @@
         </select>
     </nav>
     <div class="forma" id="forma-container-profile">
-        <div class="forma-header">Mi perfil</div>
+        <div class="forma-header" data-i18n="editProfile.editProfile">Mi perfil</div>
         <form id="registerForm">
             <div class="forma-left">
-                <label class="forma-text" for="nameE">Nombre:</label>
+                <label class="forma-text" for="nameE" data-i18n="editProfile.name">Nombre:</label>
                 <input type="text" id="nameE" name="name" placeholder="Nombre" disabled>
-                <label class="forma-text" for="emailE">Correo electronico:</label>
+                <label class="forma-text" for="emailE" data-i18n="editProfile.email">Correo electronico:</label>
                 <input type="text" id="emailE" name="email" placeholder="Correo electronico" disabled>
-                <label class="forma-text" for="birthdayE">Fecha de nacimiento</label>
+                <label class="forma-text" for="birthdayE" data-i18n="editProfile.birthday">Fecha de nacimiento</label>
                 <input type="date" id="birthdayE" disabled>
             </div>
             <div class="forma-right">
-                <label class="forma-text" for="surnameE">Apellidos:</label>
+                <label class="forma-text" for="surnameE" data-i18n="editProfile.surname">Apellidos:</label>
                 <input type="text" id="surnameE" name="surname" placeholder="Apellidos" disabled>
-                <label class="forma-text" for="loginE">Username:</label>
+                <label class="forma-text" for="loginE" data-i18n="editProfile.login">Username:</label>
                 <input type="text" id="loginE" name="login" placeholder="login" disabled>
-                <button type="button" class="submit-button-forma" id="buttonFav" onclick="misFavoritos()">Mis Favoritos</button>
+                <button type="button" class="submit-button-forma" id="buttonFav" onclick="misFavoritos()" data-i18n="editProfile.favorites">Mis Favoritos</button>
             </div>
         </form>
         <div class="button-container-register">
-            <button type="button" class="submit-button-forma" id="buttonQ" onclick="onQuitEdit()">Quitar</button>
-            <button type="button" class="submit-button-forma" id="buttonEd" onclick="startEdit()">Editar</button>
+            <button type="button" class="submit-button-forma" id="buttonQ" onclick="onQuitEdit()" data-i18n="editProfile.cancel">Quitar</button>
+            <button type="button" class="submit-button-forma" id="buttonEd" onclick="startEdit()" data-i18n="editProfile.save">Editar</button>
         </div>
     </div>
 </section>

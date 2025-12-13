@@ -1,6 +1,5 @@
 // script/carousel.js
 (function () {
-    // Evita doble inicialización si el script se carga dos veces
     if (window.__ksfCarouselInit) return;
     window.__ksfCarouselInit = true;
 
@@ -8,44 +7,43 @@
         const $container = $(".second_container").first();
         if (!$container.length) return;
 
-        // --- Datos de packs (usa imágenes reales de /images) ---
+        // En vez de meter texto literal, usamos SOLO claves i18n
         const packs = [
             {
                 id: "sea-01",
-                title: "Pack Sudeste Asiático",
-                price: 600,
-                desc:  "Vietnam y Camboya: buses, hostales y guía de visados",
-                img:   "images/pack.jpg"
+                titleKey: "home.packSoutheastAsia",
+                priceKey: "home.price",                // o uno distinto si cada pack tiene precio diferente en el json
+                descKey:  "home.packDescription",      // idem
+                img:      "images/pack.jpg"
             },
             {
                 id: "jpn-02",
-                title: "Japón Express 10 días",
-                price: 980,
-                desc:  "Tokio, Kioto y Osaka: JR Pass, templos y ramen tour",
-                img:   "images/japan.jpg"
+                titleKey: "home.japanPackTitle",
+                priceKey: "home.japanPackPrice",
+                descKey:  "home.japanPackDesc",
+                img:      "images/japan.jpg"
             },
             {
                 id: "vnm-03",
-                title: "Vietnam Norte-Sur",
-                price: 740,
-                desc:  "Ha Noi, Ha Long y Saigón: buses nocturnos y hostales",
-                img:   "images/japan_carta.jpg"
+                titleKey: "home.vietnamPackTitle",
+                priceKey: "home.vietnamPackPrice",
+                descKey:  "home.vietnamPackDesc",
+                img:      "images/japan_carta.jpg"
             },
             {
                 id: "de-04",
-                title: "Alemania: castillos históricos",
-                price: 520,
-                desc:  "Descubre los castillos de Wierchem, Bamberg y Núremberg",
-                img:   "images/germany.jpg"
+                titleKey: "home.germanyPackTitle",
+                priceKey: "home.germanyPackPrice",
+                descKey:  "home.germanyPackDesc",
+                img:      "images/germany.jpg"
             }
         ];
 
-        // --- Selectores (la imagen se pone como background del card) ---
         const $card  = $container.find(".venta-container");
         const $title = $container.find('[data-pack="title"], #packTitle');
         const $price = $container.find('[data-pack="price"], #packPrice');
         const $desc  = $container.find('[data-pack="desc"],  #packDesc');
-        const $buy   = $container.find('[data-pack="buy"],   #buyBtn');
+        const $buy   = $container.find('[data-pack="buy"],   .button-comprar');
 
         const $btnNext = $container.find(".next-button");
         const $btnPrev = $container.find(".back-button");
@@ -53,7 +51,7 @@
         let idx = 0;
         let animating = false;
 
-        // por si quedó algún <img> dentro del card, que no “empuje” el layout
+        // Oculta posible <img> interna
         $card.find("img").css("display", "none");
 
         function setBackground(url) {
@@ -63,9 +61,15 @@
         function render() {
             const p = packs[idx];
             setBackground(p.img);
-            $title.text(p.title);
-            $price.text(`€${p.price}`);
-            $desc.text(p.desc);
+
+            // aquí NO ponemos texto; solo cambiamos la clave data-i18n
+            $title.attr("data-i18n", p.titleKey);
+            $price.attr("data-i18n", p.priceKey);
+            $desc.attr("data-i18n",  p.descKey);
+
+            // vuelve a aplicar traducciones con el idioma actual
+            applyTranslations();
+
             $buy.off("click").on("click", () => {
                 window.location.href = `versionC.html?pack=${encodeURIComponent(p.id)}`;
             });
@@ -90,35 +94,29 @@
             animateRender();
         }
 
-        // ---------- Auto-play controlado ----------
         let autoplayTimer = null;
 
-        // Programa el siguiente avance después de 'delayMs'
         function scheduleNext(delayMs) {
             clearTimeout(autoplayTimer);
             autoplayTimer = setTimeout(function tick() {
                 next();
-                // después del avance automático, seguimos al ritmo de 2 s
                 autoplayTimer = setTimeout(tick, 2000);
             }, delayMs);
         }
 
-        // Al iniciar: primer render y auto-play cada 2 s
         render();
         scheduleNext(2000);
 
-        // Si el usuario pulsa una flecha: avanzar/retroceder una vez
-        // y pausar el auto-play 5 s; luego volver al ritmo de 2 s
         $btnNext.off("click").on("click", (e) => {
             e.preventDefault();
             next();
-            scheduleNext(5000); // pausa 5s y reanuda auto a 2s
+            scheduleNext(5000);
         });
 
         $btnPrev.off("click").on("click", (e) => {
             e.preventDefault();
             prev();
-            scheduleNext(5000); // pausa 5s y reanuda auto a 2s
+            scheduleNext(5000);
         });
     });
 })();
