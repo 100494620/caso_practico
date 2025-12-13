@@ -140,6 +140,7 @@ input {
     overflow-wrap: break-word;
     wrap-option: no-wrap;
 }
+
 .includes-text {
     font-family: 'fontHeader', serif;
 }
@@ -202,15 +203,18 @@ input {
 /* =================================
    NUEVO LAYOUT DE PÁGINA (Dos Columnas)
    ================================= */
+
 .wrapper-main {
-    display: flex;
-    justify-content: space-between;
-    width: 80vw;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 10px;
     max-width: 1200px;
-    margin: 3vw auto;
-    padding: 2vw;
-    border-radius: 0.8vw;
-    box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    padding: 0 40px;
+    align-items: start;
+    background: transparent !important; /* Fondo transparente */
+    box-shadow: none !important;        /* Quitar la sombra que envuelve todo */
+    border: none !important;
 }
 
 .left_container, .right_container {
@@ -394,13 +398,6 @@ input {
         font-size: 3.5vw;
     }
 
-
-
-
-    .website-name, #Navegacion a{
-        font-size: 4.7vmin;
-        padding: 4px;
-    }
     .top-right {
         padding-top: 5vw;
     }
@@ -785,26 +782,9 @@ input {
 }
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
 
-body {
-    font-family: 'Oswald', sans-serif;
-    background-color: #FFF5F8; /* Fondo rosado pálido como en la imagen */
-    margin: 0;
-}
 
 /* --- ESTRUCTURA PRINCIPAL (Usando tus nombres) --- */
 
-.wrapper-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 50% para cada contenedor */
-    gap: 10px;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 40px;
-    align-items: start;
-    background: transparent !important; /* Fondo transparente */
-    box-shadow: none !important;        /* Quitar la sombra que envuelve todo */
-    border: none !important;
-}
 
 /* IZQUIERDA: INFORMACIÓN */
 .left_container {
