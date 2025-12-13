@@ -974,15 +974,39 @@ input {
 }
 
 /* Móvil — sigue siendo proporcional */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .cal {
-        width: clamp(150px, 60vw, 200px);
-        font-size: clamp(8px, 3vw, 11px);
-        padding: 0.25rem 0.35rem;
-        margin: 2rem auto;
+        width: 80%; 
+        max-width: 210px; 
+        font-size: 1rem; 
+        padding: 5px;      
+        margin: 5px auto 30px auto; 
+    }
+
+    /* TÍTULO DEL MES */
+    .cal-head {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+
+    .cal-grid {
+        gap: 1px; 
+    }
+
+    /*NÚMEROS*/
+    .cal-grid .day {
+        height: 22px;      
+        width: 100%;
+        font-size: 0.7rem; 
+        border-radius: 3px;
+    }
+    
+    /* DÍAS DE LA SEMANA  */
+    .cal-grid .dow {
+        font-size: 0.6rem; 
+        padding-bottom: 2px;
     }
 }
-
 /* ===== FOOTER (responsive proporcional al estilo de la web) ===== */
 .site-footer {
     background: #c7cdc5;
