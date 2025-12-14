@@ -1,0 +1,217 @@
+/* style/consejos.css */
+
+/* ====== Variables (si quieres mantener colores consistentes) ====== */
+:root{
+    --bg: #f3f3f3;
+    --panel: #c7cdc5;
+    --card: #9FB8A2;
+    --card-soft: rgba(255,255,255,0.55);
+    --text: #1e1e1e;
+    --muted: rgba(0,0,0,0.6);
+    --radius: 14px;
+}
+
+/* ====== Layout base ====== */
+html, body{
+    height: auto;
+}
+
+body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: visible; /* clave: evita “scroll lateral” */
+}
+
+/* Contenedor principal de la página (debajo del nav, encima del footer) */
+.consejos-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 1rem 2rem;
+    box-sizing: border-box;
+}
+
+/* Panel centrado tipo “Mis compras” */
+.consejos-panel{
+    width: min(920px, 92vw);          /* menos ancho, centrado y adaptable */
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.5rem 1.2rem;
+    box-sizing: border-box;
+}
+
+/* Título centrado */
+.consejos-title{
+    margin: 0 0 1.2rem 0;
+    text-align: center;
+    font-family: fontHeader, serif;
+    font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+    color: #0d2d33;
+}
+
+/* ====== Zona scrolleable (la lista) ====== */
+.consejos-list{
+    /* altura “comodín” para que se vea como tu mock:
+       scrollea dentro del panel, no la página entera */
+    height: clamp(220px, 48vh, 520px);
+    overflow-y: auto;
+    overflow-x: visible;
+    padding-right: 0.5rem;  /* espacio para scrollbar */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Scrollbar (opcional, suave) */
+.consejos-list::-webkit-scrollbar{ width: 10px; }
+.consejos-list::-webkit-scrollbar-thumb{
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+}
+.consejos-list::-webkit-scrollbar-track{
+    background: rgba(255,255,255,0.25);
+    border-radius: 10px;
+}
+
+/* ====== Cards (cada consejo) ====== */
+.consejo-card{
+    background: rgba(255,255,255,0.35);
+    border-radius: 12px;
+    padding: 1.1rem 1.2rem;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Cabecera del consejo (título) */
+.consejo-card h4{
+    margin: 0 0 0.4rem 0;
+    font-family: fontHeader, serif;
+    font-size: clamp(1rem, 1.6vw, 1.35rem);
+    color: #0d2d33;
+}
+
+/* Autor / meta */
+.consejo-meta{
+    margin: 0 0 0.7rem 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Texto del consejo */
+.consejo-body{
+    margin: 0;
+    font-family: fontText, serif;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.35;
+}
+
+/* Botón volver (como en el mock) */
+.consejos-actions{
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.consejos-back{
+    background: var(--card);
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 10px;
+    padding: 0.75rem 1.6rem;
+    cursor: pointer;
+    font-family: fontHeader, serif;
+    font-size: 1rem;
+}
+
+.consejos-back:hover{
+    background-color: #e6a31f;
+    color: #fff;
+}
+
+/* ====== Responsive móvil ====== */
+@media (max-width: 700px){
+    .consejos-page{
+        padding: 1.2rem 0.8rem 1.2rem;
+    }
+
+    .consejos-panel{
+        width: min(520px, 95vw);
+        padding: 1rem;
+    }
+
+    .consejos-list{
+        height: clamp(240px, 55vh, 560px); /* en móvil deja ver más “lista” */
+        padding-right: 0.3rem;
+    }
+
+    .consejos-back{
+        width: 45%;
+        min-width: 140px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE (≤ 600px)
+   ========================= */
+@media (max-width: 600px){
+
+    /* Página general */
+    .consejos-page{
+        padding: 1rem 0.6rem 1.2rem;
+    }
+
+    /* Panel principal */
+    .consejos-panel{
+        width: 94vw;
+        padding: 0.9rem;
+        border-radius: 12px;
+    }
+
+    /* Título */
+    .consejos-title{
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Lista scrolleable */
+    .consejos-list{
+        height: 60vh;          /* más lista, menos aire */
+        gap: 0.7rem;
+        padding-right: 0.3rem;
+    }
+
+    /* Cards */
+    .consejo-card{
+        padding: 0.8rem 0.9rem;
+        border-radius: 10px;
+    }
+
+    .consejo-card h4{
+        font-size: 0.95rem;
+    }
+
+    .consejo-meta{
+        font-size: 0.75rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .consejo-body{
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+
+    /* Botón volver */
+    .consejos-actions{
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .consejos-back{
+        width: 100%;
+        max-width: 240px;
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}

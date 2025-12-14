@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- usa el mismo CSS que tu web principal -->
-    <link href="style/versionB.css" rel="stylesheet">
+    <!-- CSS base (nav/footer/tipografías) -->
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/versionB.css">
+
+    <!-- CSS específico de esta página -->
+    <link rel="stylesheet" href="style/consejos.css">
+
     <link rel="stylesheet" href="style/language-styles.css">
     <script src="script/language-manager.js"></script>
 
@@ -15,7 +20,7 @@
 <body>
 <section id="Inicio">
 
-    <!-- NAV igual que versionB -->
+    <!-- NAV -->
     <nav id="Navegacion">
         <div class="website-name">Kilómetros Sin Fin</div>
         <a href="#">
@@ -39,44 +44,38 @@
         </select>
     </nav>
 
-    <!-- Contenido: solo el panel derecho -->
-    <div class="wrapper-main" style="grid-template-columns: 1fr;">
-        <div class="third_container" style="grid-column: 1; grid-row: 1; height: auto;">
+    <!-- CONTENIDO (layout nuevo, sin wrapper-main ni third_container) -->
+    <main class="consejos-page" aria-labelledby="consejosTitle">
+        <section class="consejos-panel">
+            <h2 class="consejos-title" id="consejosTitle" data-i18n="versionB.latestAdvice">
+                Últimos consejos
+            </h2>
 
-            <section class="text-block consejos-container" aria-labelledby="consejosTitle">
-                <div class="consejos">
-                    <h5 id="consejosTitle" data-i18n="versionB.latestAdvice">Últimos consejos</h5>
+            <!-- LISTA SCROLLEABLE -->
+            <div class="consejos-list" id="allAdvices"></div>
 
-                    <!-- lista completa -->
-                    <div class="all-advices-container" id="allAdvices"></div>
-
-                    <!-- Volver ABAJO del panel -->
-                    <div class="cerrar-container" style="margin-top: 1.5vw;">
-                        <button type="button" class="button-cerrar" onclick="window.location.href='versionB.html'">
-                            Volver
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </div>
+            <div class="consejos-actions">
+                <button type="button" class="consejos-back" onclick="window.location.href='versionB.html'">
+                    Volver
+                </button>
+            </div>
+        </section>
+    </main>
 
 </section>
 
-<!-- FOOTER igual que en versionB -->
+<!-- FOOTER -->
 <footer class="site-footer">
     <div class="footer-newsletter">
         <div class="footer-newsletter-title">
-            <label data-i18n="home.newsletterTitle">Suscríbete a la newsletter</label>
+            <label>Suscríbete a la newsletter</label>
         </div>
 
         <div class="mail">
-            <input type="email" id="nl-email" name="email" placeholder="Tu email" required
-                   data-i18n-placeholder="home.newsletterEmail">
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
         </div>
         <div class="newsletter-submit-button">
-            <button type="submit" class="nl-btn" data-i18n="home.newsletterButton">Suscribirme</button>
+            <button type="submit" class="nl-btn">Suscribirme</button>
         </div>
     </div>
 
