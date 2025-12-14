@@ -14,12 +14,17 @@
     src: url("../fonts/MainChirstmas.otf");
 }
 
+html {
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
 body {
-    background-color: #FFFFFF;
-    font-family: fontText,serif;
+    font-family: fontText, serif;
     font-size: 1.3vw;
     margin: 0;
     padding: 0;
+    background-color: #f3f3f3;
 }
 
 
@@ -539,7 +544,7 @@ input {
     .form-container h2 {
         font-size: 2.5vw;
     }
-    .boton-comprar, .boton-comprar-pack, .boton-borrar {
+    .boton-comprar,.boton-comprar-pack, .boton-borrar {
         font-size: 1.8vw;
     }
     .menu-lang {
@@ -803,4 +808,628 @@ input {
     font-size: 1.7vw;
     font-family: fontHeader, serif;
     padding-bottom: 1vw;
+}
+
+/*breakpoint for devices less then 600px*/
+@media (max-width: 628px) {
+    .form-container .button-enter, .button-register {
+        font-size: 1.7vw;
+        padding: 1vw 1vw 1vw 1vw;
+        margin-top: 0.5vw;
+    }
+
+    .text-block dd {
+        font-size: 2vw;
+    }
+    .text-block {
+        padding-left: 5vw;
+    }
+    .consent-box {
+        font-size: 1.7vw;
+    }
+
+    .cartas-grind {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 2vh;
+        padding-left: 5.6vw;
+        max-height: 57vw;
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .carta-header {
+        font-size: 1.6vw;
+    }
+
+    .text-block dd {
+        font-size: 2vw;
+    }
+
+    .first_container {
+        border-radius: 0.8vw;
+        grid-column: 1;
+        grid-row: 1;
+        height: 15vw;
+        background-image: url('../images/sea.jpg');
+    }
+    /*left second container*/
+    .second_container {
+        border-radius: 0.8vw;
+        grid-column: 1;
+        height: 30vw;
+        grid-row: 2;
+    }
+
+    /*right container*/
+    .third_container {
+        border-radius: 0.8vw;
+        grid-column: 2;
+        grid-row: 1 / 4;
+    }
+    /*left bottom container*/
+    .fourth-container {
+        border-radius: 0.8vw;
+        grid-column: 1;
+        grid-row: 3;
+        height: auto;
+    }
+    /*first container text*/
+    .container-text {
+        padding: 1vw 5vw;
+        margin: 5.4vw 1vw auto 1vw;
+        font-size: 2vw;
+
+    }
+
+    /*wrapper of the whole contents of the initial screen*/
+    .wrapper-main {
+        grid-template-columns: 1fr;
+    }
+
+    /*right container*/
+    .third_container {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .carta {
+        width: 70%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .back-button{
+        height: 14%;
+        top: 60%;
+        left: 8vw;
+    }
+
+    .next-button{
+        height: 14%;
+        top: 60%;
+        right: 8vw;
+    }
+    .form-container .button-enter, .button-register {
+        font-size: 1.7vw;
+        padding: 1vw 2vw 1vw 2vw;
+        margin-top: 0.5vw;
+    }
+
+    .form-container input[type=text], .form-container input[type=password] {
+        padding: 7px;
+        width: 70%;
+        font-size: 1.5vw;
+        margin-left: 12vw;
+        margin-bottom: 2vw;
+    }
+
+    .venta-container-header, .experiencias-container-header {
+        font-size: 2vw;
+    }
+    .line {
+        border-bottom: 2px solid #2b4485;
+        width: 80%;
+        margin: 1vw 2vw 1vw 8vw;
+    }
+
+    .website-name, #Navegacion a{
+        font-size: 4.7vmin;
+        padding: 4px;
+    }
+
+    .venta-container {
+        width: 70%;
+    }
+
+    .carta {
+        width: 70%;
+        height: 100%;
+        border-radius: 1vmin;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cartas-grind {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1.5vh;
+        grid-column-gap: 0.1vh;
+        margin-left: 6vw;
+    }
+
+    .carta-photo {
+        height: 7vw;
+    }
+
+    .carta-like {
+        width: 45%;
+        margin-bottom: 2vw;
+        margin-left: 3vw;
+    }
+
+    #consent {
+        width: 1.7vw;
+    }
+
+    .website-name, #Navegacion a{
+        font-size: 2.7vmin;
+    }
+
+    .website-name {
+        margin-top: 3vw;
+        height: 3vh;
+    }
+
+}
+
+/*breakpoint for the middle-scaled devices*/
+@media (min-width: 628px) and (max-width: 766px) {
+
+    .website-name, #Navegacion a{
+        font-size: 4.3vmin;
+    }
+
+    .form-container .button-enter, .button-register {
+        font-size: 1.3vw;
+        padding: 1vw 1vw 1vw 1vw;
+        margin-top: 0.5vw;
+    }
+
+
+    .form-container input[type=text], .form-container input[type=password] {
+        font-size: 1.4vw;
+        margin-left: 1vw;
+        margin-bottom: 1vw;
+        padding: 1vw 2vw 1vw 2vw;
+    }
+
+    .text-block dt {
+        font-size: 2vw;
+    }
+
+    .consent-box {
+        font-size: 2vw;
+    }
+
+    .website-name {
+        margin-top: 2.2vw;
+    }
+
+    .menu-lang {
+        margin-top: 4vw;
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .consent-box {
+        font-size: 1.6vw;
+    }
+    .cartas-grind {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1vh;
+        grid-column-gap: 2vh;
+        margin-left: 6vw;
+    }
+
+    .carta-header {
+        font-size: 1.6vw;
+    }
+
+    .text-block dt {
+        font-size: 2vw;
+    }
+
+    .venta-container-header {
+        text-align: center;
+        font-size: 2.5vw;
+        font-family: fontHeader, serif;
+        margin: 1.5vw 1.5vw 1.5vw 3vw;
+    }
+
+    .experiencias-container-header {
+        text-align: center;
+        font-size: 2.5vw;
+        font-family: fontHeader, serif;
+        margin-top: 5vw;
+    }
+
+    .carta-photo {
+        height: 7vw;
+    }
+
+    .carta-like {
+        width: 90%;
+        margin-bottom: 2vw;
+    }
+    .back-button{
+        height: 12%;
+        left: 1vw;
+    }
+
+    .next-button{
+        height: 12%;
+        right: 1vw;
+    }
+
+    #consent {
+        width: 1.4vw;
+    }
+}
+
+@media (min-width: 766px) and (max-width: 998px) {
+    .website-name, #Navegacion a{
+        font-size: 4.3vmin;
+    }
+
+    .website-name {
+        margin-top: 2.2vw;
+    }
+
+    .menu-lang {
+        margin-top: 3vw;
+    }
+
+    .form-container .button-enter, .button-register {
+        font-size: 1.3vw;
+        padding: 1vw 1vw 1vw 1vw;
+        margin-top: 0.5vw;
+    }
+
+    .form-container input[type=text], .form-container input[type=password] {
+        font-size: 1.4vw;
+        margin-left: 1vw;
+        margin-bottom: 1vw;
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .consent-box {
+        font-size: 1.6vw;
+    }
+    .cartas-grind {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1vh;
+        grid-column-gap: 2vh;
+        margin-left: 6vw;
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .carta-header {
+        font-size: 1.6vw;
+    }
+
+    .text-block dt {
+        font-size: 2vw;
+    }
+
+    .venta-container-header {
+        text-align: center;
+        font-size: 2.5vw;
+        font-family: fontHeader, serif;
+        margin: 1.5vw 1.5vw 1.5vw 3vw;
+    }
+
+    .experiencias-container-header {
+        text-align: center;
+        font-size: 2.5vw;
+        font-family: fontHeader, serif;
+        margin-top: 5vw;
+    }
+
+    .carta-photo {
+        height: 7vw;
+    }
+
+    .carta-like {
+        width: 90%;
+        margin-bottom: 2vw;
+    }
+
+    .back-button{
+        height: 12%;
+        left: 2vw;
+    }
+
+    .next-button{
+        height: 12%;
+        right: 2vw;
+    }
+
+}
+/*breakpoint for bigger screens, but not extremely big*/
+@media (min-width: 998px) and (max-width: 1087px) {
+    .form-container .button-enter, .button-register {
+        font-size: 1.3vw;
+        padding: 1vw 1vw 1vw 1vw;
+        margin-top: 0.5vw;
+    }
+
+    .form-container input[type=text], .form-container input[type=password] {
+        font-size: 1.5vw;
+        margin-left: 1vw
+    }
+
+    .carta {
+        width: 80%;
+        height: auto;
+        border-radius: 1vmin;
+    }
+
+    .website-name, #Navegacion a{
+        font-size: 5.2vmin;
+    }
+
+    .website-name {
+        margin-top: 2vw;
+    }
+
+    .cartas-grind {
+        margin-left: 1.7vw;
+    }
+
+    .consent-box {
+        font-size: 1.6vw;
+    }
+
+    .menu-lang {
+        margin-top: 2.4vw;
+    }
+
+}
+
+.button-comprar {
+    margin-top: 9.7vw;
+    float: right;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: rgb(44, 39, 39);
+    color: white;
+    padding: 0.7vw 1.8vw;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    font-size: 1.7vw;
+}
+
+
+.nl-title{
+    margin:0;
+    font-family: fontHeader, serif;
+    font-size:1.1rem;
+    color:#fff;
+}
+
+.nl-form{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    margin-left:auto;
+}
+
+.nl-form input[type="email"]{
+    padding:.55rem .75rem;
+    border-radius:.5rem;
+    border:none;
+    outline:none;
+    font-family: fontText, serif;
+    min-width: 220px;
+    background:#fff;
+    color:#333;
+}
+
+.nl-btn{
+    background:#f6d586;
+    color:#2a2a2a;
+    border:none;
+    border-radius:.55rem;
+    padding:.55rem .9rem;
+    font-family: fontHeader, serif;
+    cursor:pointer;
+}
+.nl-btn:hover{ background:#e6a31f; }
+
+/* oculto visualmente pero accesible */
+.sr-only{
+    position:absolute !important;
+    height:1px; width:1px;
+    overflow:hidden; clip:rect(1px,1px,1px,1px);
+}
+
+/* ===== FOOTER (responsive proporcional al estilo de la web) ===== */
+.site-footer {
+    background: #c7cdc5;
+    color: #000000;
+    width: 96%;
+    margin: 2vw auto 0;
+    border-radius: 0.8vw;
+    font-family: fontText, serif;
+    overflow: hidden;
+    font-size: 1vw; /* tamaño base proporcional */
+}
+
+/* Enlaces */
+.site-footer a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1vw;
+}
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Tira superior: newsletter --- */
+.footer-newsletter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* mantiene una sola línea */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 0.6vw 0.6vw 0 0;
+}
+
+.footer-newsletter-title label {
+    font-family: fontHeader, serif;
+    font-size: 1.3vw;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.mail input[type="email"] {
+    padding: 0.6vw 0.9vw;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    font-family: fontText, serif;
+    font-size: 1vw;
+    width: 20vw;
+    background: #fff;
+    color: #333;
+}
+
+.newsletter-submit-button button {
+    background: #ffd36b;
+    color: #2a2a2a;
+    border: none;
+    border-radius: 0.4vw;
+    padding: 0.6vw 1.2vw;
+    font-family: fontHeader, serif;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.newsletter-submit-button button:hover {
+    background: #e6a31f;
+    color: #fff;
+}
+
+/* --- Barra inferior --- */
+.footer-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* nunca apila */
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+    padding: 1vw 2vw;
+    border-top: 0.1vw solid rgba(255, 255, 255, 0.25);
+    background: #9b9f99;
+}
+
+.copy {
+    margin: 0;
+    font-size: 0.9vw;
+    color: #000000;
+    white-space: nowrap;
+}
+
+/* Enlaces centrales */
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.2vw;
+    margin: 0;
+    padding: 0;
+    font-size: 1vw;
+    white-space: nowrap;
+}
+
+/* Redes sociales */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+}
+
+.footer-social img {
+    width: 1.8vw;
+    height: 1.8vw;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+.footer-social img:hover {
+    transform: scale(1.12);
+}
+
+html {
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+body {
+    font-family: fontText, serif;
+    font-size: 1.3vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+
+.experience-searchbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    font-size: 2vw;
+    margin-top: 1.2vw;
+}
+
+/*langauge options container*/
+.menu-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 2vw 0 0;
+    font-family: fontHeader, serif;
+    font-size: 1.7vw;
+    color: #302f2f;
+    background: #c9dac7;
+    border-radius: 7px;
+    width: 4vw;
+    height: 2vw;
 }

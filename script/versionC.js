@@ -5,11 +5,10 @@ $(function () {
     const user = getMyInfo();
     const isLoggedIn = user && user.loginStatus === true;
     if (!isLoggedIn) {
-      alert("Debe iniciar sesión para acceder a la compra.");
-      window.location.replace("home.html");
-      return;
+        alert("Debe iniciar sesión para acceder a la compra.");
+        window.location.replace("home.html");
+        return;
     }
-
 
     const PACKS = [
         {
@@ -135,7 +134,6 @@ $(function () {
         const expiry = $expiry.val().trim();
         const cvv = $cvv.val().trim();
 
-        if (fullName.length < 3) { alert("Nombre completo: mínimo 3 caracteres."); return false; }
         if (!EMAIL_REGEX.test(email)) { alert("Correo electrónico no válido."); return false; }
         if (!type) { alert("Seleccione el tipo de tarjeta."); return false; }
         if (!CARD_NUMBER_REGEX.test(number)) { alert("Número de tarjeta no válido (13, 15, 16 o 19 dígitos)."); return false; }
@@ -160,64 +158,4 @@ $(function () {
 
         this.reset();
     });
-    $(function() {
-
-    // 1. ACOMPAÑANTES DINÁMICOS
-    // Detectamos cambios en el número de entradas
-    $('#numTickets').on('input change', function() {
-        const totalPersonas = parseInt($(this).val()) || 1;
-        const $container = $('#companionsContainer');
-        
-        // Limpiamos los campos anteriores para regenerarlos
-        $container.empty();
-
-        // Si hay más de 1 persona, creamos los campos extra
-        // (Empezamos en 2 porque la persona 1 es el titular del formulario)
-        if (totalPersonas > 1) {
-            for (let i = 2; i <= totalPersonas; i++) {
-                const html = `
-                    <div class="companion-card">
-                        <span class="companion-title">Viajero #${i}</span>
-                        
-                        <input type="text" name="name_companion_${i}" 
-                               placeholder="Nombre completo" required 
-                               style="margin-bottom: 0.5vw;">
-                               
-                        <input type="email" name="email_companion_${i}" 
-                               placeholder="Email" required 
-                               style="margin-bottom: 0;">
-                    </div>
-                `;
-                $container.append(html);
-            }
-        }
-    });
-
-    // 2. MASCOTA (MOSTRAR / OCULTAR)
-    $('#hasPet').on('change', function() {
-        if ($(this).is(':checked')) {
-            $('#petDetails').slideDown(); // Animación de despliegue
-        } else {
-            $('#petDetails').slideUp();   // Animación de ocultar
-        }
-    });
-
-    // 3. ENVÍO DEL FORMULARIO
-    $('#purchaseForm').on('submit', function(e) {
-        e.preventDefault(); // Evita que se recargue la página
-
-        // Recogida básica de datos para feedback
-        const nombre = $('#FullName').val();
-        const personas = $('#numTickets').val();
-        const mascota = $('#hasPet').is(':checked') ? "con mascota" : "sin mascota";
-
-        // Aquí iría la lógica real de pago o guardado en BD
-        alert(`¡Reserva confirmada!\n\nTitular: ${nombre}\nPlazas: ${personas}\nDetalle: ${mascota}\n\nGracias por confiar en Kilómetros Sin Fin.`);
-        
-        // Redirección opcional
-        // window.location.href = "index.html";
-    });
-});
-
-
 });
