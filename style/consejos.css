@@ -12,25 +12,6 @@
 }
 
 /* ====== Layout base ====== */
-html, body{
-    height: auto;
-}
-
-body{
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: visible; /* clave: evita “scroll lateral” */
-}
-
-/* Contenedor principal de la página (debajo del nav, encima del footer) */
-.consejos-page{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 2.5rem 1rem 2rem;
-    box-sizing: border-box;
-}
 
 /* Panel centrado tipo “Mis compras” */
 .consejos-panel{
@@ -142,7 +123,7 @@ body{
     }
 
     .consejos-list{
-        height: clamp(240px, 55vh, 560px); /* en móvil deja ver más “lista” */
+        height: clamp(240px, 55vh, 560px);
         padding-right: 0.3rem;
     }
 
@@ -177,7 +158,7 @@ body{
 
     /* Lista scrolleable */
     .consejos-list{
-        height: 60vh;          /* más lista, menos aire */
+        height: 60vh;
         gap: 0.7rem;
         padding-right: 0.3rem;
     }
@@ -214,4 +195,48 @@ body{
         font-size: 0.9rem;
         padding: 0.6rem 1rem;
     }
+
+}
+
+.site-footer {
+    margin: 2vw auto 0;
+    flex-shrink: 0;
+}
+
+html {
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+body {
+    font-family: fontText, serif;
+    font-size: 1.3vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    color: var(--text);
+}
+
+/* Contenedor principal de la página (debajo del nav, encima del footer) */
+.consejos-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 1rem 2rem;
+    box-sizing: border-box;
+    flex: 1;
+}
+@media (max-width: 600px) {
+
+    .advice-desc {
+        font-size: 1.7vw;
+    }
+
+    .advice-author {
+        font-size: 1.7vw
+    }
+
 }
