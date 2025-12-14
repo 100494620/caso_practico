@@ -14,9 +14,7 @@ $(function () {
         const $container = $("#allAdvices");
         const all = loadAdvices();
 
-        // Más recientes primero
         all.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-
         $container.empty();
 
         if (all.length === 0) {
@@ -25,31 +23,23 @@ $(function () {
         }
 
         all.forEach(item => {
-            const authorName = item.authorName || "Anónimo";
+            const author = item.authorName || "Anónimo";
 
             const $card = $("<div>")
-                .addClass("text-block")
-                .attr("id", item.id)
-                .css({ marginBottom: "12px" });
+                .addClass("advice-card")
+                .attr("id", item.id);
 
             const $title = $("<h5>").text(item.title || "(Sin título)");
+            const $author = $("<div>").addClass("advice-author").text(`Por ${author}`);
+            const $desc = $("<p>").addClass("advice-desc").text(item.desc || "(Sin descripción)");
 
-            const $meta = $("<div>")
-                .css({ fontSize: "0.9rem", opacity: 0.85, margin: "0 4vw 1vw 4vw" })
-                .text(`Por ${authorName}`);
-
-            const $desc = $("<p>")
-                .css({ margin: "0 4vw 3vw 4vw" })
-                .text(item.desc || "(Sin descripción)");
-
-            $card.append($title, $meta, $desc);
+            $card.append($title, $author, $desc);
             $container.append($card);
         });
     }
 
     renderAll();
 
-    // Si vienes desde versionB con #id, hacemos scroll al consejo seleccionado
     const hashId = decodeURIComponent(window.location.hash.replace("#", ""));
     if (hashId) {
         setTimeout(() => {
