@@ -11,6 +11,7 @@ $(function () {
     }
 
     function renderAll() {
+
         const $container = $("#allAdvices");
         const all = loadAdvices();
 
