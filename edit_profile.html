@@ -32,6 +32,7 @@
             <option value="ES">ES</option>
             <option value="ENG">ENG</option>
             <option value="FR">FR</option>
+            <option value="UA">UA</option>
         </select>
     </nav>
     <div class="forma" id="forma-container-profile">
@@ -64,38 +65,38 @@
     <!-- Tira superior: newsletter -->
     <div class="footer-newsletter">
         <div class="footer-newsletter-title">
-            <label>
+            <label data-i18n="footer.newsletter">
                 Suscríbete a la newsletter
             </label>
         </div>
 
         <div class="mail">
-            <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" data-i18n="footer.email_placeholder" required>
         </div>
         <div class="newsletter-submit-button">
-            <button type="submit" class="nl-btn">Suscribirme</button>
+            <button type="submit" class="nl-btn" data-i18n="footer.subscribe_button">Suscribirme</button>
         </div>
     </div>
 
     <!-- Barra inferior: © + enlaces + redes -->
     <div class="footer-bar">
-        <p class="copy">&copy; 2025 Kilómetros Sin Fin</p>
+        <p class="copy" data-i18n="footer.copyright">&copy; 2025 Kilómetros Sin Fin</p>
 
         <ul class="footer-links" aria-label="Enlaces legales">
-            <li><a href="#">Sobre nosotros</a></li>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Ayuda</a></li>
+            <li><a href="#" data-i18n="footer.about">Sobre nosotros</a></li>
+            <li><a href="#" data-i18n="footer.privacy">Política de privacidad</a></li>
+            <li><a href="#" data-i18n="footer.help">Ayuda</a></li>
         </ul>
 
         <div class="footer-social" aria-label="Redes sociales">
-            <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener">
-                <img src="images/icons8-instagram-128.png" alt="Instagram">
+            <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">
+                <img src="images/icons8-instagram-128.png" alt="Instagram" data-i18n="footer.instagram">
             </a>
-            <a class="social-link" href="https://www.tiktok.com/" target="_blank" rel="noopener">
-                <img src="images/icons8-tiktok-128.png" alt="TikTok">
+            <a class="social-link" href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok">
+                <img src="images/icons8-tiktok-128.png" alt="TikTok" data-i18n="footer.tiktok">
             </a>
-            <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener">
-                <img src="images/icons8-youtube-128.png" alt="YouTube">
+            <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener" title="YouTube">
+                <img src="images/icons8-youtube-128.png" alt="YouTube" data-i18n="footer.youtube">
             </a>
         </div>
     </div>

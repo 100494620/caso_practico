@@ -74,6 +74,17 @@
       "newsletterEmail": "Tu email",
       "newsletterButton": "Suscribirme"
     },
+    "editProfile": {
+      "editProfile": "Mi perfil",
+      "name": "Nombre:",
+      "surname": "Apellidos:",
+      "login": "Usuario:",
+      "email": "Correo electrónico:",
+      "birthday": "Fecha de nacimiento:",
+      "favorites": "Mis Favoritos",
+      "cancel": "Cancelar",
+      "save": "Guardar"
+    },
     "versionB": {
       "tagline": "Comparte y descubre viajes de todo el mundo",
       "economicPacks": "PACKS DE VIAJE MÁS ECONÓMICOS",
@@ -127,11 +138,24 @@
       "rio_title": "Río de Janeiro: playa y samba",
       "buenosaires_title": "Buenos Aires: tango y parrilla"
     },
+    "footer": {
+      "newsletter": "Suscríbete a la newsletter",
+      "email_placeholder": "Tu email",
+      "subscribe_button": "Suscribirme",
+      "copyright": "© 2025 Kilómetros Sin Fin",
+      "about": "Sobre nosotros",
+      "privacy": "Política de privacidad",
+      "help": "Ayuda",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "youtube": "YouTube"
+    },
     "versionC": {
       "title": "Pack Esencial: Maravillas del Sudeste Asiático (15 días)",
       "intro": "Embárcate en una aventura inolvidable por los destinos más emblemáticos del Sudeste Asiático. Explora los templos de Bangkok, navega por la Bahía de Ha Long en Vietnam y relájate en las playas cristalinas de Phuket. Descubre los mercados flotantes y la vibrante vida callejera. Disfruta de la gastronomía local, sumérgete en aguas turquesas y vive experiencias únicas.",
       "includes": "Incluye: vuelos internos, hoteles 4★, guías locales, traslados y experiencias únicas."
     }
+    
   },
   "eng": {
     "nav": {
@@ -139,6 +163,30 @@
       "trips": "Trips",
       "accommodation": "Accommodation"
     },
+    "editProfile": {
+      "editProfile": "My Profile",
+      "name": "Name:",
+      "surname": "Surname:",
+      "login": "Username:",
+      "email": "Email:",
+      "birthday": "Date of Birth:",
+      "favorites": "My Favorites",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+        "footer": {
+      "newsletter": "Subscribe to our newsletter",
+      "email_placeholder": "Your email",
+      "subscribe_button": "Subscribe",
+      "copyright": "© 2025 Kilometers Without End",
+      "about": "About us",
+      "privacy": "Privacy Policy",
+      "help": "Help",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "youtube": "YouTube"
+    },
+
     "home": {
       "tagline": "Share and discover trips from around the world",
       "economicPacks": "MOST AFFORDABLE TRAVEL PACKAGES",
@@ -342,6 +390,17 @@
       "newsletterEmail": "Твоя електронна пошта",
       "newsletterButton": "Підписатися"
     },
+    "editProfile": {
+      "editProfile": "Мій Профіль",
+      "name": "Ім'я:",
+      "surname": "Прізвище:",
+      "login": "Ім'я користувача:",
+      "email": "Електронна пошта:",
+      "birthday": "Дата народження:",
+      "favorites": "Мої Улюблені",
+      "cancel": "Скасувати",
+      "save": "Зберегти"
+    },
     "versionB": {
       "tagline": "Ділись та відкривай подорожі з усього світу",
       "economicPacks": "НАЙБІЛЬШ ДОСТУПНІ ТУРИСТИЧНІ ПАКЕТИ",
@@ -395,17 +454,53 @@
       "rio_title": "Ріо-де-Жанейро: пляж та самба",
       "buenosaires_title": "Буенос-Айрес: танго та барбекю"
     },
+        "footer": {
+      "newsletter": "Підпишись на розсилку",
+      "email_placeholder": "Твоя електронна пошта",
+      "subscribe_button": "Підписатися",
+      "copyright": "© 2025 Кілометри Без Кінця",
+      "about": "Про нас",
+      "privacy": "Політика конфіденційності",
+      "help": "Допомога",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "youtube": "YouTube"
+    },
     "versionC": {
       "title": "Основний пакет: Чудеса Південно-Східної Азії (15 днів)",
       "intro": "Вирушай в незабутню пригоду найбільш знакових пункти Південно-Східної Азії. Дослідж храми Бангкока, відпливай по затоці Халонг у В'єтнамі та розслабляйся на кристально чистих пляжах Пхукета. Відкривай плаваючі базари та яскраве вулличне життя. Насолоджуйся місцевою кухнею, занурюйся в бірюзові води та доживай унікальні досвіди.",
       "includes": "Включає: внутрішні рейси, готелі 4★, місцеві гіди, трансфери та унікальні досвіди."
     }
+    
   },
   "fr": {
     "nav": {
       "flights": "Vols",
       "trips": "Voyages",
       "accommodation": "Hébergement"
+    },
+    "footer": {
+      "newsletter": "Abonnez-vous à notre newsletter",
+      "email_placeholder": "Votre email",
+      "subscribe_button": "S'abonner",
+      "copyright": "© 2025 Kilomètres Sans Fin",
+      "about": "À propos de nous",
+      "privacy": "Politique de confidentialité",
+      "help": "Aide",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "youtube": "YouTube"
+    },
+    "editProfile": {
+      "editProfile": "Mon Profil",
+      "name": "Nom:",
+      "surname": "Prénom:",
+      "login": "Nom d'utilisateur:",
+      "email": "Email:",
+      "birthday": "Date de naissance:",
+      "favorites": "Mes Favoris",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
     },
     "home": {
       "tagline": "Partagez et découvrez des voyages du monde entier",
