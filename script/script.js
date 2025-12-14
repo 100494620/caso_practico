@@ -670,38 +670,57 @@ function removeCard(id) {
     //console.log(allFavourites);
 }
 
-// === Filtro por destino para cartas de experiencias (home y versionB) ===
-document.addEventListener('DOMContentLoaded', () => {
-  // Espera el evento de traducción o usa timeout como fallback
-  const initFilter = () => {
-    const searchInput = document.getElementById('cardSearch');
-    if (!searchInput) return;
+// ============ CORRECCIÓN DEL FILTRO POR DESTINO ============
+// Filtro por destino para cartas de experiencias (home y versionB)
 
-    const cards = Array.from(document.querySelectorAll('.cartas-grind .carta'));
+document.addEventListener('DOMContentLoaded', function() {
+     const initFilter = () => {
+        const searchInput = document.getElementById('cardSearch');
+        if (!searchInput) return;
 
-    function filtrar() {
-      const term = searchInput.value.trim().toLowerCase();
+        const cards = Array.from(document.querySelectorAll('.cartas-grind .carta'));
 
-      cards.forEach(card => {
-        const headerEl = card.querySelector('.carta-header');
-        const titulo = headerEl ? headerEl.textContent.toLowerCase() : '';
-        const destino = (card.getAttribute('data-destino') || '').toLowerCase();
-        
-        const match = term === '' || titulo.includes(term) || destino.includes(term);
-        card.style.display = match ? '' : 'none';
-      });
+        // Mostrar solo los primeros 6 inicialmente
+        function mostrarIniciales() {
+            cards.forEach((card, index) => {
+                if (index < 6) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filtrar() {
+            const term = searchInput.value.trim().toLowerCase();
+            
+            // Si está vacío, volver a mostrar solo 6
+            if (term === '') {
+                mostrarIniciales();
+                return;
+            }
+
+            // Si hay búsqueda, mostrar TODOS los que coincidan
+            cards.forEach(card => {
+                const headerEl = card.querySelector('.carta-header');
+                const titulo = headerEl ? headerEl.textContent.toLowerCase() : '';
+                const destino = card.getAttribute('data-destino').toLowerCase();
+                
+                const match = titulo.includes(term) || destino.includes(term);
+                
+                card.style.display = match ? '' : 'none';
+            });
+        }
+
+        searchInput.addEventListener('input', filtrar);
+        mostrarIniciales();
+    };
+
+    if (window.addEventListener && typeof window.languageLoaded !== 'undefined') {
+        window.addEventListener('languageLoaded', initFilter);
+    } else {
+        setTimeout(initFilter, 1200);
     }
-
-    searchInput.addEventListener('input', filtrar);
-    filtrar();
-  };
-
-  // Si existe un evento de traducción, esperarlo. Si no, usar timeout
-  if (window.addEventListener && typeof window.languageLoaded !== 'undefined') {
-    window.addEventListener('languageLoaded', initFilter);
-  } else {
-    setTimeout(initFilter, 1200); // Fallback: espera 1.2 segundos
-  }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
