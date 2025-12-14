@@ -55,52 +55,48 @@
 
         <div class="right_container">
             <form class="form-container" id="buy">
+                <label for="FullName"></label>
                 <input type="text" id="FullName" placeholder="Full Name" name="full-name" required>
 
                 <label for="emailLogin"></label>
                 <input type="text" id="emailLogin" placeholder="Correo electrónico" name="email" required>
 
                 <!-- Campo: Tipo de tarjeta -->
-                <div class="tarjeta">
-                    <label for="cardType">Tipo de tarjeta</label>
-                    <select id="cardType" name="cardType" class="select-split">
-                        <option value="visa">Visa</option>
-                        <option value="mc">Mastercard</option>
-                        <option value="amex">American Express</option>
-                        <option value="maestro">Otro</option>
-                    </select>
-                </div>
+                <label for="cardType">Tipo de tarjeta</label>
+                <select id="cardType" name="cardType" class="select-split">
+                    <option value="visa">Visa</option>
+                    <option value="mc">Mastercard</option>
+                    <option value="amex">American Express</option>
+                    <option value="maestro">Otro</option>
+                </select>
 
+                <label for="card-number"></label>
                 <input type="text" id="card-number" placeholder="Número de tarjeta" name="Número de tarjeta" required>
+                <label for="owner-name"></label>
                 <input type="text" id="owner-name" placeholder="Nombre del titular de la tarjeta" name="owners-name" required>
-
-                <div class="grupo-fecha">
-                    <label for="fechaCaducidad">Fecha de caducidad</label>
-                    <div class="entrada-fecha">
-                        <input type="month" id="fechaCaducidad" name="fechaCaducidad" required>
-                        <span class="icono-calendario">🗓️</span>
+                <div class="form-align">
+                    <div class="grupo-fecha">
+                        <label for="fechaCaducidad">Fecha de caducidad</label>
+                        <div class="entrada-fecha">
+                            <input type="month" id="fechaCaducidad" name="fechaCaducidad" required>
+                            <span class="icono-calendario">🗓️</span>
+                        </div>
+                    </div>
+                    <div class="grupo-cvv">
+                        <label for="codigoCVV">Código CVV</label>
+                        <input type="password" id="codigoCVV" name="codigoCVV" placeholder="***" maxlength="4" required>
                     </div>
                 </div>
-
-                <div class="grupo-cvv">
-                    <label for="codigoCVV">Código CVV</label>
-                    <input type="password" id="codigoCVV" name="codigoCVV" placeholder="***" maxlength="4" required>
-                </div>
-
-                <div class="grupo-people">
-                    <label for="numPeople">Número de acompañantes</label>
-                    <input type="number" id="numPeople" min="0" step="1" value="0">
-                </div>
+                <label for="numPeople">Número de acompañantes</label>
+                <input type="number" id="numPeople" min="0" step="1" value="0">
 
                 <div id="peopleE"></div>
 
-                <div class="grupo-pet">
-                    <label for="pet">¿Viajas con mascota?</label>
-                    <select id="pet" name="pet">
-                        <option value="no">No</option>
-                        <option value="yes">Sí</option>
-                    </select>
-                </div>
+                <label for="pet">¿Viajas con mascota?</label>
+                <select id="pet" name="pet">
+                    <option value="no">No</option>
+                    <option value="yes">Sí</option>
+                </select>
 
                 <div id="petInfoType" style="display: none;">
                     <div class="grupo-pet">
@@ -127,16 +123,15 @@
                     <label for="allergies"> Tienes alguna alergia?</label>
                     <input type="text" id="allergies" placeholder="Indícanos su alergia, si tiene alguna.">
                 </div>
-
-
                 <div class="botones-accion">
+                    <button type="reset" class="boton-borrar" onclick="window.location.href = 'versionB.html'">Volver</button>
                     <button type="submit" class="boton-comprar-pack">Comprar</button>
-
-                    <button type="reset" class="boton-borrar">Borrar</button>
                 </div>
             </form>
         </div>
+
     </div>
+
 </section>
 <footer class="site-footer">
     <!-- Tira superior: newsletter -->
@@ -148,6 +143,7 @@
         </div>
 
         <div class="mail">
+            <label for="nl-email"></label>
             <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
         </div>
         <div class="newsletter-submit-button">
