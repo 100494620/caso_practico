@@ -2,6 +2,7 @@ const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!.,:;@$%^&*-]).{8
 const EMAIL_REGEX = /^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
 const FAVOURITES = "favourites";
 const SUBSCRIPTIONS = "newsletter_subs";
+const SELECTED_PACK_KEY = "selected_pack";
 let editPermission = false;
 
 // submit image button functionality ONLY for html where it exists
@@ -868,6 +869,29 @@ $("#pet").on("change", function () {
     }
 });
 
+function getSelectedPackFallback() {
+    return { id: "sea-01", title: "Pack Sudeste Asiático", price: 600 };
+}
+
+function getSelectedPackFromStorage() {
+    const raw = localStorage.getItem(SELECTED_PACK_KEY);
+    if (!raw) return getSelectedPackFallback();
+
+    try {
+        const pack = JSON.parse(raw);
+        const price = Number(pack.price);
+
+        return {
+            id: pack.id || "unknown",
+            title: (pack.title || "").trim() || "Pack",
+            price: Number.isFinite(price) ? price : 600
+        };
+    } catch (e) {
+        return getSelectedPackFallback();
+    }
+}
+
+
 // comprar functionality
 $("#buy").on("submit", function (e) {
     e.preventDefault();
@@ -910,16 +934,20 @@ $("#buy").on("submit", function (e) {
     };
 
 
+    // pack seleccionado desde el carrusel (guardado en localStorage)
+    const selectedPack = getSelectedPackFromStorage();
+
     // purchase object
     const newPurchase = new Purchase(
-        "Pack Sudeste Asiático", //TODO CHANGE TO THE PACK THAT IS BEING PICKED
-        600,
+        selectedPack.title,              // ombre dinámico
+        selectedPack.price,              // recio dinámico
         new Date().toLocaleDateString(),
         paymentInfo,
         companions,
         petInfo,
         $("#allergies").val()
     );
+
 
     if (!user.purchases) {
         user.purchases = [];

@@ -3,6 +3,21 @@
     if (window.__ksfCarouselInit) return;
     window.__ksfCarouselInit = true;
 
+    // clave storage del pack seleccionado
+    const SELECTED_PACK_KEY = "selected_pack";
+
+    // parser robusto de precios tipo "600€", "1.200,50 €", etc.
+    function parsePrice(text) {
+        const cleaned = (text || "")
+            .replace(/\s/g, "")        // fuera espacios
+            .replace(/[€$]/g, "")      // fuera símbolos típicos
+            .replace(/\./g, "")        // fuera separador miles
+            .replace(",", ".");        // coma decimal -> punto
+
+        const n = Number(cleaned);
+        return Number.isFinite(n) ? n : null;
+    }
+
     $(function () {
         const $container = $(".second_container").first();
         if (!$container.length) return;
@@ -70,7 +85,19 @@
             // vuelve a aplicar traducciones con el idioma actual
             applyTranslations();
 
+            // ✅ MODIFICADO: al comprar, guardamos el pack y su precio visible (sin hardcodear)
             $buy.off("click").on("click", () => {
+                const titleText = ($title.text() || "").trim();
+                const priceText = ($price.text() || "").trim();
+                const priceNum  = parsePrice(priceText);
+
+                localStorage.setItem(SELECTED_PACK_KEY, JSON.stringify({
+                    id: p.id,
+                    title: titleText || p.titleKey,     // guardamos el título ya traducido si existe
+                    price: priceNum,                    // número (o null si el formato no es parseable)
+                    priceText: priceText                // opcional, por si quieres depurar
+                }));
+
                 window.location.href = `versionC.html?pack=${encodeURIComponent(p.id)}`;
             });
         }
