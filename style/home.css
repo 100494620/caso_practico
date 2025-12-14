@@ -1163,20 +1163,3 @@ input {
 .footer-social img:hover {
     transform: scale(1.12);
 }
-
-/* --- Escala general para pantallas pequeñas --- */
-@media (max-width: 600px) {
-    .site-footer {
-        font-size: 1.7vw;
-        border-radius: 1vw;
-    }
-    .footer-newsletter,
-    .footer-bar {
-        padding: 2vw;
-        gap: 2vw;
-    }
-    .footer-social img {
-        width: 3vw;
-        height: 3vw;
-    }
-}

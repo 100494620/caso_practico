@@ -1,6 +1,7 @@
 const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!.,:;@$%^&*-]).{8,}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9.]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
 const FAVOURITES = "favourites";
+const SUBSCRIPTIONS = "newsletter_subs";
 let editPermission = false;
 
 // submit image button functionality ONLY for html where it exists
@@ -698,3 +699,64 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    subsribeToNewsletters();
+
+});
+
+function subsribeToNewsletters() {
+    //public key from emailjs
+    emailjs.init("nUFwX21uT667l74vK");
+
+    // get subscription fields
+    const nlInput = document.getElementById("nl-email");
+    const nlButton = document.querySelector(".nl-btn");
+
+    if (!nlButton || !nlInput) {
+        return;
+    }
+
+    nlButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        const email = nlInput.value.trim();
+
+        if (!email) {
+            alert("Escribe un email!");
+            return;
+        }
+
+        if (!EMAIL_REGEX.test(email)) {
+            alert("Email is not following the correct structure!");
+            return;
+        }
+
+        let subscribers = JSON.parse(localStorage.getItem(SUBSCRIPTIONS)) || [];
+
+        if (subscribers.includes(email)) {
+            alert("You are already subscribed!");
+            nlInput.value = "";
+            return;
+        }
+
+        // emailjs service and template IDs
+        const serviceID = "service_email_casoPract";
+        const templateID = "template_qh1n9ep";
+
+        const params = {
+            user_email: email
+        };
+
+        // emailjs pipeline
+        emailjs.send(serviceID, templateID, params)
+            .then(() => {
+                subscribers.push(email);
+                localStorage.setItem(SUBSCRIPTIONS, JSON.stringify(subscribers));
+
+                alert("Thank you for subscription!");
+                nlInput.value = "";
+            })
+            .catch((err) => {
+                alert("Error in subscribing!");
+            });
+    });
+}

@@ -130,7 +130,7 @@ input {
     font-family: fontMainPage, serif;
     font-size: 7vmin;
     color: #605e5e;
-    margin: 25px 4px;
+    margin: 25px;
     padding: 10px;
     border-radius: 10px;
     display: flex;
@@ -152,7 +152,7 @@ input {
     flex-grow: 0;
     margin-left: 2.2vw;
     padding-left: 1vw;
-    margin-top: 5px;
+    margin-top: 1.4vw;
     border-radius: 27px;
 }
 
@@ -209,7 +209,7 @@ input {
     grid-template-columns: 1.5fr 1fr; 
     gap: 10px;
     max-width: 1200px;
-    margin: 50px auto;
+    margin-top: 2vw;
     padding: 0 40px;
     align-items: start;
     background: transparent !important; /* Fondo transparente */
@@ -359,6 +359,13 @@ input {
 
 
 
+/* --- Responsive --- */
+@media (max-width: 900px){
+    .footer-bar{ grid-template-columns: 1fr; text-align:center; }
+    .footer-links{ justify-content:center; flex-wrap:wrap; }
+    .footer-social{ justify-content:center; }
+    .nl-form{ width:100%; justify-content:flex-start; }
+}
 
 /* --- Móvil (0px a 600px) --- */
 @media (max-width: 600px) {
@@ -810,7 +817,7 @@ input {
 
 .main-trip-img {
     width: 100%;
-    height: 400px;
+    height: 200px;
     object-fit: cover;
     display: block;
 }
@@ -923,8 +930,7 @@ input, select {
 /* Responsive */
 @media (max-width: 800px) {
     .wrapper-main {
-        grid-template-columns: 1fr; /* Una columna */
-        padding: 0 20px;
+        grid-template-columns: 1fr;
     }
 }
 @media (max-width: 768px) {
@@ -934,7 +940,7 @@ input, select {
 }
 @media (max-width: 600px) {
     .trip-description-box {
-        padding: 15px; /* Menos relleno en móvil para ganar espacio */
+        padding: 15px;
     }
     
     .trip-description-box p {

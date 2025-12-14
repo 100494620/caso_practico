@@ -559,9 +559,9 @@ input {
 
 
 .form-container .button-enter, .button-register, .button-cerrar{
-    background-color: #f6d586;
+    background: #9FB8A2;
     border-radius: 7px;
-    border-color: #a14432;
+    border-color: #4f654d;
     cursor: pointer;
     margin: 10px;
     width: auto;
@@ -585,7 +585,7 @@ input {
     width: 100%;
 }
 
-.cartas-ver-mas-button:hover, .button-comprar:hover, .form-container .button-enter:hover{
+.button-register:hover, .button-cerrar:hover, .cartas-ver-mas-button:hover, .button-comprar:hover, .form-container .button-enter:hover{
     background-color: #e6a31f;
     font-style: italic;
 }
@@ -604,10 +604,23 @@ input {
 /*TODO REDO BREAKPOINTS*/
 /*breakpoint for devices less then 600px*/
 @media (max-width: 628px) {
+
+    .side-text-options {
+        margin-left: 30vw;
+        font-family: fontText,serif;
+        font-size: 2vw;
+
+    }
     .form-container .button-enter, .button-register {
         font-size: 1.7vw;
         padding: 1vw 1vw 1vw 1vw;
         margin-top: 0.5vw;
+    }
+
+    .button-register {
+        margin-left: 2vw;
+        margin-right: 30vw;
+        margin-bottom: 0;
     }
 
     .text-block dd {
@@ -888,6 +901,12 @@ input {
     #consent {
         width: 1.4vw;
     }
+
+    .button-cerrar {
+        margin: 0;
+        width:90%;
+        padding: 1vw;
+    }
 }
 
 @media (min-width: 766px) and (max-width: 998px) {
@@ -979,6 +998,12 @@ input {
         right: 2vw;
     }
 
+    .button-cerrar {
+        margin: 0;
+        width: 90%;
+        padding: 1vw;
+    }
+
 }
 /*breakpoint for bigger screens, but not extremely big*/
 @media (min-width: 998px) and (max-width: 1087px) {
@@ -1017,6 +1042,12 @@ input {
 
     .menu-lang {
         margin-top: 2.4vw;
+    }
+
+    .button-cerrar {
+        margin: 0;
+        width:90%;
+        padding: 1vw;
     }
 
 }
