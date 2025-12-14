@@ -219,6 +219,7 @@
     grid-column: 1;
     grid-row: 3;
     height: auto;
+    margin-top: 2vw;
 }
 /*first container text*/
 .container-text {
@@ -491,6 +492,7 @@ input {
 .venta-container-header {
     margin-top: 0;
 }
+
 
 .venta-container-text {
     font-size: 1.5vw;
