@@ -281,6 +281,10 @@ function fillProfileForm() {
     document.getElementById("emailE").value = user.email;
     document.getElementById("birthdayE").value = user.birthday;
     document.getElementById("loginE").value = user.login_name;
+    const img = document.getElementById("profileAvatar");
+    if (img && user.image) {
+        img.src = user.image;
+    }
 }
 function showPasswordFields() {
     const passwordFields = `
@@ -498,16 +502,17 @@ function onQuitEditForm() {
             <div class="forma-left">
                 <label class="forma-text" for="nameE">Nombre:</label>
                 <input type="text" id="nameE" name="name" placeholder="Nombre" disabled>
+                <label class="forma-text" for="surnameE">Apellidos:</label>
+                <input type="text" id="surnameE" name="surname" placeholder="Apellidos" disabled>
+                <label class="forma-text" for="loginE">Username:</label>
+                <input type="text" id="loginE" name="login" placeholder="login" disabled>
                 <label class="forma-text" for="emailE">Correo electronico:</label>
                 <input type="text" id="emailE" name="email" placeholder="Correo electronico" disabled>
                 <label class="forma-text" for="birthdayE">Fecha de nacimiento</label>
                 <input type="date" id="birthdayE" disabled>
             </div>
             <div class="forma-right">
-                <label class="forma-text" for="surnameE">Apellidos:</label>
-                <input type="text" id="surnameE" name="surname" placeholder="Apellidos" disabled>
-                <label class="forma-text" for="loginE">Username:</label>
-                <input type="text" id="loginE" name="login" placeholder="login" disabled>
+                <img id="profileAvatar" src="images/login-icon.png" alt="Avatar del usuario" />
                 <button type="button" class="submit-button-forma" id="buttonFav" onclick="misFavoritos()">Mis Favoritos</button>
             </div>
         </form>

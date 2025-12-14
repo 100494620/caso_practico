@@ -40,16 +40,17 @@
             <div class="forma-left">
                 <label class="forma-text" for="nameE" data-i18n="editProfile.name">Nombre:</label>
                 <input type="text" id="nameE" name="name" placeholder="Nombre" disabled>
+                <label class="forma-text" for="surnameE" data-i18n="editProfile.surname">Apellidos:</label>
+                <input type="text" id="surnameE" name="surname" placeholder="Apellidos" disabled>
+                <label class="forma-text" for="loginE" data-i18n="editProfile.login">Username:</label>
+                <input type="text" id="loginE" name="login" placeholder="login" disabled>
                 <label class="forma-text" for="emailE" data-i18n="editProfile.email">Correo electronico:</label>
                 <input type="text" id="emailE" name="email" placeholder="Correo electronico" disabled>
                 <label class="forma-text" for="birthdayE" data-i18n="editProfile.birthday">Fecha de nacimiento</label>
                 <input type="date" id="birthdayE" disabled>
             </div>
             <div class="forma-right">
-                <label class="forma-text" for="surnameE" data-i18n="editProfile.surname">Apellidos:</label>
-                <input type="text" id="surnameE" name="surname" placeholder="Apellidos" disabled>
-                <label class="forma-text" for="loginE" data-i18n="editProfile.login">Username:</label>
-                <input type="text" id="loginE" name="login" placeholder="login" disabled>
+                <img id="profileAvatar" src="images/login-icon.png" alt="Avatar del usuario" />
                 <button type="button" class="submit-button-forma" id="buttonFav" onclick="misFavoritos()" data-i18n="editProfile.favorites">Mis Favoritos</button>
             </div>
         </form>
