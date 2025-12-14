@@ -666,30 +666,35 @@ function removeCard(id) {
 
 // === Filtro por destino para cartas de experiencias (home y versionB) ===
 document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.getElementById('cardSearch');
-  if (!searchInput) return;
+  // Espera el evento de traducción o usa timeout como fallback
+  const initFilter = () => {
+    const searchInput = document.getElementById('cardSearch');
+    if (!searchInput) return;
 
-  const cards = Array.from(document.querySelectorAll('.cartas-grind .carta'));
+    const cards = Array.from(document.querySelectorAll('.cartas-grind .carta'));
 
-  function filtrar() {
-    const term = searchInput.value.trim().toLowerCase();
+    function filtrar() {
+      const term = searchInput.value.trim().toLowerCase();
 
-    cards.forEach(card => {
-      const destino = (card.getAttribute('data-destino') || '').toLowerCase();
-      const headerEl = card.querySelector('.carta-header');
-      const titulo = headerEl ? headerEl.textContent.toLowerCase() : '';
+      cards.forEach(card => {
+        const headerEl = card.querySelector('.carta-header');
+        const titulo = headerEl ? headerEl.textContent.toLowerCase() : '';
+        const destino = (card.getAttribute('data-destino') || '').toLowerCase();
+        
+        const match = term === '' || titulo.includes(term) || destino.includes(term);
+        card.style.display = match ? '' : 'none';
+      });
+    }
 
-      const match =
-        term === '' ||
-        destino.includes(term) ||
-        titulo.includes(term);
+    searchInput.addEventListener('input', filtrar);
+    filtrar();
+  };
 
-      // si usas .extra { display:none } en CSS, aquí lo sobreescribimos
-      card.style.display = match ? '' : 'none';
-    });
+  // Si existe un evento de traducción, esperarlo. Si no, usar timeout
+  if (window.addEventListener && typeof window.languageLoaded !== 'undefined') {
+    window.addEventListener('languageLoaded', initFilter);
+  } else {
+    setTimeout(initFilter, 1200); // Fallback: espera 1.2 segundos
   }
-
-  searchInput.addEventListener('input', filtrar);
-  // llamada inicial para respetar el estado por defecto (todas visibles)
-  filtrar();
 });
+
