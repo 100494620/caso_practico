@@ -33,7 +33,7 @@ $(function () {
 
         $list.empty();
         last3.forEach(item => {
-            const href = `consejo.html?id=${encodeURIComponent(item.id)}`; // no es necesario que exista
+            const href = `ultimos_consejos.html#${encodeURIComponent(item.id)}`;
             const $a = $("<a>").attr("href", href).text(item.title);
             $list.append($a).append("<br>");
         });
@@ -54,13 +54,16 @@ $(function () {
         }
 
         const advices = loadAdvices();
+        const me = (typeof getMyInfo === "function") ? getMyInfo() : null;
+        const authorName = me?.login_name ? me.login_name : "Anónimo";
 
         // Añadir al comienzo (más reciente primero)
         const advice = {
             id: newId(),
             title: escapeHtml(title),
-            desc: desc,              // si más adelante pintas la descripción, escápala o ponla como texto
-            createdAt: Date.now()
+            desc: desc,
+            createdAt: Date.now(),
+            authorName: authorName
         };
         advices.unshift(advice);
 

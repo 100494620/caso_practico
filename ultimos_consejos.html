@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Para mantener la misma apariencia que versionB -->
+    <link href="style/versionB.css" rel="stylesheet" />
+
+    <title>Últimos consejos</title>
+</head>
+<body>
+
+<section id="Inicio">
+    <nav id="Navegacion">
+        <div class="website-name">Kilómetros Sin Fin</div>
+
+        <a href="versionB.html">
+            <img class="aloj" src="images/vuel.png" alt="volver">
+            <span>Volver</span>
+        </a>
+
+        <!-- si quieres mantener el selector de idioma aquí también, dímelo y lo copiamos -->
+    </nav>
+
+    <div class="wrapper-main">
+        <!-- Reutilizamos tu contenedor derecho (estilo panel) -->
+        <div class="third_container" style="grid-column: 1 / -1; grid-row: auto; height: auto;">
+            <section class="text-block consejos-container" aria-labelledby="titulo-consejos">
+                <div class="consejos">
+                    <h5 id="titulo-consejos">Todos los consejos</h5>
+
+                    <!-- Aquí se renderiza la lista completa -->
+                    <div id="allAdvices" class="ultimos-consejos-container"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script/local_storage_ops.js"></script>
+<script src="script/ultimos_consejos.js"></script>
+
+</body>
+</html>
