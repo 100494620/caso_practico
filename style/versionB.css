@@ -1457,13 +1457,7 @@ body {
    CONSEJOS - SCROLLS
    =========================== */
 
-/* Lista pequeña (en versionB: últimos 3 links) */
-.ultimos-consejos-container {
-    max-height: 18vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 0.6vw;
-}
+
 
 /* Lista grande (en ultimos_consejos.html: todos los consejos completos) */
 .all-advices-container {
@@ -1509,4 +1503,25 @@ body {
     .all-advices-container { max-height: 60vh; }
     .advice-author { font-size: 2.6vw; }
     .advice-desc { font-size: 3vw; }
+}
+
+/* Color de los links de "últimos consejos" (versionB) */
+#adviceList a,
+.ultimos-consejos-container a {
+    color: #111 !important;
+}
+
+/* Para que no cambie a morado/azul por defecto */
+#adviceList a:visited,
+.ultimos-consejos-container a:visited {
+    color: #111 !important;
+}
+
+#adviceList a:hover,
+.ultimos-consejos-container a:hover {
+    color: #0b2942 !important;
+    text-decoration: underline;
+}
+.ultimos-consejos-container {
+    color: #111;
 }
