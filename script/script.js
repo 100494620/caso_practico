@@ -800,7 +800,29 @@ function miHistorial() {
     `;
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    fillBuyerInfo();
+});
 
+// fill in the info of the current account that is buying tickets with an email being unchangable
+function fillBuyerInfo() {
+
+    const email = localStorage.getItem(EMAIL_LS_DATA);
+    const registeredUsers = getRegisteredUsers();
+    const user = registeredUsers.get(email);
+
+    if (user) {
+        const nameInput = document.getElementById("FullName");
+        const emailInput = document.getElementById("emailLogin");
+
+        if (nameInput && emailInput) {
+            nameInput.value = `${user.user_name} ${user.user_surname}`;
+            emailInput.value = user.email;
+            emailInput.readOnly = true;
+        }
+    }
+}
+// choose number of companions
 $("#numPeople").on("input", function () {
     // check the input value and take it for a loop
     let num = parseInt(this.value, 10);
@@ -810,10 +832,11 @@ $("#numPeople").on("input", function () {
     }
 });
 
+// add companion
 function addPersonWithParams(person, i) {
     const personHtml = `
         <div id="person-${i + 1}" class="person">
-            <p style="margin-left: 50%;">Compañero ${i + 1}</p>
+            <div class="forma-header">Compañero ${i + 1}</div>
             <label for="person-${i + 1}-name">Nombre</label>
             <input type="text" placeholder="Enter person's name" id="person-${i + 1}-name" name="person-${i + 1}-name" minlength="3" value="${person.nameOfPerson}">
             <label for="person-${i + 1}-surname">Apellidos</label>
@@ -830,4 +853,90 @@ function addPersonWithParams(person, i) {
 $(document).on("click", ".button-remove-person", function() {
     const index = $(this).data("index");
     $(`#person-${index+1}`).remove();
+});
+
+// choose a pet
+$("#pet").on("change", function () {
+    if (this.value === "yes") {
+        $("#petInfoType").slideDown();
+        $("#petType, #petSize").prop("required", true);
+    } else {
+        $("#petInfoType").slideUp();
+        $("#petType, #petSize")
+            .prop("required", false)
+            .val("");
+    }
+});
+
+// comprar functionality
+$("#buy").on("submit", function (e) {
+    e.preventDefault();
+    const email = localStorage.getItem(EMAIL_LS_DATA);
+    if (!email) {
+        alert("Log in to buy!");
+        return;
+    }
+    let registeredUsers = getRegisteredUsers();
+    let user = registeredUsers.get(email);
+
+    // get people who accompany you
+    let companions = [];
+    $(".person").each(function() {
+        let name = $(this).find("input[name$='-name']").val();
+        let surname = $(this).find("input[name$='-surname']").val();
+        let email = $(this).find("input[name$='-email']").val();
+
+        companions.push(new Person(name, surname, email));
+    });
+
+    // get pet info
+    const userHasPet = $("#pet").val() === "yes";
+    let petInfo = {
+        hasPet: userHasPet,
+        type: null,
+        size: null
+    };
+    if (userHasPet) {
+        petInfo.type = $("#petType").val();
+        petInfo.size = $("#petSize").val();
+    }
+
+    // get card info
+    let paymentInfo = {
+        cardType: $("#cardType").val(),
+        cardNumber: $("#card-number").val(),
+        owner: $("#owner-name").val(),
+        expiry: $("#fechaCaducidad").val()
+    };
+
+
+    // purchase object
+    const newPurchase = new Purchase(
+        "Pack Sudeste Asiático", //TODO CHANGE TO THE PACK THAT IS BEING PICKED
+        600,
+        new Date().toLocaleDateString(),
+        paymentInfo,
+        companions,
+        petInfo,
+        $("#allergies").val()
+    );
+
+    if (!user.purchases) {
+        user.purchases = [];
+    }
+
+    user.purchases.push(newPurchase);
+
+    user.people = companions;
+    user.numOfPeople = companions.length;
+
+    registeredUsers.set(email, user);
+    saveRegisteredUsersToStorage(registeredUsers);
+
+    alert("Thank you for your purchase");
+
+    this.reset();
+    $("#peopleE").empty();
+    $("#petInfoType").hide();
+    $("#numPeople").val(0);
 });

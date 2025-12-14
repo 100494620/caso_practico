@@ -61,7 +61,7 @@ input {
 }
 
 /*submit button functionality (Aplica a los nuevos botones .boton-comprar)*/
-.boton-comprar {
+.boton-comprar, .boton-comprar-pack {
     background-color: rgba(39, 88, 124, 0.79);
     color: white;
     padding: 1vw 2vw;
@@ -74,7 +74,7 @@ input {
 }
 
 /*change of the color while clicking on submit button*/
-.boton-comprar:hover {
+.boton-comprar:hover, .boton-comprar-pack:hover {
     background-color: #e19c38;
     border: 0.2vmin solid #183d61;
 }
@@ -539,7 +539,7 @@ input {
     .form-container h2 {
         font-size: 2.5vw;
     }
-    .boton-comprar, .boton-borrar {
+    .boton-comprar, .boton-comprar-pack, .boton-borrar {
         font-size: 1.8vw;
     }
     .menu-lang {
@@ -780,8 +780,27 @@ input {
     }
 }
 
-
+.grupo-people {
+    padding-bottom: 2vw;
+}
 .aloj {
     width: 5vw;
     padding-right: 0.5vw;
+}
+.button-remove-person {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(159, 83, 83);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: fontHeader, serif;
+    font-size: 1.4vw;
+    margin-bottom: 2vw;
+}
+.forma-header {
+    text-align: center;
+    font-size: 1.7vw;
+    font-family: fontHeader, serif;
+    padding-bottom: 1vw;
 }

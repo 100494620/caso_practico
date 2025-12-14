@@ -86,13 +86,51 @@
                     <label for="codigoCVV">Código CVV</label>
                     <input type="password" id="codigoCVV" name="codigoCVV" placeholder="***" maxlength="4" required>
                 </div>
+
                 <div class="grupo-people">
                     <label for="numPeople">Número de acompañantes</label>
                     <input type="number" id="numPeople" min="0" step="1" value="0">
                 </div>
+
                 <div id="peopleE"></div>
+
+                <div class="grupo-pet">
+                    <label for="pet">¿Viajas con mascota?</label>
+                    <select id="pet" name="pet">
+                        <option value="no">No</option>
+                        <option value="yes">Sí</option>
+                    </select>
+                </div>
+
+                <div id="petInfoType" style="display: none;">
+                    <div class="grupo-pet">
+                        <label for="petType">Tipo de mascota</label>
+                        <select id="petType" name="petType">
+                            <option value="">Selecciona</option>
+                            <option value="dog">Perro</option>
+                            <option value="cat">Gato</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-pet">
+                        <label for="petSize">Peso de la mascota</label>
+                        <select id="petSize" name="petSize">
+                            <option value="">Selecciona</option>
+                            <option value="small">Pequeña (0–10 kg)</option>
+                            <option value="medium">Mediana (10–25 kg)</option>
+                            <option value="large">Grande (+25 kg)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grupo-allergies">
+                    <label for="allergies"> Tienes alguna alergia?</label>
+                    <input type="text" id="allergies" placeholder="Indícanos su alergia, si tiene alguna.">
+                </div>
+
+
                 <div class="botones-accion">
-                    <button type="submit" class="boton-comprar">Comprar</button>
+                    <button type="submit" class="boton-comprar-pack">Comprar</button>
 
                     <button type="reset" class="boton-borrar">Borrar</button>
                 </div>
