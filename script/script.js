@@ -798,5 +798,36 @@ function miHistorial() {
             <button class="submit-button-forma" onclick="onQuitEditForm()">Volver</button>
         </div>
     `;
-
 }
+
+
+$("#numPeople").on("input", function () {
+    // check the input value and take it for a loop
+    let num = parseInt(this.value, 10);
+    $("#peopleE").empty();
+    for (let i = 0; i < num; i++) {
+        addPersonWithParams(new Person('', '', ''), i);
+    }
+});
+
+function addPersonWithParams(person, i) {
+    const personHtml = `
+        <div id="person-${i + 1}" class="person">
+            <p style="margin-left: 50%;">Compañero ${i + 1}</p>
+            <label for="person-${i + 1}-name">Nombre</label>
+            <input type="text" placeholder="Enter person's name" id="person-${i + 1}-name" name="person-${i + 1}-name" minlength="3" value="${person.nameOfPerson}">
+            <label for="person-${i + 1}-surname">Apellidos</label>
+            <input type="text" placeholder="Enter person's surname" id="person-${i + 1}-surname" name="person-${i + 1}-surname" minlength="3" value="${person.surnameOfPerson}">
+            <label for="person-${i + 1}-email">Correo electronico</label>
+            <input type="text" placeholder="Enter person's email" id="person-${i + 1}-email" name="person-${i + 1}-email" minlength="3" value="${person.emailOfPerson}">   
+            <div class="people-container">
+               <button class="button-remove-person" type="button" data-index="${i}">Eliminar Compañero</button>
+            </div>
+        </div>
+    `;
+    $("#peopleE").append(personHtml);
+}
+$(document).on("click", ".button-remove-person", function() {
+    const index = $(this).data("index");
+    $(`#person-${index+1}`).remove();
+});

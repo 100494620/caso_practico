@@ -14,21 +14,14 @@
     src: url("../fonts/MainChirstmas.otf");
 }
 
-html {
-    height: 100%;
-    background-color: #f3f3f3;
-}
-
 body {
-    font-family: fontText, serif;
+    background-color: #FFFFFF;
+    font-family: fontText,serif;
     font-size: 1.3vw;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #f3f3f3;
 }
+
 
 /*margins for all the built-in headers*/
 h1, h2, h3, h4, h5, h6 {
@@ -50,17 +43,7 @@ input {
     padding-bottom: 3vw;
     position: relative; /* Necesario para que el footer fijo no lo pise */
 }
-.form-container {
-    /* Color exacto del footer */
-    background-color: #c7cdc5; 
-    
-    /* Añadimos relleno para que parezca una tarjeta */
-    padding: 30px !important; 
-    border-radius: 12px;
-    
-    /* Una sombra suave para que destaque sobre el blanco */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+
 
 /*form input functionality (Reglas generales para inputs/selects del nuevo formulario)*/
 .form-container input[type="text"],
@@ -79,7 +62,7 @@ input {
 
 /*submit button functionality (Aplica a los nuevos botones .boton-comprar)*/
 .boton-comprar {
-    background-color: #9b9f99;
+    background-color: rgba(39, 88, 124, 0.79);
     color: white;
     padding: 1vw 2vw;
     border: none;
@@ -96,23 +79,6 @@ input {
     border: 0.2vmin solid #183d61;
 }
 
-.btn-back-home {
-    background-color: #9b9f99;
-    color: white;
-    border: none;
-    padding: 1vw 2vw;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'fontHeader', serif;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-
-.btn-back-home:hover{
-    background-color: #e19c38;
-    border: 0.2vmin solid #183d61;
-}
-
 @keyframes AnimacionLetras {
     from{color: #c1b089
     }
@@ -120,6 +86,7 @@ input {
 }
 
 /*navigation bar should change depending on the device*/
+/*navegation bar container*/
 #Navegacion{
     margin: 0;
     width: 100%;
@@ -129,7 +96,7 @@ input {
     align-items: stretch;
     justify-items: center;
 }
-
+/*navegation bar text and website name (no hover for it)*/
 .website-name, #Navegacion a{
     text-align: center;
     flex-grow: 1;
@@ -147,9 +114,6 @@ input {
     wrap-option: no-wrap;
 }
 
-.includes-text {
-    font-family: 'fontHeader', serif;
-}
 .website-name {
     color: #000000;
     background: #9FB8A2;
@@ -161,7 +125,6 @@ input {
     margin-top: 1.4vw;
     border-radius: 27px;
 }
-
 
 #Navegacion a:hover{
     animation-name: AnimacionLetras;
@@ -192,12 +155,11 @@ input {
     align-items: center;
     margin: 20px 10px 0 0;
     font-family: fontHeader, serif;
-    font-size: 1.7vw;
+    font-size: 1.5vw;
     color: #302f2f;
-    background: #c9dac7;
-    border-radius: 7px;
-    width: 4vw;
-    height: 2vw;
+    background: #f1f1f1;
+    border-radius: 0.25rem 1rem 0.25rem 1rem;
+    width: 3vw;
 }
 
 .top-right {
@@ -209,18 +171,16 @@ input {
 /* =================================
    NUEVO LAYOUT DE PÁGINA (Dos Columnas)
    ================================= */
-
 .wrapper-main {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr; 
-    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
     max-width: 1200px;
-    margin-top: 2vw;
-    padding: 0 40px;
-    align-items: start;
-    background: transparent !important; /* Fondo transparente */
-    box-shadow: none !important;        /* Quitar la sombra que envuelve todo */
-    border: none !important;
+    margin: 3vw auto;
+    padding: 2vw;
+    background-color: rgba(176, 196, 222, 0.5);
+    border-radius: 0.8vw;
+    box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.2);
 }
 
 .left_container, .right_container {
@@ -239,6 +199,55 @@ input {
 .right_container {
     flex: 2;
     min-width: 60%;
+}
+
+
+/* =================================
+   CONTENIDO LATERAL IZQUIERDO
+   ================================= */
+.top-left {
+    border: 0.1vw solid #ccc;
+    padding: 2.2vw;
+    margin-bottom: 1.5vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2vw 0.5vw;
+    background-color: white;
+}
+
+.venta-container-left {
+    grid-column: 1 / 2;
+    font-weight: bold;
+}
+
+.venta-container-right {
+    grid-column: 2 / 3;
+    text-align: right;
+    font-weight: bold;
+    color: #e67e22;
+    width: 50%;
+}
+
+.venta-container-middle {
+    grid-column: 1 / 3;
+    color: #555;
+}
+
+.bottom-left {
+    border: 0.1vw solid #ccc;
+    padding: 1.2vw;
+    text-align: justify;
+    background-color: white;
+
+}
+
+.titulo-text {
+    font-weight: bold;
+    margin-bottom: 0.8vw;
+    font-size: 1.2vw;
+    border-bottom: 0.1vw solid #eee;
+    padding-bottom: 0.5vw;
+    font-family: fontHeader, serif;
 }
 
 
@@ -283,10 +292,21 @@ input {
     margin-bottom: 0.5vw;
 }
 
+.entrada-fecha {
+    display: flex;
+    align-items: center;
+}
+
 .entrada-fecha input {
     margin: 0;
     margin-right: 0.5vw;
     width: 100%;
+}
+
+.icono-calendario {
+    font-size: 1.8vw;
+    cursor: pointer;
+    margin-bottom: 0.5vw;
 }
 
 .grupo-cvv input {
@@ -299,7 +319,18 @@ input {
     margin-top: 2vw;
 }
 
-
+.boton-borrar {
+    padding: 1vw 2vw;
+    margin: 0.5vw 1vw;
+    border: none;
+    border-radius: 0.8vw;
+    cursor: pointer;
+    font-family: fontHeader, serif;
+    font-size: 1.4vw;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #ccc;
+    color: #333;
+}
 
 .boton-borrar:hover {
     background-color: #999;
@@ -316,10 +347,7 @@ input {
     font-size:1.1rem;
     color:#fff;
 }
-.aloj {
-    width: 5vw;
-    padding-right: 0.5vw;
-}
+
 .nl-form{
     display:flex;
     align-items:center;
@@ -365,13 +393,6 @@ input {
 
 
 
-/* --- Responsive --- */
-@media (max-width: 900px){
-    .footer-bar{ grid-template-columns: 1fr; text-align:center; }
-    .footer-links{ justify-content:center; flex-wrap:wrap; }
-    .footer-social{ justify-content:center; }
-    .nl-form{ width:100%; justify-content:flex-start; }
-}
 
 /* --- Móvil (0px a 600px) --- */
 @media (max-width: 600px) {
@@ -411,6 +432,13 @@ input {
         font-size: 3.5vw;
     }
 
+
+
+
+    .website-name, #Navegacion a{
+        font-size: 4.7vmin;
+        padding: 4px;
+    }
     .top-right {
         padding-top: 5vw;
     }
@@ -538,7 +566,7 @@ input {
 
 
 .site-footer {
-    background:#c7cdc5;
+    background:#2a578c;
     color:#f0f0f0;
     width:100%;
     margin:0;
@@ -618,8 +646,8 @@ input {
 
 /* ===== FOOTER (responsive proporcional al estilo de la web) ===== */
 .site-footer {
-    background: #c7cdc5;
-    color: #000000;
+    background: #2a578c;
+    color: #f0f0f0;
     width: 96%;
     margin: 2vw auto 0;
     border-radius: 0.8vw;
@@ -630,7 +658,7 @@ input {
 
 /* Enlaces */
 .site-footer a {
-    color: #000000;
+    color: #f0f0f0;
     text-decoration: none;
     font-size: 1vw;
 }
@@ -654,7 +682,7 @@ input {
 .footer-newsletter-title label {
     font-family: fontHeader, serif;
     font-size: 1.3vw;
-    color: #000000;
+    color: #fff;
     white-space: nowrap;
 }
 
@@ -696,13 +724,13 @@ input {
     gap: 1vw;
     padding: 1vw 2vw;
     border-top: 0.1vw solid rgba(255, 255, 255, 0.25);
-    background: #9b9f99;
+    background: #21476f;
 }
 
 .copy {
     margin: 0;
     font-size: 0.9vw;
-    color: #000000;
+    color: #e6eef6;
     white-space: nowrap;
 }
 
@@ -752,205 +780,8 @@ input {
     }
 }
 
-/* --- ESTILOS EXTRA PARA FORMULARIO AVANZADO --- */
 
-/* Clase para ocultar elementos (Mascota) */
-.hidden {
-    display: none;
-}
-
-/* Tarjeta visual para cada acompañante */
-.companion-card {
-    background-color: rgba(255, 255, 255, 0.6); /* Fondo semitransparente acorde a tu diseño */
-    border-left: 0.4vw solid #e6a31f; /* Borde naranja a la izquierda */
-    padding: 1vw;
-    margin-top: 1vw;
-    border-radius: 0.4vw;
-    animation: fadeIn 0.4s ease;
-}
-
-.companion-title {
-    font-family: fontHeader, serif;
-    font-size: 1.1vw;
-    color: #333;
-    margin-bottom: 0.5vw;
-    display: block;
-}
-
-/* Animación suave al aparecer */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-0.5vw); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Ajustes responsive para los selects nuevos */
-@media (max-width: 600px) {
-    #petType, #petSize, #cardType {
-        font-size: 2vw !important;
-        height: auto;
-    }
-    .companion-title {
-        font-size: 2.5vw;
-    }
-}
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
-
-
-/* --- ESTRUCTURA PRINCIPAL (Usando tus nombres) --- */
-
-
-/* IZQUIERDA: INFORMACIÓN */
-.left_container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* DERECHA: FORMULARIO */
-.right_container {
-    /* El contenedor derecho ahora solo envuelve el formulario */
-}
-
-/* --- ESTILOS ESPECÍFICOS DEL DISEÑO (INTERNOS) --- */
-
-/* Imagen Principal */
-.trip-image-card {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.main-trip-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.trip-badge {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 5px 15px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    font-family: 'fontHeader', serif;;
-}
-
-.price-badge {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* Caja Verde */
-.trip-description-box {
-    background-color: #9CAF9C; /* Verde Salvia */
-    padding: 25px;
-    border-radius: 12px;
-    color: #1a1a1a;
-    font-weight: 300;
-    line-height: 1.5;
-    font-size: 0.9rem;
-}
-
-.trip-description-box h3 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-family:'fontHeader', serif ;
-}
-
-.mini-gallery {
-    display: flex;
-    gap: 10px;
-    margin: 15px 0;
-}
-
-.mini-gallery img {
-    width: 50%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-
-/* --- ESTILOS DEL FORMULARIO (DENTRO DE RIGHT CONTAINER) --- */
-
-
-.form-title {
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-
-/* Inputs Blancos "Pastilla" */
-input, select {
-    width: 100%;
-    background: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    font-family: fontText, serif;
-    color: #555;
-    outline: none;
-}
-
-.form-row {
-    display: flex;
-    gap: 15px;
-}
-
-/* Fechas */
-.dates-row {
-    align-items: flex-start;
-}
-
-
-.date-inputs input {
-    margin: 0;
-    text-align: center;
-    background: transparent;
-    padding: 12px 5px;
-}
-.slash { color: #aaa; }
-
-/* Botones */
-.form-buttons {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* Responsive */
-@media (max-width: 800px) {
-    .wrapper-main {
-        grid-template-columns: 1fr;
-    }
-}
-@media (max-width: 768px) {
-    .main-trip-img {
-        height: 250px; 
-    }
-}
-@media (max-width: 600px) {
-    .trip-description-box {
-        padding: 15px;
-    }
-    
-    .trip-description-box p {
-        font-size: 1.1rem; /* Un pelín más grande en móvil para leer mejor */
-        text-align: justify; /* Opcional: justifica el texto */
-    }
+.aloj {
+    width: 5vw;
+    padding-right: 0.5vw;
 }
