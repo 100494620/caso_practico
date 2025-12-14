@@ -609,8 +609,11 @@ input {
     font-size: 1.4vw;
 }
 
-#buttonFav {
+#buttonFav, #buttonHistorial {
     width: 80%;
+}
+#buttonHistorial {
+    margin-top: 1vw;
 }
 @media (max-width: 628px) {
 
@@ -774,6 +777,12 @@ input {
         margin-bottom: 2vw;
     }
 
+    #buttonHistorial {
+        order: 9;
+        width: 100%;
+        margin-bottom: 2vw;
+    }
+
     label[for="passwordEOld"],
     #passwordEOld,
     label[for="passwordENew"],
@@ -814,7 +823,7 @@ input {
     }
 
     .website-name, #Navegacion a{
-        font-size: 4.3vmin;
+        font-size: 4.1vmin;
     }
 
     .website-name {
@@ -886,6 +895,11 @@ input {
 
     #buttonFav {
         order: 8;
+        width: 100%;
+    }
+
+    #buttonHistorial {
+        order: 9;
         width: 100%;
     }
 

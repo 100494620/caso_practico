@@ -514,6 +514,7 @@ function onQuitEditForm() {
             <div class="forma-right">
                 <img id="profileAvatar" src="images/login-icon.png" alt="Avatar del usuario" />
                 <button type="button" class="submit-button-forma" id="buttonFav" onclick="misFavoritos()">Mis Favoritos</button>
+                <button type="button" class="submit-button-forma" id="buttonHistorial" onclick="miHistorial()" data-i18n="editProfile.history">Mi Historial</button>
             </div>
         </form>
         <div class="button-container-register">
@@ -783,4 +784,19 @@ function subsribeToNewsletters() {
                 alert("Error in subscribing!");
             });
     });
+}
+
+function miHistorial() {
+    const container = document.getElementById("forma-container-profile");
+    // take email as a key for associating the cards
+    const email = localStorage.getItem(EMAIL_LS_DATA);
+
+    container.innerHTML = `
+        <div class="forma-header">Mis compras</div>
+        <div class="cartas-grind" id="misCartas"></div>
+        <div class="button-container-register">
+            <button class="submit-button-forma" onclick="onQuitEditForm()">Volver</button>
+        </div>
+    `;
+
 }
