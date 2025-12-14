@@ -1452,3 +1452,61 @@ body {
     padding: 0;
     background-color: #f3f3f3;
 }
+
+/* ===========================
+   CONSEJOS - SCROLLS
+   =========================== */
+
+/* Lista pequeña (en versionB: últimos 3 links) */
+.ultimos-consejos-container {
+    max-height: 18vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 0.6vw;
+}
+
+/* Lista grande (en ultimos_consejos.html: todos los consejos completos) */
+.all-advices-container {
+    max-height: 55vh;            /* aquí está la clave: deja ver varios consejos */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1vw 1.2vw;
+    margin: 0 2.5vw 1.5vw 2.5vw;
+    border-radius: 0.8vw;
+    background: rgba(255,255,255,0.25);
+}
+
+/* Cada consejo como "tarjeta" */
+.advice-card {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 0.8vw;
+    padding: 1.2vw 1.4vw;
+    margin-bottom: 1vw;
+}
+
+/* Título */
+.advice-card h5 {
+    margin: 0 0 0.6vw 0;
+    font-family: fontHeader, serif;
+}
+
+/* Autor */
+.advice-author {
+    font-size: 0.9vw;
+    opacity: 0.75;
+    margin-bottom: 0.8vw;
+}
+
+/* Descripción */
+.advice-desc {
+    margin: 0;
+    line-height: 1.35;
+    font-size: 1.1vw;
+}
+
+/* En móvil: más alto y letras un pelín más grandes */
+@media (max-width: 628px) {
+    .all-advices-container { max-height: 60vh; }
+    .advice-author { font-size: 2.6vw; }
+    .advice-desc { font-size: 3vw; }
+}
