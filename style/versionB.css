@@ -274,14 +274,14 @@ input {
 /*experience card*/
 .carta {
     width: 16vw;
-    height: auto;  /* Cambia de 9vw a auto */
+    height: auto;
     background: #9FB8A2;
     border-radius: 1vmin;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 1vw;
-    grid-template-rows: auto 1fr;
     padding: 1vw;
+    grid-template-rows: auto 8vw;
 }
 /*text block container below logging in on the right*/
 .text-block {
@@ -321,17 +321,20 @@ input {
     text-align: left;
     font-size: 1.25vw;
     font-family: fontHeader, serif;
+    height: 1.8em;
+    line-height: 1em;
+    overflow: hidden;
 }
 /*experience carta photo*/
 .carta-photo {
     grid-column: 1;
     grid-row: 2;
     width: 100%;
-    height: 100%;
-    max-height: 8vw;  /* Añade esto para limitar la altura máxima */
     object-fit: cover;
     border-radius: 7px;
-    overflow: hidden;  /* Añade esto para que no se salga */
+    overflow: hidden;
+    height: 100%;
+    display: block;
 }
 /*experience carta like*/
 .carta-like {
@@ -1400,5 +1403,3 @@ input {
     width: 5vw;
     padding-right: 0.5vw;
 }
-
-
