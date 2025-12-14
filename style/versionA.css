@@ -14,14 +14,21 @@
     src: url("../fonts/MainChirstmas.otf");
 }
 
-body {
+html {
+    height: 100%;
     background-color: #f3f3f3;
-    font-family: fontText,serif;
-    font-size: 1.3vw;
-    margin: 0; /* Añadido para consistencia */
-    padding: 0; /* Añadido para consistencia */
 }
 
+body {
+    font-family: fontText, serif;
+    font-size: 1.3vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
 /*margins for all the built-in headers*/
 h1, h2, h3, h4, h5, h6 {
     margin: 4vw;

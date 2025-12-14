@@ -1436,3 +1436,19 @@ input {
     width: 5vw;
     padding-right: 0.5vw;
 }
+
+html {
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+body {
+    font-family: fontText, serif;
+    font-size: 1.3vw;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
