@@ -134,14 +134,7 @@ $(function () {
         const expiry = $expiry.val().trim();
         const cvv = $cvv.val().trim();
 
-        if (!EMAIL_REGEX.test(email)) { alert("Correo electrónico no válido."); return false; }
-        if (!type) { alert("Seleccione el tipo de tarjeta."); return false; }
-        if (!CARD_NUMBER_REGEX.test(number)) { alert("Número de tarjeta no válido (13, 15, 16 o 19 dígitos)."); return false; }
-        if (owner.length < 3) { alert("Nombre del titular: mínimo 3 caracteres."); return false; }
-        if (!isFutureExpiry(expiry)) { alert("La fecha de caducidad debe ser futura."); return false; }
-        if (!CVV_REGEX.test(cvv)) { alert("CVV debe contener exactamente 3 dígitos."); return false; }
 
-        return { fullName, email, type, numberLast4: number.slice(-4), owner, expiry };
     }
 
     $form.on("submit", function (e) {

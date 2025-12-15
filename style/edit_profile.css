@@ -13,6 +13,51 @@
     font-family: fontMainPage;
     src: url("../fonts/MainChirstmas.otf");
 }
+/* Contenedor del historial */
+#misCartas {
+    max-height: 260px;          /* altura visible */
+    overflow-y: auto;           /* scroll vertical */
+    margin-top: 15px;
+    padding-right: 8px;
+}
+
+/* Cabecera de la lista */
+.historial-header,
+.historial-item {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Cabecera */
+.historial-header {
+    font-weight: 600;
+    padding: 8px 12px;
+    border-bottom: 2px solid #aaa;
+    margin-bottom: 6px;
+}
+
+/* Cada fila */
+.historial-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.historial-item:last-child {
+    border-bottom: none;
+}
+
+/* Scroll bonito (opcional) */
+#misCartas::-webkit-scrollbar {
+    width: 6px;
+}
+#misCartas::-webkit-scrollbar-thumb {
+    background: #9bb59a;
+    border-radius: 6px;
+}
+
 
 
 html {
@@ -1139,4 +1184,117 @@ input {
 
 #profileAvatar {
     width: 20vw;
+}
+
+/* ===== HISTORIAL DE COMPRAS ===== */
+
+/* Contenedor scrolleable */
+#misCartas {
+    max-height: 260px;
+    overflow-y: auto;
+    margin-top: 15px;
+    padding-right: 8px;
+}
+
+/* Cabecera y filas */
+.historial-header,
+.historial-item {
+    display: grid;
+    grid-template-columns:
+        2fr   /* Destino */
+        1.2fr /* Fecha */
+        1fr   /* Precio */
+        1fr   /* Acompañantes */
+        1fr   /* Mascota */
+        1.5fr /* Alergias */;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Cabecera */
+.historial-header {
+    font-weight: bold;
+    padding: 8px 12px;
+    border-bottom: 2px solid #aaa;
+    margin-bottom: 6px;
+}
+
+/* Filas */
+.historial-item {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.historial-item:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 900px) {
+
+    .historial-header,
+    .historial-item {
+        grid-template-columns:
+            2fr
+            1fr
+            1fr
+            1fr
+            1fr
+            1.2fr;
+        font-size: 0.9rem;
+    }
+
+    #misCartas {
+        max-height: 300px;
+    }
+}
+@media (max-width: 600px) {
+
+    /* Ocultamos la cabecera */
+    .historial-header {
+        display: none;
+    }
+
+    /* Cada compra se convierte en una tarjeta */
+    .historial-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 12px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background: #f6f6f6;
+        border: 1px solid #ddd;
+        font-size: 0.95rem;
+    }
+
+    /* Labels automáticos */
+    .historial-item div::before {
+        font-weight: bold;
+        margin-right: 4px;
+    }
+
+    .historial-item div:nth-child(1)::before { content: "Destino: "; }
+    .historial-item div:nth-child(2)::before { content: "Fecha: "; }
+    .historial-item div:nth-child(3)::before { content: "Precio: "; }
+    .historial-item div:nth-child(4)::before { content: "Acompañantes: "; }
+    .historial-item div:nth-child(5)::before { content: "Mascota: "; }
+    .historial-item div:nth-child(6)::before { content: "Alergias: "; }
+
+    #misCartas {
+        max-height: none; /* deja que el scroll sea natural en móvil */
+    }
+}
+/* ===== AUMENTO DE TAMAÑO DE LETRA DEL HISTORIAL (+50%) ===== */
+
+.historial-header,
+.historial-item {
+    font-size: 1.425rem; /* antes ~0.95rem → +50% */
+}
+
+/* Móvil (tarjetas) */
+@media (max-width: 600px) {
+    .historial-item {
+        font-size: 1.425rem;
+    }
 }

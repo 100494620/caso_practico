@@ -789,17 +789,151 @@ function subsribeToNewsletters() {
 
 function miHistorial() {
     const container = document.getElementById("forma-container-profile");
-    // take email as a key for associating the cards
-    const email = localStorage.getItem(EMAIL_LS_DATA);
+    const username = localStorage.getItem(EMAIL_LS_DATA);
+    if (!username) return;
+
+    const registeredUsers = getRegisteredUsers();
+    const user = registeredUsers.get(username);
 
     container.innerHTML = `
         <div class="forma-header">Mis compras</div>
-        <div class="cartas-grind" id="misCartas"></div>
+
+        <div class="historial-header">
+            <div>Destino</div>
+            <div>Fecha</div>
+            <div>Precio</div>
+            <div>Acompañantes</div>
+            <div>Mascota</div>
+            <div>Alergias</div>
+        </div>
+
+        <div id="misCartas"></div>
+
         <div class="button-container-register">
             <button class="submit-button-forma" onclick="onQuitEditForm()">Volver</button>
         </div>
     `;
+
+    const list = document.getElementById("misCartas");
+
+    if (!user || !Array.isArray(user.purchases) || user.purchases.length === 0) {
+        list.innerHTML = `<div class="carta-empty">No tienes compras todavía :(</div>`;
+        return;
+    }
+
+    const asText = (v) => (v === null || v === undefined) ? "" : String(v).trim();
+    const isDateString = (s) => typeof s === "string" && /^\d{1,2}\/\d{1,2}\/\d{4}$/.test(s.trim());
+
+    const purchases = [...user.purchases].reverse();
+
+    purchases.forEach(p => {
+        // ===== DESTINO (busca el primer string “largo” que no parezca fecha) =====
+        let destino =
+            asText(p.packName) || asText(p.pack) || asText(p.destination) || asText(p.destino) ||
+            asText(p.title) || asText(p.name) || "";
+
+        if (!destino) {
+            // fallback: cualquier string que no sea fecha y tenga algo de longitud
+            for (const [k, v] of Object.entries(p)) {
+                if (typeof v === "string" && !isDateString(v) && v.trim().length >= 4) {
+                    destino = v.trim();
+                    break;
+                }
+            }
+        }
+        if (!destino) destino = "—";
+
+        // ===== FECHA (intenta keys típicas y luego detecta por formato dd/mm/yyyy) =====
+        let fecha = asText(p.date) || asText(p.fecha) || asText(p.purchaseDate) || "";
+        if (!fecha) {
+            for (const v of Object.values(p)) {
+                if (isDateString(v)) { fecha = v.trim(); break; }
+            }
+        }
+        if (!fecha) fecha = "—";
+
+        // ===== PRECIO (busca number o string convertible) =====
+        let precioNum = p.price ?? p.precio ?? p.amount ?? p.total ?? p.packPrice ?? p.cost ?? null;
+        if (precioNum === null || precioNum === undefined) {
+            // fallback: primer valor numérico que parezca precio
+            for (const v of Object.values(p)) {
+                const n = Number(v);
+                if (Number.isFinite(n) && n > 0) { precioNum = n; break; }
+            }
+        }
+        const precio = Number.isFinite(Number(precioNum)) ? `${Number(precioNum)} €` : "—";
+
+        // ===== ACOMPAÑANTES (detecta cualquier array dentro de la compra) =====
+        let companionsArr = null;
+        if (Array.isArray(p.companions)) companionsArr = p.companions;
+        else if (Array.isArray(p.people)) companionsArr = p.people;
+        else {
+            for (const v of Object.values(p)) {
+                if (Array.isArray(v)) { companionsArr = v; break; }
+            }
+        }
+        // OJO: aquí muestro 0 si existe el array pero está vacío (así sabes que se guardó)
+        const acompanantes =
+            Array.isArray(companionsArr) ? companionsArr.length : "No";
+
+        // ===== MASCOTA (detecta objeto con hasPet/type/size) =====
+        let petObj = p.petInfo ?? p.pet ?? p.mascota ?? null;
+        if (!petObj || typeof petObj !== "object") {
+            for (const v of Object.values(p)) {
+                if (v && typeof v === "object" && !Array.isArray(v)) {
+                    if ("hasPet" in v || "type" in v || "size" in v || "has_pet" in v) {
+                        petObj = v;
+                        break;
+                    }
+                }
+            }
+        }
+
+        let mascota = "No";
+        if (petObj && typeof petObj === "object") {
+            const raw = petObj.hasPet ?? petObj.has_pet ?? petObj.value ?? null;
+            if (raw === true) mascota = "Sí";
+            else if (raw === false) mascota = "No";
+            else {
+                const s = asText(raw).toLowerCase();
+                if (["yes", "si", "sí", "true", "1"].includes(s)) mascota = "Sí";
+            }
+        }
+
+        // ===== ALERGIAS (busca string “allergies” o, si no, detecta campo de texto corto) =====
+        let alergias =
+            asText(p.allergies) || asText(p.alergias) || asText(p.allergy) || asText(p.alergia) || "";
+
+        if (!alergias) {
+            // fallback: intenta encontrar un string "pequeño" que no sea destino/fecha
+            for (const [k, v] of Object.entries(p)) {
+                if (typeof v === "string") {
+                    const s = v.trim();
+                    if (!s) continue;
+                    if (s === destino || s === fecha) continue;
+                    if (isDateString(s)) continue;
+                    // típico de alergias: texto corto
+                    if (s.length <= 25) { alergias = s; break; }
+                }
+            }
+        }
+
+        if (!alergias) alergias = "No";
+
+        const row = document.createElement("div");
+        row.classList.add("historial-item");
+        row.innerHTML = `
+            <div>${destino}</div>
+            <div>${fecha}</div>
+            <div>${precio}</div>
+            <div>${acompanantes}</div>
+            <div>${mascota}</div>
+            <div>${alergias}</div>
+        `;
+        list.appendChild(row);
+    });
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
     fillBuyerInfo();
