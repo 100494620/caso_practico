@@ -11,18 +11,18 @@
 <body>
 <section id="Inicio">
     <nav id="Navegacion">
-        <div class="website-name">Kilómetros Sin Fin</div>
+        <div class="website-name" data-translate-key="footer.copyright">Kilómetros Sin Fin</div>
         <a href="#">
             <img class="aloj" src="images/vuel.png" alt="vuelo button">
-            <span data-i18n="nav.flights">Vuelos</span>
+            <span data-translate-key="nav.flights">Vuelos</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/viaj.png" alt="viaje button">
-            <span data-i18n="nav.trips">Viajes</span>
+            <span data-translate-key="nav.trips">Viajes</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/aloj.png" alt="alojamiento button">
-            <span data-i18n="nav.accommodation">Alojamiento</span>
+            <span data-translate-key="nav.accommodation">Alojamiento</span>
         </a>
         <label for="lang"></label>
         <select class="menu-lang" name="lang" id="lang">
@@ -36,19 +36,19 @@
         <div class="left_container">
             <div class="top-left">
                 <div class="venta-container-left">
-                    <div class="venta-container-text">Pack Sudeste Asiático</div>
+                    <div class="venta-container-text" data-translate-key="versionC.title">Pack Sudeste Asiático</div>
                 </div>
                 <div class="venta-container-right">
-                    <div class="venta-container-text">€600</div>
+                    <div class="venta-container-text" data-translate-key="versionC.price">€600</div>
                 </div>
                 <div class="venta-container-middle">
-                    <div class="venta-container-text">Vietnam y Camboya: buses, hostales y gías de visados.</div>
+                    <div class="venta-container-text" data-translate-key="versionC.packDescription">Vietnam y Camboya: buses, hostales y gías de visados.</div>
                 </div>
             </div>
 
             <div class = "bottom-left">
-                <div class="titulo-text">Descripción del Pack</div>
-                <div class="contenido-text">Vietnam y Camboya en 14 días: traslados en bus, 12 noches en hostales seleccionados
+                <div class="titulo-text" data-translate-key="versionC.descriptionTitle">Descripción del Pack</div>
+                <div class="contenido-text" data-translate-key="versionC.intro">Vietnam y Camboya en 14 días: traslados en bus, 12 noches en hostales seleccionados
                     tours imprescindibles y guía de visados con soporte 24/7</div>
             </div>
         </div>
@@ -56,43 +56,43 @@
         <div class="right_container">
             <form class="form-container" id="buy">
                 <label for="FullName"></label>
-                <input type="text" id="FullName" placeholder="Full Name" name="full-name" required>
+                <input type="text" id="FullName" placeholder="Full Name" name="full-name" required data-translate-key="versionC.fullNamePlaceholder">
 
                 <label for="emailLogin"></label>
-                <input type="text" id="emailLogin" placeholder="Correo electrónico" name="email" required>
+                <input type="text" id="emailLogin" placeholder="Correo electrónico" name="email" required data-translate-key="versionC.emailPlaceholder">
 
                 <!-- Campo: Tipo de tarjeta -->
-                <label for="cardType">Tipo de tarjeta</label>
+                <label for="cardType" data-translate-key="versionC.cardTypeLabel">Tipo de tarjeta</label>
                 <select id="cardType" name="cardType" class="select-split">
-                    <option value="visa">Visa</option>
-                    <option value="mc">Mastercard</option>
-                    <option value="amex">American Express</option>
-                    <option value="maestro">Otro</option>
+                    <option value="visa" data-translate-key="versionC.visa">Visa</option>
+                    <option value="mc" data-translate-key="versionC.mastercard">Mastercard</option>
+                    <option value="amex" data-translate-key="versionC.amex">American Express</option>
+                    <option value="maestro" data-translate-key="versionC.petOther">Otro</option>
                 </select>
 
                 <label for="card-number"></label>
-                <input type="text" id="card-number" placeholder="Número de tarjeta" name="Número de tarjeta" required>
+                <input type="text" id="card-number" placeholder="Número de tarjeta" name="Número de tarjeta" required data-translate-key="versionC.cardNumberPlaceholder">
                 <label for="owner-name"></label>
-                <input type="text" id="owner-name" placeholder="Nombre del titular de la tarjeta" name="owners-name" required>
+                <input type="text" id="owner-name" placeholder="Nombre del titular de la tarjeta" name="owners-name" required data-translate-key="versionC.cardholderPlaceholder">
                 <div class="form-align">
                     <div class="grupo-fecha">
-                        <label for="fechaCaducidad">Fecha de caducidad</label>
+                        <label for="fechaCaducidad" data-translate-key="versionC.expiryDatePlaceholder">Fecha de caducidad</label>
                         <div class="entrada-fecha">
                             <input type="month" id="fechaCaducidad" name="fechaCaducidad" required>
                             <span class="icono-calendario">🗓️</span>
                         </div>
                     </div>
                     <div class="grupo-cvv">
-                        <label for="codigoCVV">Código CVV</label>
+                        <label for="codigoCVV" data-translate-key="versionC.cvvPlaceholder">Código CVV</label>
                         <input type="password" id="codigoCVV" name="codigoCVV" placeholder="***" maxlength="4" required>
                     </div>
                 </div>
-                <label for="numPeople">Número de acompañantes</label>
+                <label for="numPeople" data-translate-key="versionC.numTravelers">Número de acompañantes</label>
                 <input type="number" id="numPeople" min="0" step="1" value="0">
 
                 <div id="peopleE"></div>
 
-                <label for="pet">¿Viajas con mascota?</label>
+                <label for="pet" data-translate-key="versionC.petQuestion">¿Viajas con mascota?</label>
                 <select id="pet" name="pet">
                     <option value="no">No</option>
                     <option value="yes">Sí</option>
@@ -100,32 +100,32 @@
 
                 <div id="petInfoType" style="display: none;">
                     <div class="grupo-pet">
-                        <label for="petType">Tipo de mascota</label>
+                        <label for="petType" data-translate-key="versionC.petTypeSelect">Tipo de mascota</label>
                         <select id="petType" name="petType">
                             <option value="">Selecciona</option>
-                            <option value="dog">Perro</option>
-                            <option value="cat">Gato</option>
-                            <option value="other">Otro</option>
+                            <option value="dog" data-translate-key="versionC.petDog">Perro</option>
+                            <option value="cat" data-translate-key="versionC.petCat">Gato</option>
+                            <option value="other" data-translate-key="versionC.petOther">Otro</option>
                         </select>
                     </div>
 
                     <div class="grupo-pet">
-                        <label for="petSize">Peso de la mascota</label>
+                        <label for="petSize" data-translate-key="versionC.petSizeSelect">Peso de la mascota</label>
                         <select id="petSize" name="petSize">
                             <option value="">Selecciona</option>
-                            <option value="small">Pequeña (0–10 kg)</option>
-                            <option value="medium">Mediana (10–25 kg)</option>
-                            <option value="large">Grande (+25 kg)</option>
+                            <option value="small" data-translate-key="versionC.petSmall">Pequeña (0–10 kg)</option>
+                            <option value="medium" data-translate-key="versionC.petMedium">Mediana (10–25 kg)</option>
+                            <option value="large" data-translate-key="versionC.petLarge">Grande (+25 kg)</option>
                         </select>
                     </div>
                 </div>
                 <div class="grupo-allergies">
-                    <label for="allergies"> Tienes alguna alergia?</label>
+                    <label for="allergies" data-translate-key="versionC.allergiesPlaceholder"> Tienes alguna alergia?</label>
                     <input type="text" id="allergies" placeholder="Indícanos su alergia, si tiene alguna.">
                 </div>
                 <div class="botones-accion">
-                    <button type="reset" class="boton-borrar" onclick="window.location.href = 'versionB.html'">Volver</button>
-                    <button type="submit" class="boton-comprar-pack">Comprar</button>
+                    <button type="reset" class="boton-borrar" onclick="window.location.href = 'versionB.html'" data-translate-key="versionC.backHome">Volver</button>
+                    <button type="submit" class="boton-comprar-pack" data-translate-key="versionC.confirmButton">Comprar</button>
                 </div>
             </form>
         </div>
@@ -137,28 +137,28 @@
     <!-- Tira superior: newsletter -->
     <div class="footer-newsletter">
         <div class="footer-newsletter-title">
-            <label>
+            <label data-translate-key="footer.newsletter">
                 Suscríbete a la newsletter
             </label>
         </div>
 
         <div class="mail">
             <label for="nl-email"></label>
-            <input type="email" id="nl-email" name="email" placeholder="Tu email" required>
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" required data-translate-key="footer.email_placeholder">
         </div>
         <div class="newsletter-submit-button">
-            <button type="submit" class="nl-btn">Suscribirme</button>
+            <button type="submit" class="nl-btn" data-translate-key="footer.subscribe_button">Suscribirme</button>
         </div>
     </div>
 
     <!-- Barra inferior: © + enlaces + redes -->
     <div class="footer-bar">
-        <p class="copy">&copy; 2025 Kilómetros Sin Fin</p>
+        <p class="copy" data-translate-key="footer.copyright">&copy; 2025 Kilómetros Sin Fin</p>
 
         <ul class="footer-links" aria-label="Enlaces legales">
-            <li><a href="#">Sobre nosotros</a></li>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Ayuda</a></li>
+            <li><a href="#" data-translate-key="footer.about">Sobre nosotros</a></li>
+            <li><a href="#" data-translate-key="footer.privacy">Política de privacidad</a></li>
+            <li><a href="#" data-translate-key="footer.help">Ayuda</a></li>
         </ul>
 
         <div class="footer-social" aria-label="Redes sociales">
@@ -175,9 +175,59 @@
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="script/class.js"></script>
-<script src="script/local_storage_ops.js"></script>
-<script src="script/script.js"></script>
-<script src="script/versionC.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const langSelector = document.getElementById('lang');
+    let translations = {};
+
+    async function loadTranslations() {
+        try {
+            const response = await fetch('translations.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            translations = await response.json();
+            const savedLang = localStorage.getItem('language') || 'es';
+            setLanguage(savedLang.toLowerCase());
+            langSelector.value = savedLang.toUpperCase();
+        } catch (error) {
+            console.error('Failed to load translations:', error);
+        }
+    }
+
+    function setLanguage(lang) {
+        const langKey = lang.toLowerCase();
+        const lang_translations = translations[langKey] || translations['es'];
+        if (lang_translations) {
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                const translation = getTranslation(key, lang_translations);
+                if (translation) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        if (element.placeholder) {
+                            element.placeholder = translation;
+                        }
+                    } else {
+                        element.innerHTML = translation;
+                    }
+                }
+            });
+            localStorage.setItem('language', langKey);
+             // Update the lang attribute of the html tag
+            document.documentElement.lang = langKey;
+        }
+    }
+
+    function getTranslation(key, lang_translations) {
+        return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), lang_translations);
+    }
+
+    langSelector.addEventListener('change', (event) => {
+        setLanguage(event.target.value.toLowerCase());
+    });
+
+    loadTranslations();
+});
+</script>
 </body>
 </html>

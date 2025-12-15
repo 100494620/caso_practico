@@ -14,18 +14,18 @@
 <body>
 <section id="Inicio">
     <nav id="Navegacion">
-        <div class="website-name">Kilómetros Sin Fin</div>
+        <div class="website-name" data-translate-key="footer.copyright">Kilómetros Sin Fin</div>
         <a href="#">
             <img class="aloj" src="images/vuel.png" alt="vuelo button">
-            <span data-i18n="nav.flights">Vuelos</span>
+            <span data-translate-key="nav.flights">Vuelos</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/viaj.png" alt="viaje button">
-            <span data-i18n="nav.trips">Viajes</span>
+            <span data-translate-key="nav.trips">Viajes</span>
         </a>
         <a href="#">
             <img class="aloj" src="images/aloj.png" alt="alojamiento button">
-            <span data-i18n="nav.accommodation">Alojamiento</span>
+            <span data-translate-key="nav.accommodation">Alojamiento</span>
         </a>
         <label for="lang" ></label>
         <select class="menu-lang" name="lang" id="lang">
@@ -36,29 +36,29 @@
         </select>
     </nav>
     <div class="forma" id="forma-container-profile">
-        <div class="forma-header" data-i18n="editProfile.editProfile">Mi perfil</div>
+        <div class="forma-header" data-translate-key="editProfile.editProfile">Mi perfil</div>
         <form id="registerForm">
             <div class="forma-left">
-                <label class="forma-text" for="nameE" data-i18n="editProfile.name">Nombre:</label>
+                <label class="forma-text" for="nameE" data-translate-key="editProfile.name">Nombre:</label>
                 <input type="text" id="nameE" name="name" placeholder="Nombre" disabled>
-                <label class="forma-text" for="surnameE" data-i18n="editProfile.surname">Apellidos:</label>
+                <label class="forma-text" for="surnameE" data-translate-key="editProfile.surname">Apellidos:</label>
                 <input type="text" id="surnameE" name="surname" placeholder="Apellidos" disabled>
-                <label class="forma-text" for="loginE" data-i18n="editProfile.login">Username:</label>
+                <label class="forma-text" for="loginE" data-translate-key="editProfile.login">Username:</label>
                 <input type="text" id="loginE" name="login" placeholder="login" disabled>
-                <label class="forma-text" for="emailE" data-i18n="editProfile.email">Correo electronico:</label>
+                <label class="forma-text" for="emailE" data-translate-key="editProfile.email">Correo electronico:</label>
                 <input type="text" id="emailE" name="email" placeholder="Correo electronico" disabled>
-                <label class="forma-text" for="birthdayE" data-i18n="editProfile.birthday">Fecha de nacimiento</label>
+                <label class="forma-text" for="birthdayE" data-translate-key="editProfile.birthday">Fecha de nacimiento</label>
                 <input type="date" id="birthdayE" disabled>
             </div>
             <div class="forma-right">
                 <img id="profileAvatar" src="images/login-icon.png" alt="Avatar del usuario" />
-                <button type="button" class="submit-button-forma" id="buttonFav" onclick="misFavoritos()" data-i18n="editProfile.favorites">Mis Favoritos</button>
-                <button type="button" class="submit-button-forma" id="buttonHistorial" onclick="miHistorial()" data-i18n="editProfile.history">Mi Historial</button>
+                <button type="button" class="submit-button-forma" id="buttonFav" onclick="misFavoritos()" data-translate-key="editProfile.favorites">Mis Favoritos</button>
+                <button type="button" class="submit-button-forma" id="buttonHistorial" onclick="miHistorial()" data-translate-key="editProfile.history">Mi Historial</button>
             </div>
         </form>
         <div class="button-container-register">
-            <button type="button" class="submit-button-forma" id="buttonQ" onclick="onQuitEdit()" data-i18n="editProfile.cancel">Quitar</button>
-            <button type="button" class="submit-button-forma" id="buttonEd" onclick="startEdit()" data-i18n="editProfile.edit">Editar</button>
+            <button type="button" class="submit-button-forma" id="buttonQ" onclick="onQuitEdit()" data-translate-key="editProfile.cancel">Quitar</button>
+            <button type="button" class="submit-button-forma" id="buttonEd" onclick="startEdit()" data-translate-key="editProfile.save">Editar</button>
         </div>
     </div>
 </section>
@@ -66,38 +66,38 @@
     <!-- Tira superior: newsletter -->
     <div class="footer-newsletter">
         <div class="footer-newsletter-title">
-            <label data-i18n="footer.newsletter">
+            <label data-translate-key="footer.newsletter">
                 Suscríbete a la newsletter
             </label>
         </div>
 
         <div class="mail">
-            <input type="email" id="nl-email" name="email" placeholder="Tu email" data-i18n="footer.email_placeholder" required>
+            <input type="email" id="nl-email" name="email" placeholder="Tu email" data-translate-key="footer.email_placeholder" required>
         </div>
         <div class="newsletter-submit-button">
-            <button type="submit" class="nl-btn" data-i18n="footer.subscribe_button">Suscribirme</button>
+            <button type="submit" class="nl-btn" data-translate-key="footer.subscribe_button">Suscribirme</button>
         </div>
     </div>
 
     <!-- Barra inferior: © + enlaces + redes -->
     <div class="footer-bar">
-        <p class="copy" data-i18n="footer.copyright">&copy; 2025 Kilómetros Sin Fin</p>
+        <p class="copy" data-translate-key="footer.copyright">&copy; 2025 Kilómetros Sin Fin</p>
 
         <ul class="footer-links" aria-label="Enlaces legales">
-            <li><a href="#" data-i18n="footer.about">Sobre nosotros</a></li>
-            <li><a href="#" data-i18n="footer.privacy">Política de privacidad</a></li>
-            <li><a href="#" data-i18n="footer.help">Ayuda</a></li>
+            <li><a href="#" data-translate-key="footer.about">Sobre nosotros</a></li>
+            <li><a href="#" data-translate-key="footer.privacy">Política de privacidad</a></li>
+            <li><a href="#" data-translate-key="footer.help">Ayuda</a></li>
         </ul>
 
         <div class="footer-social" aria-label="Redes sociales">
             <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">
-                <img src="images/icons8-instagram-128.png" alt="Instagram" data-i18n="footer.instagram">
+                <img src="images/icons8-instagram-128.png" alt="Instagram" data-translate-key="footer.instagram">
             </a>
             <a class="social-link" href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok">
-                <img src="images/icons8-tiktok-128.png" alt="TikTok" data-i18n="footer.tiktok">
+                <img src="images/icons8-tiktok-128.png" alt="TikTok" data-translate-key="footer.tiktok">
             </a>
             <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener" title="YouTube">
-                <img src="images/icons8-youtube-128.png" alt="YouTube" data-i18n="footer.youtube">
+                <img src="images/icons8-youtube-128.png" alt="YouTube" data-translate-key="footer.youtube">
             </a>
         </div>
     </div>
@@ -106,6 +106,57 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const langSelector = document.getElementById('lang');
+    let translations = {};
+
+    async function loadTranslations() {
+        try {
+            const response = await fetch('translations.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            translations = await response.json();
+            const savedLang = localStorage.getItem('language') || 'es';
+            setLanguage(savedLang.toLowerCase());
+            langSelector.value = savedLang.toUpperCase();
+        } catch (error) {
+            console.error('Failed to load translations:', error);
+        }
+    }
+
+    function setLanguage(lang) {
+        const langKey = lang.toLowerCase();
+        const lang_translations = translations[langKey] || translations['es'];
+        if (lang_translations) {
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                const translation = getTranslation(key, lang_translations);
+                if (translation) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translation;
+                    } else {
+                        element.textContent = translation;
+                    }
+                }
+            });
+            localStorage.setItem('language', langKey);
+            document.documentElement.lang = langKey;
+        }
+    }
+
+    function getTranslation(key, lang_translations) {
+        return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), lang_translations);
+    }
+
+    langSelector.addEventListener('change', (event) => {
+        setLanguage(event.target.value.toLowerCase());
+    });
+
+    loadTranslations();
+});
+</script>
 <script src="script/class.js"></script>
 <script src="script/local_storage_ops.js"></script>
 <script src="script/script.js"></script>

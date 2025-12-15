@@ -82,8 +82,38 @@
       "email": "Correo electrónico:",
       "birthday": "Fecha de nacimiento:",
       "favorites": "Mis Favoritos",
+      "history": "Mi Historial",
       "cancel": "Cancelar",
       "save": "Guardar"
+    },
+    "favorites": {
+      "title": "Mis favoritos",
+      "empty": "No tienes favoritos :(",
+      "remove": "Eliminar",
+      "back": "Volver",
+      "viewMore": "Ver más"
+    },
+    "history": {
+      "title": "Mis compras",
+      "empty": "No tienes compras",
+      "back": "Volver"
+    },
+    "editForm": {
+      "uploadProfilePicture": "Subir imagen de perfil",
+      "browse": "Examinar ...",
+      "confirmEmail": "Confirma el correo",
+      "changePassword": "Cambiar contraseña",
+      "remove": "Quitar",
+      "save": "Guardar",
+      "oldPassword": "Contraseña previa",
+      "newPassword": "Contraseña nueva"
+    },
+    "companions": {
+      "title": "Compañero",
+      "name": "Nombre",
+      "surname": "Apellidos",
+      "email": "Correo electrónico",
+      "remove": "Eliminar Compañero"
     },
     "versionB": {
       "tagline": "Comparte y descubre viajes de todo el mundo",
@@ -151,11 +181,37 @@
       "youtube": "YouTube"
     },
     "versionC": {
-      "title": "Pack Esencial: Maravillas del Sudeste Asiático (15 días)",
-      "intro": "Embárcate en una aventura inolvidable por los destinos más emblemáticos del Sudeste Asiático. Explora los templos de Bangkok, navega por la Bahía de Ha Long en Vietnam y relájate en las playas cristalinas de Phuket. Descubre los mercados flotantes y la vibrante vida callejera. Disfruta de la gastronomía local, sumérgete en aguas turquesas y vive experiencias únicas.",
-      "includes": "Incluye: vuelos internos, hoteles 4★, guías locales, traslados y experiencias únicas."
+      "title": "Pack Esencial: Vietnam y Camboya (14 días)",
+      "price": "€600",
+      "descriptionTitle": "Descripción del Pack",
+      "intro": "Vietnam y Camboya en 14 días: traslados en bus, 12 noches en hostales seleccionados, tours imprescindibles y guía de visados con soporte 24/7.",
+      "includes": "<strong>Incluye:</strong> traslados en bus, 12 noches en hostales, tours, guía de visados y soporte 24/7.",
+      "backHome": "Volver al Inicio",
+      "formTitle": "Datos del Titular",
+      "fullNamePlaceholder": "Nombre completo",
+      "emailPlaceholder": "Correo electrónico",
+      "numTravelers": "🎟️ Número de viajeros:",
+      "petQuestion": "Voy a llevar mascota 🐾",
+      "petTypeSelect": "Tipo de animal",
+      "petDog": "Perro",
+      "petCat": "Gato",
+      "petOther": "Otro",
+      "petSizeSelect": "Tamaño",
+      "petSmall": "Pequeño (<10kg)",
+      "petMedium": "Mediano (10-25kg)",
+      "petLarge": "Grande (>25kg)",
+      "allergiesPlaceholder": "¿Alergias o restricciones alimentarias?",
+      "paymentTitle": "💳 Pago Seguro",
+      "cardTypeLabel": "Tipo de tarjeta",
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "cardNumberPlaceholder": "Número de tarjeta (16 dígitos)",
+      "cardholderPlaceholder": "Titular de la tarjeta",
+      "expiryDatePlaceholder": "MM/AA",
+      "cvvPlaceholder": "CVV",
+      "confirmButton": "Confirmar Reserva"
     }
-    
   },
   "eng": {
     "nav": {
@@ -171,10 +227,40 @@
       "email": "Email:",
       "birthday": "Date of Birth:",
       "favorites": "My Favorites",
+      "history": "My History",
       "cancel": "Cancel",
       "save": "Save"
     },
-        "footer": {
+    "favorites": {
+      "title": "My Favorites",
+      "empty": "You have no favorites :(",
+      "remove": "Remove",
+      "back": "Back",
+      "viewMore": "View more"
+    },
+    "history": {
+      "title": "My Purchases",
+      "empty": "You have no purchases",
+      "back": "Back"
+    },
+    "editForm": {
+      "uploadProfilePicture": "Upload profile picture",
+      "browse": "Browse ...",
+      "confirmEmail": "Confirm email",
+      "changePassword": "Change password",
+      "remove": "Remove",
+      "save": "Save",
+      "oldPassword": "Current password",
+      "newPassword": "New password"
+    },
+    "companions": {
+      "title": "Companion",
+      "name": "Name",
+      "surname": "Surname",
+      "email": "Email",
+      "remove": "Remove Companion"
+    },
+    "footer": {
       "newsletter": "Subscribe to our newsletter",
       "email_placeholder": "Your email",
       "subscribe_button": "Subscribe",
@@ -186,7 +272,6 @@
       "tiktok": "TikTok",
       "youtube": "YouTube"
     },
-
     "home": {
       "tagline": "Share and discover trips from around the world",
       "economicPacks": "MOST AFFORDABLE TRAVEL PACKAGES",
@@ -310,9 +395,36 @@
       "buenosaires_title": "Buenos Aires: tango and barbecue"
     },
     "versionC": {
-      "title": "Essential Package: Wonders of Southeast Asia (15 days)",
-      "intro": "Embark on an unforgettable adventure through the most emblematic destinations of Southeast Asia. Explore Bangkok's temples, sail through Ha Long Bay in Vietnam and relax on Phuket's crystal-clear beaches. Discover floating markets and vibrant street life. Enjoy local gastronomy, immerse yourself in turquoise waters and live unique experiences.",
-      "includes": "Includes: domestic flights, 4★ hotels, local guides, transfers and unique experiences."
+      "title": "Essential Pack: Vietnam and Cambodia (14 days)",
+      "price": "€600",
+      "descriptionTitle": "Pack Description",
+      "intro": "Vietnam and Cambodia in 14 days: bus transfers, 12 nights in selected hostels, essential tours and visa guide with 24/7 support.",
+      "includes": "<strong>Includes:</strong> bus transfers, 12 nights in hostels, tours, visa guide and 24/7 support.",
+      "backHome": "Back to Home",
+      "formTitle": "Cardholder Details",
+      "fullNamePlaceholder": "Full name",
+      "emailPlaceholder": "Email address",
+      "numTravelers": "🎟️ Number of travelers:",
+      "petQuestion": "I'm traveling with a pet 🐾",
+      "petTypeSelect": "Type of animal",
+      "petDog": "Dog",
+      "petCat": "Cat",
+      "petOther": "Other",
+      "petSizeSelect": "Size",
+      "petSmall": "Small (<10kg)",
+      "petMedium": "Medium (10-25kg)",
+      "petLarge": "Large (>25kg)",
+      "allergiesPlaceholder": "Any allergies or dietary restrictions?",
+      "paymentTitle": "💳 Secure Payment",
+      "cardTypeLabel": "Card type",
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "cardNumberPlaceholder": "Card number (16 digits)",
+      "cardholderPlaceholder": "Cardholder name",
+      "expiryDatePlaceholder": "MM/YY",
+      "cvvPlaceholder": "CVV",
+      "confirmButton": "Confirm Booking"
     }
   },
   "ua": {
@@ -398,8 +510,38 @@
       "email": "Електронна пошта:",
       "birthday": "Дата народження:",
       "favorites": "Мої Улюблені",
+      "history": "Моя Історія",
       "cancel": "Скасувати",
       "save": "Зберегти"
+    },
+    "favorites": {
+      "title": "Мої улюблені",
+      "empty": "У вас немає улюблених :(",
+      "remove": "Видалити",
+      "back": "Назад",
+      "viewMore": "Переглянути більше"
+    },
+    "history": {
+      "title": "Мої покупки",
+      "empty": "У вас немає покупок",
+      "back": "Назад"
+    },
+    "editForm": {
+      "uploadProfilePicture": "Завантажити фото профілю",
+      "browse": "Огляд ...",
+      "confirmEmail": "Підтвердити електронну пошту",
+      "changePassword": "Змінити пароль",
+      "remove": "Видалити",
+      "save": "Зберегти",
+      "oldPassword": "Поточний пароль",
+      "newPassword": "Новий пароль"
+    },
+    "companions": {
+      "title": "Компаньйон",
+      "name": "Ім'я",
+      "surname": "Прізвище",
+      "email": "Електронна пошта",
+      "remove": "Видалити компаньйона"
     },
     "versionB": {
       "tagline": "Ділись та відкривай подорожі з усього світу",
@@ -454,7 +596,7 @@
       "rio_title": "Ріо-де-Жанейро: пляж та самба",
       "buenosaires_title": "Буенос-Айрес: танго та барбекю"
     },
-        "footer": {
+    "footer": {
       "newsletter": "Підпишись на розсилку",
       "email_placeholder": "Твоя електронна пошта",
       "subscribe_button": "Підписатися",
@@ -467,11 +609,37 @@
       "youtube": "YouTube"
     },
     "versionC": {
-      "title": "Основний пакет: Чудеса Південно-Східної Азії (15 днів)",
-      "intro": "Вирушай в незабутню пригоду найбільш знакових пункти Південно-Східної Азії. Дослідж храми Бангкока, відпливай по затоці Халонг у В'єтнамі та розслабляйся на кристально чистих пляжах Пхукета. Відкривай плаваючі базари та яскраве вулличне життя. Насолоджуйся місцевою кухнею, занурюйся в бірюзові води та доживай унікальні досвіди.",
-      "includes": "Включає: внутрішні рейси, готелі 4★, місцеві гіди, трансфери та унікальні досвіди."
+      "title": "Основний пакет: В'єтнам та Камбоджа (14 днів)",
+      "price": "€600",
+      "descriptionTitle": "Опис пакету",
+      "intro": "В'єтнам та Камбоджа за 14 днів: автобусні трансфери, 12 ночей у вибраних хостелах, важливі екскурсії та посібник з виз з цілодобовою підтримкою.",
+      "includes": "<strong>Включає:</strong> автобусні трансфери, 12 ночей у хостелах, екскурсії, посібник з виз та цілодобова підтримка.",
+      "backHome": "Назад на головну",
+      "formTitle": "Дані власника карти",
+      "fullNamePlaceholder": "Повне ім'я",
+      "emailPlaceholder": "Адреса електронної пошти",
+      "numTravelers": "🎟️ Кількість подорожуючих:",
+      "petQuestion": "Я подорожую з домашньою тваринною 🐾",
+      "petTypeSelect": "Тип тварини",
+      "petDog": "Собака",
+      "petCat": "Кіт",
+      "petOther": "Інше",
+      "petSizeSelect": "Розмір",
+      "petSmall": "Мала (<10 кг)",
+      "petMedium": "Середня (10-25 кг)",
+      "petLarge": "Велика (>25 кг)",
+      "allergiesPlaceholder": "Які-небудь алергії чи дієтичні обмеження?",
+      "paymentTitle": "💳 Безпечна оплата",
+      "cardTypeLabel": "Тип карти",
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "cardNumberPlaceholder": "Номер карти (16 цифр)",
+      "cardholderPlaceholder": "Ім'я власника карти",
+      "expiryDatePlaceholder": "MM/AA",
+      "cvvPlaceholder": "CVV",
+      "confirmButton": "Підтвердити бронювання"
     }
-    
   },
   "fr": {
     "nav": {
@@ -499,8 +667,38 @@
       "email": "Email:",
       "birthday": "Date de naissance:",
       "favorites": "Mes Favoris",
+      "history": "Mon Historique",
       "cancel": "Annuler",
       "save": "Enregistrer"
+    },
+    "favorites": {
+      "title": "Mes favoris",
+      "empty": "Vous n'avez pas de favoris :(",
+      "remove": "Supprimer",
+      "back": "Retour",
+      "viewMore": "Voir plus"
+    },
+    "history": {
+      "title": "Mes achats",
+      "empty": "Vous n'avez aucun achat",
+      "back": "Retour"
+    },
+    "editForm": {
+      "uploadProfilePicture": "Télécharger une photo de profil",
+      "browse": "Parcourir ...",
+      "confirmEmail": "Confirmez votre email",
+      "changePassword": "Changer le mot de passe",
+      "remove": "Supprimer",
+      "save": "Enregistrer",
+      "oldPassword": "Mot de passe actuel",
+      "newPassword": "Nouveau mot de passe"
+    },
+    "companions": {
+      "title": "Compagnon",
+      "name": "Nom",
+      "surname": "Prénom",
+      "email": "Email",
+      "remove": "Supprimer le compagnon"
     },
     "home": {
       "tagline": "Partagez et découvrez des voyages du monde entier",
@@ -625,9 +823,36 @@
       "buenosaires_title": "Buenos Aires : tango et barbecue"
     },
     "versionC": {
-      "title": "Forfait essentiel : Merveilles de l'Asie du Sud-Est (15 jours)",
-      "intro": "Embarquez pour une aventure inoubliable à travers les destinations les plus emblématiques de l'Asie du Sud-Est. Explorez les temples de Bangkok, naviguez dans la baie d'Ha Long au Vietnam et détendez-vous sur les plages cristallines de Phuket. Découvrez les marchés flottants et la vie urbaine vibrante. Savourez la gastronomie locale, immergez-vous dans les eaux turquoises et vivez des expériences uniques.",
-      "includes": "Comprend : vols intérieurs, hôtels 4★, guides locaux, transferts et expériences uniques."
+      "title": "Forfait essentiel : Vietnam et Cambodge (14 jours)",
+      "price": "€600",
+      "descriptionTitle": "Description du forfait",
+      "intro": "Vietnam et Cambodge en 14 jours : transferts en bus, 12 nuits dans des auberges sélectionnées, visites essentielles et guide des visas avec support 24/7.",
+      "includes": "<strong>Comprend :</strong> transferts en bus, 12 nuits en auberge, visites, guide des visas et support 24/7.",
+      "backHome": "Retour à l'accueil",
+      "formTitle": "Données du titulaire",
+      "fullNamePlaceholder": "Nom complet",
+      "emailPlaceholder": "Adresse email",
+      "numTravelers": "🎟️ Nombre de voyageurs :",
+      "petQuestion": "Je voyage avec un animal de compagnie 🐾",
+      "petTypeSelect": "Type d'animal",
+      "petDog": "Chien",
+      "petCat": "Chat",
+      "petOther": "Autre",
+      "petSizeSelect": "Taille",
+      "petSmall": "Petit (<10 kg)",
+      "petMedium": "Moyen (10-25 kg)",
+      "petLarge": "Grand (>25 kg)",
+      "allergiesPlaceholder": "Avez-vous des allergies ou des restrictions alimentaires ?",
+      "paymentTitle": "💳 Paiement sécurisé",
+      "cardTypeLabel": "Type de carte",
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "amex": "American Express",
+      "cardNumberPlaceholder": "Numéro de carte (16 chiffres)",
+      "cardholderPlaceholder": "Nom du titulaire de la carte",
+      "expiryDatePlaceholder": "MM/AA",
+      "cvvPlaceholder": "CVV",
+      "confirmButton": "Confirmer la réservation"
     }
   }
 }
